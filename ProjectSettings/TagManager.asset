@@ -8,7 +8,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
@@ -41,24 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: sky
+  - name: background
     uniqueID: 2910121027
-    locked: 0
-  - name: building
-    uniqueID: 928378835
-    locked: 0
-  - name: trees back
-    uniqueID: 1146045291
-    locked: 0
-  - name: ground
-    uniqueID: 4252275567
-    locked: 0
-  - name: entrance
-    uniqueID: 1788649177
     locked: 0
   - name: foreground
     uniqueID: 51271107
-    locked: 0
-  - name: fog
-    uniqueID: 3193221775
     locked: 0

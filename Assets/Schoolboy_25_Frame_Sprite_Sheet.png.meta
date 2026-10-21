@@ -1,0 +1,673 @@
+fileFormatVersion: 2
+guid: 1dfb49b88b384f64aa4738600f1b3629
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 1031
+        width: 151
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23d2c7248a7748f4b9608f03561a58f9
+      internalID: 1113231176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 1031
+        width: 157
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0637fb1b5b3a1f45870ee54b8af6ffe
+      internalID: 110589975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 1031
+        width: 153
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d4a048b7f4527b4c995fc6b669431f0
+      internalID: -664358509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 1030
+        width: 162
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b30203bc4140c5408833abbb51dcd9c
+      internalID: 1111741165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 1030
+        width: 188
+        height: 221
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f0b24a49f7eb49459adaddda4b5649e
+      internalID: 156234159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 774
+        width: 217
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa3d5843f6c421645a59bede9d61ac83
+      internalID: 310965180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 791
+        width: 185
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14623ecabd63c5f40aa91eace8242c8c
+      internalID: -1375100888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 774
+        width: 205
+        height: 219
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ae8258ec280ee74dbe12def47d36cb5
+      internalID: -2146553942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 990
+        y: 774
+        width: 174
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a6645c2f924a44d8702d860efee329
+      internalID: -1913417733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 774
+        width: 180
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4de125b1adb4e43bdbe62f190ad48b
+      internalID: -242492972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 533
+        width: 181
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a92104563cae2b49b3f35d2e3b44b4a
+      internalID: 1834923054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 518
+        width: 185
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10eb80373dab453469ff56542b0772b1
+      internalID: 1868602786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 521
+        width: 148
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21eb9f2e0d223f4c97dbee1fc0ab865
+      internalID: -255418574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 520
+        width: 146
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d852e513b288fe48992e95988f293f1
+      internalID: -269812888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 520
+        width: 156
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 228c1302e8756c34d8d56ec60e349063
+      internalID: -1315038603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 264
+        width: 151
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55d240c98122ed418844499ba4beb1d
+      internalID: -98830756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 262
+        width: 167
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff5c513dd8d7b64ba5ce6ee387b9a33
+      internalID: 1831828075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 262
+        width: 180
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f389ce407c9c821479a8fc53757dbe29
+      internalID: -1971343360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 262
+        width: 173
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15424af9e7db4a342b26a0d5a2d0279f
+      internalID: 524825499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 262
+        width: 155
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 833d7a5f209d4bd4aa264dead980e097
+      internalID: 448956869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 6
+        width: 155
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d95f32063504942a20205d112a0991
+      internalID: 451081667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 6
+        width: 155
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86bb15873a7bf564a936f6114100cf6a
+      internalID: -1150591003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 6
+        width: 170
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0591bbe0c7a9e4a8747d9e9043f584
+      internalID: -1524169722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 6
+        width: 176
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012594d3e89f8e443b905f55897871ba
+      internalID: 1199275497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Schoolboy_25_Frame_Sprite_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 6
+        width: 177
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c86c2ccac32c33c45a023bde4f787b9f
+      internalID: 1336383029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Schoolboy_25_Frame_Sprite_Sheet_11: 1868602786
+      Schoolboy_25_Frame_Sprite_Sheet_0: 1113231176
+      Schoolboy_25_Frame_Sprite_Sheet_19: 448956869
+      Schoolboy_25_Frame_Sprite_Sheet_3: 1111741165
+      Schoolboy_25_Frame_Sprite_Sheet_4: 156234159
+      Schoolboy_25_Frame_Sprite_Sheet_12: -255418574
+      Schoolboy_25_Frame_Sprite_Sheet_13: -269812888
+      Schoolboy_25_Frame_Sprite_Sheet_8: -1913417733
+      Schoolboy_25_Frame_Sprite_Sheet_7: -2146553942
+      Schoolboy_25_Frame_Sprite_Sheet_16: 1831828075
+      Schoolboy_25_Frame_Sprite_Sheet_20: 451081667
+      Schoolboy_25_Frame_Sprite_Sheet_2: -664358509
+      Schoolboy_25_Frame_Sprite_Sheet_22: -1524169722
+      Schoolboy_25_Frame_Sprite_Sheet_17: -1971343360
+      Schoolboy_25_Frame_Sprite_Sheet_15: -98830756
+      Schoolboy_25_Frame_Sprite_Sheet_5: 310965180
+      Schoolboy_25_Frame_Sprite_Sheet_18: 524825499
+      Schoolboy_25_Frame_Sprite_Sheet_21: -1150591003
+      Schoolboy_25_Frame_Sprite_Sheet_23: 1199275497
+      Schoolboy_25_Frame_Sprite_Sheet_9: -242492972
+      Schoolboy_25_Frame_Sprite_Sheet_1: 110589975
+      Schoolboy_25_Frame_Sprite_Sheet_6: -1375100888
+      Schoolboy_25_Frame_Sprite_Sheet_10: 1834923054
+      Schoolboy_25_Frame_Sprite_Sheet_24: 1336383029
+      Schoolboy_25_Frame_Sprite_Sheet_14: -1315038603
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
