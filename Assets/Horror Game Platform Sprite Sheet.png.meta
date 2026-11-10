@@ -1,0 +1,289 @@
+fileFormatVersion: 2
+guid: d3540fecaae50c149961c4110ec02a5d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Horror Game Platform Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 222
+        width: 1338
+        height: 487
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610ebae09d4600246af3a9f452eb65a2
+      internalID: -2048480836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horror Game Platform Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 310
+        width: 508
+        height: 375
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f702e77f15abc5e43935735507ef5117
+      internalID: 542838373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horror Game Platform Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 507
+        width: 224
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a1ead33b134054f8cccc9c803408cc
+      internalID: -316518460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horror Game Platform Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 336
+        width: 198
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a832c29b214879499fc519facf228cf
+      internalID: -532444097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horror Game Platform Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1330
+        y: 16
+        width: 522
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3065f60e3a31ce45ac07e6ccabefcae
+      internalID: 424658992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Horror Game Platform Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 24
+        width: 209
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 818b14432ddeb9e488ca492fed2c0e56
+      internalID: 1551302844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Horror Game Platform Sprite Sheet_15: -1895343574
+      Horror Game Platform Sprite Sheet_5: 424658992
+      Horror Game Platform Sprite Sheet_36: 1525157362
+      Horror Game Platform Sprite Sheet_23: 1931631871
+      Horror Game Platform Sprite Sheet_3: -316518460
+      Horror Game Platform Sprite Sheet_28: 1068034151
+      Horror Game Platform Sprite Sheet_1: -2048480836
+      Horror Game Platform Sprite Sheet_6: -905974092
+      Horror Game Platform Sprite Sheet_32: -2016876648
+      Horror Game Platform Sprite Sheet_11: 835332042
+      Horror Game Platform Sprite Sheet_18: -1729151218
+      Horror Game Platform Sprite Sheet_20: 1015226443
+      Horror Game Platform Sprite Sheet_26: -1690011524
+      Horror Game Platform Sprite Sheet_19: 495131956
+      Horror Game Platform Sprite Sheet_14: -599133121
+      Horror Game Platform Sprite Sheet_13: -643760168
+      Horror Game Platform Sprite Sheet_4: -532444097
+      Horror Game Platform Sprite Sheet_7: 1551302844
+      Horror Game Platform Sprite Sheet_39: 763025503
+      Horror Game Platform Sprite Sheet_24: 1982742062
+      Horror Game Platform Sprite Sheet_31: 247545784
+      Horror Game Platform Sprite Sheet_25: 636722375
+      Horror Game Platform Sprite Sheet_30: 715494735
+      Horror Game Platform Sprite Sheet_37: -285614037
+      Horror Game Platform Sprite Sheet_27: -928194664
+      Horror Game Platform Sprite Sheet_2: 542838373
+      Horror Game Platform Sprite Sheet_0: -833218896
+      Horror Game Platform Sprite Sheet_9: -1674596835
+      Horror Game Platform Sprite Sheet_10: 254304439
+      Horror Game Platform Sprite Sheet_12: -1125016998
+      Horror Game Platform Sprite Sheet_35: -1515531183
+      Horror Game Platform Sprite Sheet_22: -444884049
+      Horror Game Platform Sprite Sheet_34: -1698768043
+      Horror Game Platform Sprite Sheet_17: 821514704
+      Horror Game Platform Sprite Sheet_16: -631622582
+      Horror Game Platform Sprite Sheet_8: -488092151
+      Horror Game Platform Sprite Sheet_38: 688430513
+      Horror Game Platform Sprite Sheet_21: 1101613005
+      Horror Game Platform Sprite Sheet_29: 1101267089
+      Horror Game Platform Sprite Sheet_33: -805122178
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

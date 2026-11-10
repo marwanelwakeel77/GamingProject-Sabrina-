@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a0d5cd5da66d0274387a000b5fda64bf
+guid: 816a76d20a09ac64fb85816363b19f95
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,34 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Alex_0
+      name: Chibi Boy Animation Sprite Sheet_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 746
-        width: 118
-        height: 197
+        x: 15
+        y: 1289
+        width: 281
+        height: 318
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99723b5b134b9544e942c73794a0533f
+      internalID: -366283141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chibi Boy Animation Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 1293
+        width: 330
+        height: 326
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a3cf9ef69b069b4b95464138bc45ea4
-      internalID: 758245420
+      spriteID: a6b0248c0507ea14eaeeba5349a1751b
+      internalID: -1209478336
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_1
+      name: Chibi Boy Animation Sprite Sheet_5
       rect:
         serializedVersion: 2
-        x: 227
-        y: 747
-        width: 122
-        height: 195
+        x: 660
+        y: 1298
+        width: 267
+        height: 315
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 72e233699f6433a4d89e3c7d44fccf1e
-      internalID: 1250228463
+      spriteID: 14a3ca4e451cfef4db7f0f35eaf57f5b
+      internalID: 690191414
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_2
+      name: Chibi Boy Animation Sprite Sheet_11
       rect:
         serializedVersion: 2
-        x: 419
-        y: 747
-        width: 121
-        height: 196
+        x: 20
+        y: 975
+        width: 260
+        height: 308
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,20 +182,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c36471978d29e7847b822ea6238cbf32
-      internalID: -428672155
+      spriteID: a2026bf9a36d75e4ea614ea9a56df301
+      internalID: 1013694660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_3
+      name: Chibi Boy Animation Sprite Sheet_20
       rect:
         serializedVersion: 2
-        x: 611
-        y: 747
-        width: 122
-        height: 196
+        x: 326
+        y: 988
+        width: 317
+        height: 296
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,20 +203,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 019bdf92ca6c45c4d833143ea30a4ec0
-      internalID: -1989580937
+      spriteID: d971828a0ecb4fb43b0970263af35399
+      internalID: -1974601763
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_4
+      name: Chibi Boy Animation Sprite Sheet_22
       rect:
         serializedVersion: 2
-        x: 801
-        y: 746
-        width: 125
-        height: 197
+        x: 671
+        y: 968
+        width: 282
+        height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +224,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7b614d0553cf8a843b964e0d04c0cfbf
-      internalID: 624428689
+      spriteID: 1398328f864b81a4cb9d55339d5d13e7
+      internalID: -119331952
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_5
+      name: Chibi Boy Animation Sprite Sheet_40
       rect:
         serializedVersion: 2
-        x: 992
-        y: 747
-        width: 127
-        height: 196
+        x: 348
+        y: 668
+        width: 264
+        height: 298
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -224,20 +245,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 23ee78cfd7d686a4ea01e5c55b932202
-      internalID: 2018072916
+      spriteID: 0d6d76312074b994f8ed833c96d1ace3
+      internalID: 1460033352
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_6
+      name: Chibi Boy Animation Sprite Sheet_47
       rect:
         serializedVersion: 2
-        x: 35
-        y: 504
-        width: 122
-        height: 203
+        x: 677
+        y: 659
+        width: 268
+        height: 298
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -245,20 +266,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 501c4510a5b9eb94fabe28720fda20ff
-      internalID: -1588592192
+      spriteID: 13a564f724569e14aacee331c8077a3a
+      internalID: -1996547639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_7
+      name: Chibi Boy Animation Sprite Sheet_49
       rect:
         serializedVersion: 2
-        x: 225
-        y: 504
-        width: 125
-        height: 202
+        x: 29
+        y: 668
+        width: 270
+        height: 300
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,20 +287,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 49514dec866ac16459618c48aa2372a0
-      internalID: -2035670145
+      spriteID: 4770584ebcaab6e4cb467e097283cf01
+      internalID: 1510118260
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_8
+      name: Chibi Boy Animation Sprite Sheet_61
       rect:
         serializedVersion: 2
-        x: 416
-        y: 504
-        width: 127
-        height: 203
+        x: 39
+        y: 352
+        width: 250
+        height: 295
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,20 +308,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76a34ecf53cd55d41a9feffd40cb0b8e
-      internalID: 1714014767
+      spriteID: c18c2423ecbca034cae8c57b7ea6b189
+      internalID: -859640967
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_9
+      name: Chibi Boy Animation Sprite Sheet_63
       rect:
         serializedVersion: 2
-        x: 603
-        y: 504
-        width: 137
-        height: 202
+        x: 367
+        y: 332
+        width: 236
+        height: 323
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -308,20 +329,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef5acc5508ebbe04cb3e18d21162c33a
-      internalID: -1255487109
+      spriteID: 3197572db7bfafb46aca9eea274bb1fd
+      internalID: -214086528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_10
+      name: Chibi Boy Animation Sprite Sheet_66
       rect:
         serializedVersion: 2
-        x: 795
-        y: 504
-        width: 137
-        height: 202
+        x: 672
+        y: 330
+        width: 287
+        height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -329,230 +350,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa271e09b8b466745a2c53a054b98e5e
-      internalID: -1409500340
+      spriteID: 42dd9afc8d2af914e9ca4a92630651e1
+      internalID: -789630164
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_11
+      name: Chibi Boy Animation Sprite Sheet_72
       rect:
         serializedVersion: 2
-        x: 990
-        y: 503
-        width: 131
-        height: 203
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e222d953f376dbf4a92b81d34b893c21
-      internalID: -1778193353
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_12
-      rect:
-        serializedVersion: 2
-        x: 25
-        y: 273
-        width: 141
-        height: 188
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3b55f3e77c7a8fd42b4ec4d7002271a6
-      internalID: -1040816582
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_13
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 277
-        width: 159
-        height: 184
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 191d0f4c800b91d4fbba36cf5d04a91c
-      internalID: -1438979645
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_14
-      rect:
-        serializedVersion: 2
-        x: 401
-        y: 278
-        width: 158
-        height: 183
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a87d7fb7af382ab409095e182840b82c
-      internalID: -2119546134
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_15
-      rect:
-        serializedVersion: 2
-        x: 591
-        y: 295
-        width: 161
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eaddfa03c907ad04e81d5c7a37db2980
-      internalID: -1529126993
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_16
-      rect:
-        serializedVersion: 2
-        x: 793
-        y: 281
-        width: 142
-        height: 181
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5d2eeb2051f35fb40940b268c23ee4d6
-      internalID: -1621295432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_17
-      rect:
-        serializedVersion: 2
-        x: 979
-        y: 274
-        width: 153
-        height: 187
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15564ba6722095740b9622840ec382f7
-      internalID: 1180332346
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_18
-      rect:
-        serializedVersion: 2
-        x: 1171
-        y: 273
-        width: 154
-        height: 190
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f821c6231a83366408b93a6f8d75cd45
-      internalID: -1980379670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_19
-      rect:
-        serializedVersion: 2
-        x: 1360
-        y: 273
-        width: 159
-        height: 192
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b17178e1ddbbca247ad6f6f533654426
-      internalID: 580788778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_20
-      rect:
-        serializedVersion: 2
-        x: 1551
-        y: 273
-        width: 161
-        height: 191
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96ad8542b6314ab4d8832f5d4c5c91a9
-      internalID: -1753824661
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_21
-      rect:
-        serializedVersion: 2
-        x: 19
+        x: 31
         y: 18
-        width: 153
-        height: 167
+        width: 278
+        height: 306
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -560,20 +371,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4efac4c2c98c6314cbb342e1336cc09b
-      internalID: -219547145
+      spriteID: 7c99f0fd0ff214d46a2fad3ffbf271e2
+      internalID: 1013252490
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Alex_22
+      name: Chibi Boy Animation Sprite Sheet_78
       rect:
         serializedVersion: 2
-        x: 213
+        x: 331
+        y: 22
+        width: 282
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41bf4afb4c9282d458d30dbefa6949d1
+      internalID: -2116651346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Chibi Boy Animation Sprite Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 646
         y: 27
-        width: 149
-        height: 189
+        width: 313
+        height: 280
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -581,155 +413,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8860bd9c97430441a384dc261d44d10
-      internalID: -729290003
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_23
-      rect:
-        serializedVersion: 2
-        x: 404
-        y: 39
-        width: 152
-        height: 181
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6bd8743dd2d7eeb49a082139d281d620
-      internalID: -618125461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_24
-      rect:
-        serializedVersion: 2
-        x: 601
-        y: 64
-        width: 142
-        height: 167
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7583d11767632f94db6ffe569ee830b3
-      internalID: -262826467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_25
-      rect:
-        serializedVersion: 2
-        x: 795
-        y: 53
-        width: 138
-        height: 182
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4779ce68e0bd5f4e85282ad2a2d9147
-      internalID: -185385009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_26
-      rect:
-        serializedVersion: 2
-        x: 984
-        y: 27
-        width: 144
-        height: 197
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfc264446c76e8b45ac253ed39b3336f
-      internalID: 2109410093
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_27
-      rect:
-        serializedVersion: 2
-        x: 1175
-        y: 18
-        width: 145
-        height: 183
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 06b29489e213d7c4a816c2816a3938bc
-      internalID: -612999830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_28
-      rect:
-        serializedVersion: 2
-        x: 1369
-        y: 18
-        width: 142
-        height: 177
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba5ec3e643bd04945a429fc74d226cdf
-      internalID: -1721780762
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Alex_29
-      rect:
-        serializedVersion: 2
-        x: 1553
-        y: 18
-        width: 157
-        height: 157
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1c72da7b524a09441b21bac364acfac2
-      internalID: 346447203
+      spriteID: 429a1b1d585cc9447a777284266261ef
+      internalID: 681098384
       vertices: []
       indices: 
       edges: []
@@ -745,36 +430,94 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Alex_8: 1714014767
-      Alex_4: 624428689
-      Alex_28: -1721780762
-      Alex_10: -1409500340
-      Alex_13: -1438979645
-      Alex_19: 580788778
-      Alex_25: -185385009
-      Alex_22: -729290003
-      Alex_1: 1250228463
-      Alex_3: -1989580937
-      Alex_5: 2018072916
-      Alex_17: 1180332346
-      Alex_6: -1588592192
-      Alex_16: -1621295432
-      Alex_20: -1753824661
-      Alex_21: -219547145
-      Alex_9: -1255487109
-      Alex_27: -612999830
-      Alex_7: -2035670145
-      Alex_11: -1778193353
-      Alex_18: -1980379670
-      Alex_14: -2119546134
-      Alex_23: -618125461
-      Alex_26: 2109410093
-      Alex_12: -1040816582
-      Alex_15: -1529126993
-      Alex_24: -262826467
-      Alex_29: 346447203
-      Alex_2: -428672155
-      Alex_0: 758245420
+      Chibi Boy Animation Sprite Sheet_3: -1975266440
+      Chibi Boy Animation Sprite Sheet_73: -820856340
+      Chibi Boy Animation Sprite Sheet_27: -1093021973
+      Chibi Boy Animation Sprite Sheet_62: -875719935
+      Chibi Boy Animation Sprite Sheet_87: 1290948686
+      Chibi Boy Animation Sprite Sheet_38: 758292363
+      Chibi Boy Animation Sprite Sheet_74: -1359874740
+      Chibi Boy Animation Sprite Sheet_66: -789630164
+      Chibi Boy Animation Sprite Sheet_43: 1681875768
+      Chibi Boy Animation Sprite Sheet_63: -214086528
+      Chibi Boy Animation Sprite Sheet_34: 933190533
+      Chibi Boy Animation Sprite Sheet_64: 1439299962
+      Chibi Boy Animation Sprite Sheet_15: -1557452726
+      Chibi Boy Animation Sprite Sheet_72: 1013252490
+      Chibi Boy Animation Sprite Sheet_28: -133027260
+      Chibi Boy Animation Sprite Sheet_85: -871924164
+      Chibi Boy Animation Sprite Sheet_47: -1996547639
+      Chibi Boy Animation Sprite Sheet_58: 604549339
+      Chibi Boy Animation Sprite Sheet_8: 1991449425
+      Chibi Boy Animation Sprite Sheet_12: 1951423368
+      Chibi Boy Animation Sprite Sheet_19: -1973201448
+      Chibi Boy Animation Sprite Sheet_23: 1978492490
+      Chibi Boy Animation Sprite Sheet_61: -859640967
+      Chibi Boy Animation Sprite Sheet_5: 690191414
+      Chibi Boy Animation Sprite Sheet_42: -1274507945
+      Chibi Boy Animation Sprite Sheet_54: -1465795664
+      Chibi Boy Animation Sprite Sheet_46: -761406782
+      Chibi Boy Animation Sprite Sheet_30: -1938868289
+      Chibi Boy Animation Sprite Sheet_86: 374749346
+      Chibi Boy Animation Sprite Sheet_14: 598117339
+      Chibi Boy Animation Sprite Sheet_35: 1674945339
+      Chibi Boy Animation Sprite Sheet_44: -279976232
+      Chibi Boy Animation Sprite Sheet_37: 1807016685
+      Chibi Boy Animation Sprite Sheet_6: -832992881
+      Chibi Boy Animation Sprite Sheet_82: -1923248752
+      Chibi Boy Animation Sprite Sheet_80: 286558459
+      Chibi Boy Animation Sprite Sheet_77: 1804889864
+      Chibi Boy Animation Sprite Sheet_0: -366283141
+      Chibi Boy Animation Sprite Sheet_26: 2145938937
+      Chibi Boy Animation Sprite Sheet_83: 2127465255
+      Chibi Boy Animation Sprite Sheet_40: 1460033352
+      Chibi Boy Animation Sprite Sheet_65: -1955499493
+      Chibi Boy Animation Sprite Sheet_71: 1066857049
+      Chibi Boy Animation Sprite Sheet_21: 2099084278
+      Chibi Boy Animation Sprite Sheet_22: -119331952
+      Chibi Boy Animation Sprite Sheet_76: -1018135323
+      Chibi Boy Animation Sprite Sheet_10: 2102708640
+      Chibi Boy Animation Sprite Sheet_16: -529128285
+      Chibi Boy Animation Sprite Sheet_57: -578921444
+      Chibi Boy Animation Sprite Sheet_56: 1434910037
+      Chibi Boy Animation Sprite Sheet_39: -1023010049
+      Chibi Boy Animation Sprite Sheet_68: -530341509
+      Chibi Boy Animation Sprite Sheet_70: 165527070
+      Chibi Boy Animation Sprite Sheet_60: -1116684371
+      Chibi Boy Animation Sprite Sheet_25: 86117535
+      Chibi Boy Animation Sprite Sheet_20: -1974601763
+      Chibi Boy Animation Sprite Sheet_24: 796171263
+      Chibi Boy Animation Sprite Sheet_32: 1445592820
+      Chibi Boy Animation Sprite Sheet_67: -1693562673
+      Chibi Boy Animation Sprite Sheet_17: 1566125402
+      Chibi Boy Animation Sprite Sheet_45: 1761043364
+      Chibi Boy Animation Sprite Sheet_33: 779834160
+      Chibi Boy Animation Sprite Sheet_49: 1510118260
+      Chibi Boy Animation Sprite Sheet_69: -333317809
+      Chibi Boy Animation Sprite Sheet_36: 1162662328
+      Chibi Boy Animation Sprite Sheet_31: 1072767271
+      Chibi Boy Animation Sprite Sheet_50: -776609149
+      Chibi Boy Animation Sprite Sheet_78: -2116651346
+      Chibi Boy Animation Sprite Sheet_2: -1780081877
+      Chibi Boy Animation Sprite Sheet_13: 1644018223
+      Chibi Boy Animation Sprite Sheet_53: -1271388900
+      Chibi Boy Animation Sprite Sheet_55: 311029755
+      Chibi Boy Animation Sprite Sheet_29: -1869795580
+      Chibi Boy Animation Sprite Sheet_7: -1082606652
+      Chibi Boy Animation Sprite Sheet_4: -1715121449
+      Chibi Boy Animation Sprite Sheet_1: -1209478336
+      Chibi Boy Animation Sprite Sheet_48: -1192660756
+      Chibi Boy Animation Sprite Sheet_18: 566706084
+      Chibi Boy Animation Sprite Sheet_84: -661599862
+      Chibi Boy Animation Sprite Sheet_81: -321583359
+      Chibi Boy Animation Sprite Sheet_52: -2113219427
+      Chibi Boy Animation Sprite Sheet_41: -1131458153
+      Chibi Boy Animation Sprite Sheet_75: 1778665565
+      Chibi Boy Animation Sprite Sheet_9: -531222796
+      Chibi Boy Animation Sprite Sheet_79: 681098384
+      Chibi Boy Animation Sprite Sheet_11: 1013694660
+      Chibi Boy Animation Sprite Sheet_51: 758613041
+      Chibi Boy Animation Sprite Sheet_59: -1608691728
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
