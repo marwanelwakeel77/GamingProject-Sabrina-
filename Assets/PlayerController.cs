@@ -15,59 +15,46 @@ public class PlayerController : MonoBehaviour
     public LayerMask whatIsGround;
     private bool grounded;
     private Animator anim;
-    
+    private Rigidbody2D rb;
+    private SpriteRenderer sr;
+    private float moveInput;
 
     void Start()
     {
-        anim = GetComponent<Animator>(); 
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-      if (Input.GetKeyDown(Spacebar) && grounded)
-        {
+        // Read input every frame. No key held = 0, so the character stops as soon as the arrow is released.
+        moveInput = 0f;
+        if (Input.GetKey(L)) moveInput = -1f;
+        if (Input.GetKey(R)) moveInput = 1f;
+
+        // Face the direction of movement; keep the last facing when standing still.
+        if (moveInput != 0f && sr != null)
+            sr.flipX = moveInput < 0f;
+
+        if (Input.GetKeyDown(Spacebar) && grounded)
             Jump();
-        }
 
-        if (Input.GetKey(L))
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
-            if (GetComponent<SpriteRenderer>() != null)
-            {
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
-        }
-
-        if (Input.GetKey(R))
-        {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
-            if (GetComponent<SpriteRenderer>() != null)
-            {
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
-        }
-        anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-        anim.SetFloat("Height", GetComponent<Rigidbody2D>().velocity.y);
+        anim.SetFloat("Speed", Mathf.Abs(moveInput));
+        anim.SetFloat("Height", rb.velocity.y);
         anim.SetBool("Grounded", grounded);
+    }
 
-    }
-    void Jump()
-    {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
-    }
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+
+        // Set horizontal speed every physics step, so releasing the key sets it back to 0.
+        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+    }
+
+    void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
     }
 }
-
-
-
-   
-
-
-   
-
