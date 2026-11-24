@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -13,61 +11,54 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
+
     private bool grounded;
     private Animator anim;
-    
+    private Rigidbody2D rb;
+    private SpriteRenderer sr;
 
     void Start()
     {
-        anim = GetComponent<Animator>(); 
+        anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-      if (Input.GetKeyDown(Spacebar) && grounded)
+        if (Input.GetKeyDown(Spacebar) && grounded)
         {
             Jump();
         }
 
         if (Input.GetKey(L))
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
-            if (GetComponent<SpriteRenderer>() != null)
-            {
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+            if (sr != null) sr.flipX = true;
         }
-
-        if (Input.GetKey(R))
+        else if (Input.GetKey(R))
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(moveSpeed, GetComponent<Rigidbody2D>().velocity.y);
-
-            if (GetComponent<SpriteRenderer>() != null)
-            {
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+            if (sr != null) sr.flipX = false;
         }
-        anim.SetFloat("Speed",Mathf.Abs(GetComponent<Rigidbody2D>().velocity.x));
-        anim.SetFloat("Height", GetComponent<Rigidbody2D>().velocity.y);
-        anim.SetBool("Grounded", grounded);
+        else
+        {
+            // No key held: stop horizontal movement so Speed returns to 0
+            rb.velocity = new Vector2(0f, rb.velocity.y);
+        }
 
+        anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        anim.SetFloat("Height", rb.velocity.y);
+        anim.SetBool("Grounded", grounded);
     }
+
     void Jump()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, jumpHeight);
+        rb.velocity = new Vector2(rb.velocity.x, jumpHeight);
     }
+
     void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
     }
 }
-
-
-
-   
-
-
-   
-
