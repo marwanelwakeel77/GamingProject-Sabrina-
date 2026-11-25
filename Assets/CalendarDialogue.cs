@@ -1,69 +1,56 @@
-using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
+using TMPro;
 
-// The instruction panel above the calendar. It only tells the player what to do:
-// it never reveals dates or solves the puzzle, and closing it does not reset anything.
-[RequireComponent(typeof(CanvasGroup))]
 public class CalendarDialogue : MonoBehaviour
 {
-    public float fadeTime = 0.35f;
-    public Button closeButton;   // the X in the panel's upper-right corner
+    public TextMeshProUGUI textDisplay; //the text inside the dialogue box
+    public string sentence = "REVEAL THE FOUR DATES & SOLVE THE PUZZLE";
+    public float typingSpeed = 0.02f;
+    public GameObject closeButton; //the X button
 
-    private CanvasGroup group;
-    private Coroutine fadeRoutine;
-    private bool visible;
-    private bool dismissed;
+    private bool wasClosed = false;
+    private bool isShown = false;
 
-    public bool IsDismissed { get { return dismissed; } }
-
-    void Awake()
+    //called by the calendar when the player opens it with E
+    public void ShowDialogue()
     {
-        group = GetComponent<CanvasGroup>();
-        if (closeButton != null) closeButton.onClick.AddListener(Dismiss);
-        group.alpha = 0f;
-    }
-
-    // Shows the panel unless the player already closed it. It is never forced open again.
-    public void ShowOnce()
-    {
-        if (dismissed || visible) return;
-
-        visible = true;
-        gameObject.SetActive(true);
-        Fade(1f, null);
-    }
-
-    // Called by the X button. The calendar keeps its progress.
-    public void Dismiss()
-    {
-        if (!visible) return;
-
-        visible = false;
-        dismissed = true;
-        Fade(0f, () => gameObject.SetActive(false));
-    }
-
-    void Fade(float target, Action onDone)
-    {
-        if (fadeRoutine != null) StopCoroutine(fadeRoutine);
-        fadeRoutine = StartCoroutine(FadeRoutine(target, onDone));
-    }
-
-    IEnumerator FadeRoutine(float target, Action onDone)
-    {
-        float start = group.alpha;
-        float t = 0f;
-        while (t < fadeTime)
+        //do not open it again after the player closed it
+        if (wasClosed == false && isShown == false)
         {
-            t += Time.deltaTime;
-            group.alpha = Mathf.Lerp(start, target, t / fadeTime);
-            yield return null;
+            isShown = true;
+            gameObject.SetActive(true);
+            StartCoroutine(TypeDialogue());
+        }
+    }
+
+    //types the sentence letter by letter (like the dialogue in lab 9)
+    IEnumerator TypeDialogue()
+    {
+        textDisplay.text = "";
+        closeButton.SetActive(false);
+
+        foreach (char letter in sentence.ToCharArray())
+        {
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
         }
 
-        group.alpha = target;
-        fadeRoutine = null;
-        if (onDone != null) onDone();
+        closeButton.SetActive(true); //the X appears when the whole sentence is written
+    }
+
+    //linked to the OnClick() of the X button in the Inspector
+    public void CloseDialogue()
+    {
+        wasClosed = true;
+        HideDialogue();
+    }
+
+    //called by the calendar when it closes, so the dialogue appears again next time
+    public void HideDialogue()
+    {
+        isShown = false;
+        gameObject.SetActive(false);
     }
 }

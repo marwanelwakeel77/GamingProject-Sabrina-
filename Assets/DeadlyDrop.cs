@@ -15,15 +15,12 @@ public class DeadlyDrop : MonoBehaviour
     {
         
     }
-   void OnTriggerEnter2D(Collider2D other)
-{
-    Debug.Log("TRIGGER WORKING: " + other.name);
-
-    if (other.CompareTag("Player"))
+    //when the player falls, the level manager respawns him (like the lake in lab 5)
+    void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("PLAYER DETECTED!");
-
-        FindObjectOfType<LevelManager>().RespawnPlayer();
+        if (other.tag == "Player")
+        {
+            FindObjectOfType<LevelManager>().RespawnPlayer();
+        }
     }
-}
 }

@@ -1,42 +1,47 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Put this on the exit door (BoxCollider2D, Is Trigger).
-// The door stays locked until the Library Permit is in the inventory, then Alex leaves for the next level.
 public class ExitDoor : MonoBehaviour
 {
-    public string requiredItem = "Library Permit";
-    public string nextScene = "level 3";
+    public int nextLevel = 3; //the number of Level 3 (the library) in File > Build Settings
+    public GameObject interactText; //"Press E To Interact" in the Canvas
 
-    private bool playerInside;
+    private bool playerNear = false;
 
+    // Update is called once per frame
     void Update()
     {
-        if (!playerInside || !Input.GetKeyDown(KeyCode.E)) return;
-
-        if (InventoryManager.Instance == null || !InventoryManager.Instance.HasItem(requiredItem))
+        if (playerNear == true && Input.GetKeyDown(KeyCode.E))
         {
-            HintText.Show("The door is locked. Find the Library Permit.");
-            return;
+            //the door opens only if the player has the Library Permit
+            if (PlayerStats.hasLibraryPermit == true)
+            {
+                SceneManager.LoadScene(nextLevel);
+            }
+            else
+            {
+                FindObjectOfType<HintText>().ShowHint("The door is locked. You need the Library Permit.");
+            }
         }
-
-        if (!Application.CanStreamedLevelBeLoaded(nextScene))
-        {
-            HintText.Show("Level 3 is not added to the build yet.");
-            Debug.LogWarning("ExitDoor: scene '" + nextScene + "' is not in Build Settings.");
-            return;
-        }
-
-        SceneManager.LoadScene(nextScene);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) playerInside = true;
+        if (other.tag == "Player")
+        {
+            playerNear = true;
+            interactText.SetActive(true);
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) playerInside = false;
+        if (other.tag == "Player")
+        {
+            playerNear = false;
+            interactText.SetActive(false);
+        }
     }
 }

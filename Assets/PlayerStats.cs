@@ -11,13 +11,15 @@ public class PlayerStats : MonoBehaviour
     private SpriteRenderer sr;
     public bool isImmune=false;
     public float immunityTime=0f;
-public float immunityDuration=1.5f;
+    public float immunityDuration=1.5f;
 
+    public static bool hasTriangle = false; //Triangle Symbol from level 2, needed in level 5
+    public static bool hasLibraryPermit = false; //needed to enter the library (level 3)
 
     // Start is called before the first frame update
     void Start()
     {
-       sr=GetComponent<SpriteRenderer>(); 
+        sr=GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public float immunityDuration=1.5f;
     {
         if(flickerTime<flickerDuration)
         {
-          flickerTime=flickerTime+Time.deltaTime;
+            flickerTime=flickerTime+Time.deltaTime;
         }
         else if(flickerTime>=flickerDuration)
         {
@@ -47,35 +49,31 @@ public float immunityDuration=1.5f;
         }
     }
     public void TakeDamage(int damage)
-{
-    if (isImmune == false)
     {
-        health = health - damage;
-
-        if (health < 0)
-            health = 0;
-
-        if (lives > 0 && health == 0)
+        if (isImmune == false)
         {
-            FindObjectOfType<LevelManager>().RespawnPlayer();
-            health = 3;
-            lives--;
-        }
-        else if (lives == 0 && health == 0)
-        {
-            Debug.Log("Gameover");
-            Destroy(this.gameObject);
-        }
+            health = health - damage;
 
-        Debug.Log("Player Health: " + health.ToString());
-        Debug.Log("Player Lives: " + lives.ToString());
+            if (health < 0)
+                health = 0;
 
-        isImmune = true;
-        immunityTime = 0f;
+            if (lives > 0 && health == 0)
+            {
+                FindObjectOfType<LevelManager>().RespawnPlayer();
+                health = 3;
+                lives--;
+            }
+            else if (lives == 0 && health == 0)
+            {
+                Debug.Log("Gameover");
+                Destroy(this.gameObject);
+            }
+
+            Debug.Log("Player Health: " + health.ToString());
+            Debug.Log("Player Lives: " + lives.ToString());
+
+            isImmune = true;
+            immunityTime = 0f;
+        }
     }
 }
-   
-    }
-    
- 
-

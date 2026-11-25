@@ -1,206 +1,182 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-// Put this on safe_0 (with a BoxCollider2D, Is Trigger).
-// E opens the keypad. Alex types a number and presses OK, four times: 5, 15, 25, 29.
-// The right code gives the Library Permit to the inventory.
 public class SafeKeypad : MonoBehaviour
 {
-    public const string PermitName = "Library Permit";
+    public GameObject keypadPanel; //the safe panel with the number buttons
+    public TMP_InputField[] numberSlots; //the 7 boxes where the numbers are written, from left to right
+    public TextMeshProUGUI wrongText; //red text: "Wrong passcode entered, try again"
+    public GameObject permitIcon; //the Library Permit icon in the inventory
+    public string password = "5152529"; //the 4 hidden dates: 5, 15, 25, 29
+    public GameObject interactText; //"Press E To Interact" in the Canvas
+    public GameObject collectText; //"Press E To Collect" in the Canvas
 
-    public GameObject keypadPanel;      // "Safe Panel" under the Canvas
-    public TextMeshProUGUI entryText;   // what is typed for the current number
-    public TextMeshProUGUI slotsText;   // the numbers locked in so far
-    public CalendarPuzzle calendar;     // the calendar that gives the code
-    public Sprite permitSprite;         // icon for the inventory
-    public int[] code = { 5, 15, 25, 29 };
+    public AudioClip keypadSound; //when a button is pressed
+    public AudioClip wrongSound; //wrong passcode
+    public AudioClip correctSound; //the safe opens
+    public AudioClip pickupSound; //taking the Library Permit
 
-    private bool playerInside;
-    private bool open;
-    private bool unlocked;
-    private string entry = "";
-    private readonly List<int> entered = new List<int>();
-    private PlayerController player;
+    private int count = 0; //how many numbers are written
+    private bool playerNear = false;
+    private bool keypadOpen = false;
+    private bool safeOpen = false;
+    private bool permitTaken = false;
+    private Animator anim;
+    private Rigidbody2D playerRB;
 
+    // Start is called before the first frame update
     void Start()
     {
-        if (keypadPanel != null) keypadPanel.SetActive(false);
-        Refresh();
+        anim = GetComponent<Animator>();
+        playerRB = FindObjectOfType<PlayerController>().GetComponent<Rigidbody2D>();
+        keypadPanel.SetActive(false);
+        interactText.SetActive(false);
+        collectText.SetActive(false);
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (unlocked) return;
-
-        if (open)
+        if (playerNear == true && keypadOpen == false && Input.GetKeyDown(KeyCode.E))
         {
-            HandleKeyboard();
-            return;
+            if (safeOpen == false)
+            {
+                OpenKeypad();
+            }
+            else if (permitTaken == false)
+            {
+                TakePermit();
+            }
         }
 
-        if (playerInside && Input.GetKeyDown(KeyCode.E))
-        {
-            Open();
-        }
-    }
-
-    void HandleKeyboard()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (keypadOpen == true && Input.GetKeyDown(KeyCode.Escape))
         {
             CloseKeypad();
-            return;
         }
-
-        for (int d = 0; d <= 9; d++)
-        {
-            if (Input.GetKeyDown((KeyCode)((int)KeyCode.Alpha0 + d)) ||
-                Input.GetKeyDown((KeyCode)((int)KeyCode.Keypad0 + d)))
-            {
-                PressDigit(d);
-            }
-        }
-
-        if (Input.GetKeyDown(KeyCode.Backspace)) Backspace();
-        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter)) Enter();
     }
 
-    void Open()
+    void OpenKeypad()
     {
-        open = true;
-        entry = "";
-        entered.Clear();
-
-        // Freeze Alex while the keypad is open.
-        player = FindObjectOfType<PlayerController>();
-        if (player != null)
-        {
-            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-            if (rb != null) rb.velocity = Vector2.zero;
-            player.enabled = false;
-        }
-
-        if (keypadPanel != null) keypadPanel.SetActive(true);
-        Refresh();
+        keypadOpen = true;
+        ClearCode();
+        wrongText.gameObject.SetActive(false);
+        keypadPanel.SetActive(true);
+        interactText.SetActive(false);
+        playerRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY; //freezing the player in place while typing
     }
 
+    //linked to the X at the top right: closes the keypad
     public void CloseKeypad()
     {
-        if (!open) return;
-
-        open = false;
-        if (keypadPanel != null) keypadPanel.SetActive(false);
-        if (player != null) player.enabled = true;
+        keypadOpen = false;
+        keypadPanel.SetActive(false);
+        playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+        ShowPressE();
     }
 
-    // Called by the keypad buttons (0-9).
-    public void PressDigit(int digit)
+    //shows "Press E To Interact" when the safe is closed, and "Press E To Collect" when the permit is inside the open safe
+    void ShowPressE()
     {
-        if (!open || unlocked) return;
-        if (entry.Length >= 2) return;   // dates on the calendar go up to 31
-
-        entry += digit.ToString();
-        Refresh();
-    }
-
-    public void Backspace()
-    {
-        if (!open || unlocked || entry.Length == 0) return;
-
-        entry = entry.Substring(0, entry.Length - 1);
-        Refresh();
-    }
-
-    // Locks in the typed number (OK button).
-    public void Enter()
-    {
-        if (!open || unlocked || entry.Length == 0) return;
-
-        entered.Add(int.Parse(entry));
-        entry = "";
-
-        if (entered.Count < code.Length)
+        if (playerNear == true)
         {
-            Refresh();
-            return;
-        }
-
-        CheckCode();
-    }
-
-    void CheckCode()
-    {
-        bool correct = true;
-        for (int i = 0; i < code.Length; i++)
-        {
-            if (entered[i] != code[i])
+            if (safeOpen == false)
             {
-                correct = false;
-                break;
+                interactText.SetActive(true);
+            }
+            else if (permitTaken == false)
+            {
+                collectText.SetActive(true);
             }
         }
+    }
 
-        if (correct)
+    //linked to the number buttons (0-9): writes the number in the next empty box
+    public void PressNumber(int number)
+    {
+        if (count < numberSlots.Length)
         {
-            Unlock();
-            return;
+            AudioManager.Instance.PlayMusicSFX(keypadSound);
+            numberSlots[count].text = "" + number;
+            count++;
+            wrongText.gameObject.SetActive(false);
+        }
+    }
+
+    //linked to the X at the bottom: removes the last number
+    public void RemoveLastNumber()
+    {
+        if (count > 0)
+        {
+            AudioManager.Instance.PlayMusicSFX(keypadSound);
+            count--;
+            numberSlots[count].text = "";
+        }
+    }
+
+    //empties all the boxes
+    void ClearCode()
+    {
+        count = 0;
+        for (int i = 0; i < numberSlots.Length; i++)
+        {
+            numberSlots[i].text = "";
+        }
+    }
+
+    //linked to the correct sign: checks the passcode
+    public void CheckCode()
+    {
+        //put the written numbers together, from left to right
+        string code = "";
+        for (int i = 0; i < count; i++)
+        {
+            code = code + numberSlots[i].text;
         }
 
-        entered.Clear();
-
-        if (calendar == null || !calendar.IsSolved)
+        if (code == password)
         {
-            HintText.Show("Wrong code. Solve the calendar puzzle first.");
+            safeOpen = true;
+            AudioManager.Instance.PlayMusicSFX(correctSound);
+            anim.SetBool("IsOpen", true); //plays the open animation of the safe
+            CloseKeypad();
+            FindObjectOfType<HintText>().ShowHint("Safe opened");
         }
         else
         {
-            HintText.Show("Wrong code. Try again.");
+            ClearCode();
+            AudioManager.Instance.PlayMusicSFX(wrongSound);
+            wrongText.gameObject.SetActive(true); //the red text appears
         }
-
-        Refresh();
     }
 
-    void Unlock()
+    void TakePermit()
     {
-        unlocked = true;
-
-        if (InventoryManager.Instance != null)
-        {
-            InventoryManager.Instance.AddItem(PermitName, permitSprite);
-        }
-
-        HintText.Show("You took the Library Permit.");
-        CloseKeypad();
-    }
-
-    void Refresh()
-    {
-        if (entryText != null) entryText.text = "Number: " + entry + "_";
-
-        if (slotsText != null)
-        {
-            string s = "";
-            for (int i = 0; i < code.Length; i++)
-            {
-                s += (i < entered.Count ? entered[i].ToString() : "?");
-                if (i < code.Length - 1) s += "   ";
-            }
-            slotsText.text = s;
-        }
+        permitTaken = true;
+        collectText.SetActive(false);
+        AudioManager.Instance.PlayRandomSFX(pickupSound); //like the coin pickup in lab 7
+        PlayerStats.hasLibraryPermit = true;
+        FindObjectOfType<InventoryManager>().AddItem(permitIcon);
+        FindObjectOfType<HintText>().ShowHint("You took the Library Permit.");
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) playerInside = true;
+        if (other.tag == "Player")
+        {
+            playerNear = true;
+            ShowPressE();
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
-            playerInside = false;
-            CloseKeypad();
+            playerNear = false;
+            interactText.SetActive(false);
+            collectText.SetActive(false);
         }
     }
 }

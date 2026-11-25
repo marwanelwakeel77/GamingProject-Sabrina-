@@ -1,89 +1,67 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
+using UnityEngine.UI;
 
-[RequireComponent(typeof(SpriteRenderer))]
+//put this on each ? block on the big calendar (Calendar Panel)
 public class CalendarDateBlock : MonoBehaviour
 {
-    public Sprite hiddenSprite;       // the question block
-    public string dateNumber;         // the date hidden here, e.g. "5"
-    public TextMeshPro numberLabel;   
-    public CalendarPuzzle puzzle;     
+    public Color selectedColor = new Color(0.72f, 0.53f, 0.04f); //dark gold = the date the player is on
 
-    private SpriteRenderer sr;
-    private Vector3 originPosition;
-    private Coroutine breakRoutine;
+    private Image img;
+    private Animator anim;
+    public bool isBroken = false;
 
-    public bool IsRevealed { get; private set; }
-
+    //Awake runs as soon as the calendar panel is shown for the first time
     void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
-        originPosition = transform.localPosition;
+        img = GetComponent<Image>();
+        anim = GetComponent<Animator>();
     }
 
-    void Start()
+    //called by the calendar when the player moves between the dates
+    public void Select(bool isSelected)
     {
-        ResetBlock();
-    }
-
-    // Yellow tint = the block Alex will break next.
-    public void SetSelected(bool selected)
-    {
-        if (sr == null || IsRevealed) return;
-        sr.color = selected ? new Color(1f, 0.9f, 0.45f) : Color.white;
-    }
-
-    // Breaks the block: it shakes, the question block disappears and the date is shown.
-    public void Break()
-    {
-        if (IsRevealed) return;
-
-        IsRevealed = true;
-        SetSelected(false);
-
-        if (numberLabel != null)
+        if (isSelected == true)
         {
-            numberLabel.text = dateNumber;
-            numberLabel.gameObject.SetActive(true);
+            img.color = selectedColor;
         }
-
-        breakRoutine = StartCoroutine(BreakEffect());
-    }
-
-    IEnumerator BreakEffect()
-    {
-        float t = 0f;
-        while (t < 0.3f)
+        else
         {
-            t += Time.deltaTime;
-            transform.localPosition = originPosition + (Vector3)Random.insideUnitCircle * 0.05f;
-            yield return null;
+            img.color = Color.white;
         }
-
-        transform.localPosition = originPosition;
-        sr.enabled = false;
-        breakRoutine = null;
     }
 
+    //called by the calendar when the player presses E on this date
+    public void BreakBlock()
+    {
+        isBroken = true;
+        Select(false);
+        StartCoroutine(Explode());
+    }
+
+    IEnumerator Explode()
+    {
+        //plays the break animation (solid block -> broken block)
+        anim.SetBool("isBroken", true);
+
+        //wait until the animation is seen, then remove the block so the date under it is seen
+        yield return new WaitForSeconds(0.4f);
+        HideBlock();
+    }
+
+    public void HideBlock()
+    {
+        img.enabled = false;
+    }
+
+    //called when the time is up, so the date is hidden again
+    //(the Animator goes back to the solid block by itself when the panel is shown again)
     public void ResetBlock()
     {
-        if (breakRoutine != null)
-        {
-            StopCoroutine(breakRoutine);
-            breakRoutine = null;
-        }
-
-        IsRevealed = false;
-        transform.localPosition = originPosition;
-
-        if (sr != null)
-        {
-            sr.enabled = true;
-            sr.color = Color.white;
-            if (hiddenSprite != null) sr.sprite = hiddenSprite;
-        }
-
-        if (numberLabel != null) numberLabel.gameObject.SetActive(false);
+        isBroken = false;
+        anim.SetBool("isBroken", false);
+        img.color = Color.white;
+        img.enabled = true;
     }
 }

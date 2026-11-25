@@ -1,83 +1,58 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-// One line of text at the top of the screen, for short messages such as "The door is locked."
-// Put this on a TextMeshProUGUI object in the Canvas.
-// The message types out one character at a time, stays, then fades out.
+//put this on an empty GameObject (Hint Manager), like the DialogueManager in lab 9
 public class HintText : MonoBehaviour
 {
-    public static HintText Instance;
+    public TextMeshProUGUI textDisplay; //the text inside the frame
+    public GameObject hintBox; //the frame ("task completed")
+    public float typingSpeed = 0.03f;
+    public float showTime = 2.5f; //how long the message stays on the screen
 
-    public float charactersPerSecond = 40f;
-    public float showSeconds = 2.5f;
-    public float fadeOutTime = 0.4f;
-    public Color textColor = new Color(1f, 0.85f, 0.55f, 1f);
+    private int hintNumber = 0; //the number of the newest message
 
-    private TextMeshProUGUI label;
-    private Coroutine hideRoutine;
-
-    void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        Instance = this;
-        label = GetComponent<TextMeshProUGUI>();
-        if (label != null)
-        {
-            label.text = "";
-            label.color = textColor;
-            label.maxVisibleCharacters = 0;
-        }
+        //the frame is hidden until there is a message
+        textDisplay.text = "";
+        hintBox.SetActive(false);
     }
 
-    public static void Show(string message)
+    //other scripts call this to show a message, e.g. "All four dates are revealed!"
+    public void ShowHint(string message)
     {
-        if (Instance == null)
-        {
-            Debug.Log(message);
-            return;
-        }
-        Instance.ShowMessage(message);
+        hintNumber++;
+        StartCoroutine(TypeHint(message, hintNumber));
     }
 
-    void ShowMessage(string message)
+    //shows the frame, types the message letter by letter, waits, then hides the frame
+    IEnumerator TypeHint(string message, int number)
     {
-        if (label == null) return;
+        hintBox.SetActive(true);
+        textDisplay.text = "";
 
-        if (hideRoutine != null) StopCoroutine(hideRoutine);
-        label.text = message;
-        label.color = textColor;
-        label.ForceMeshUpdate();
-        hideRoutine = StartCoroutine(TypeThenHide());
-    }
-
-    IEnumerator TypeThenHide()
-    {
-        // Typewriter: reveal one more character each step.
-        int total = label.textInfo.characterCount;
-        float t = 0f;
-        label.maxVisibleCharacters = 0;
-        while (label.maxVisibleCharacters < total)
+        foreach (char letter in message.ToCharArray())
         {
-            t += Time.deltaTime * charactersPerSecond;
-            label.maxVisibleCharacters = Mathf.Min(total, Mathf.FloorToInt(t));
-            yield return null;
+            //a newer message started, so this old one stops typing
+            if (number != hintNumber)
+            {
+                break;
+            }
+
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
         }
 
-        yield return new WaitForSeconds(showSeconds);
+        yield return new WaitForSeconds(showTime);
 
-        // Fade out.
-        float elapsed = 0f;
-        while (elapsed < fadeOutTime)
+        //only the newest message hides the frame
+        if (number == hintNumber)
         {
-            elapsed += Time.deltaTime;
-            float alpha = Mathf.Lerp(1f, 0f, elapsed / fadeOutTime);
-            label.color = new Color(textColor.r, textColor.g, textColor.b, alpha);
-            yield return null;
+            textDisplay.text = "";
+            hintBox.SetActive(false);
         }
-
-        label.text = "";
-        label.color = textColor;
-        label.maxVisibleCharacters = 0;
-        hideRoutine = null;
     }
 }

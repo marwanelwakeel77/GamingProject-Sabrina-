@@ -1,342 +1,271 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using TMPro;
 
-// Put this on the CalendarZone (BoxCollider2D, Is Trigger) that covers the calendar.
-// Alex stands in the zone and presses E: the calendar fills the screen.
-// Left/Right choose a hidden block, E breaks it, Escape closes the calendar.
 public class CalendarPuzzle : MonoBehaviour
 {
-    [Header("Guide dialogue")]
-    public GameObject guidePanel;
-    public TextMeshProUGUI guideText;
-    public string guideMessage = "Reveal the 4 hidden dates";
+    public GameObject calendarPanel; //the big calendar on the screen (Canvas > Calendar Panel)
+    public CalendarDateBlock[] dateBlocks; //the 4 ? blocks on the big calendar: 5, 15, 25, 29
+    public GameObject[] wallBlocks; //the 4 ? blocks on the calendar on the wall
+    public CalendarDialogue dialogue; //the hint dialogue
+    public TextMeshProUGUI timerText; //shows the seconds left
+    public float timeLimit = 30f; //the player has 30 seconds to reveal the dates
+    public AudioClip timerSound; //ticking sound while the 30 seconds run
+    public AudioClip breakSound; //plays one time when a date block breaks
+    public AudioClip solvedSound; //plays with the "All four dates are revealed!" message
+    public GameObject interactText; //"Press E To Interact" in the Canvas
 
-    [Header("Timer")]
-    public float timeLimit = 30f;
-    public TextMeshProUGUI timerText;
-
-    [Header("Date blocks (drag all 4 here)")]
-    public CalendarDateBlock[] dateBlocks;
-
-    [Header("When solved")]
-    public UnityEvent onSolved;
-
-    [Header("Big calendar view")]
-    public float viewPadding = 1.6f;
-    public CalendarDialogue dialogue;   // instruction panel above the calendar
-
+    public bool isSolved = false;
+    private bool playerNear = false;
+    public bool calendarOpen = false; //WallPickup checks it
+    private bool timerOn = false;
     private float timeLeft;
-    private bool timerRunning;
-    private bool solved;
-    private bool playerInside;
-    private bool viewing;
-    private int revealedCount;
-    private int selectedIndex = -1;
+    private int selected = 0; //the date the player is on now
+    private int brokenCount = 0; //how many dates are revealed
 
-    private Camera cam;
-    private Vector3 savedCamPosition;
-    private float savedCamSize;
     private PlayerController player;
-    private Collider2D zone;
+    private Rigidbody2D playerRB;
 
-    public bool PlayerInside { get { return playerInside; } }
-    public bool IsSolved { get { return solved; } }
-    public bool IsViewing { get { return viewing; } }
-
-    public bool CanReveal
-    {
-        get { return !solved; }
-    }
-
-    void Awake()
-    {
-        zone = GetComponent<Collider2D>();
-    }
-
+    // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
-        if (guideText != null) guideText.text = guideMessage;
-        if (timerText != null) timerText.gameObject.SetActive(false);
-        ResetPuzzle();
+        player = FindObjectOfType<PlayerController>();
+        playerRB = player.GetComponent<Rigidbody2D>();
+        calendarPanel.SetActive(false); //the big calendar is hidden until the player presses E
+        timerText.gameObject.SetActive(false);
+        dialogue.gameObject.SetActive(false); //the dialogue is hidden until the player opens the calendar
+        interactText.SetActive(false);
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (viewing)
+        //first E opens the calendar, after that E breaks the date the player is on
+        if (playerNear == true && isSolved == false && Input.GetKeyDown(KeyCode.E))
         {
-            HandleViewInput();
-        }
-        else if (playerInside && !solved && Input.GetKeyDown(KeyCode.E))
-        {
-            OpenView();
-        }
-
-        if (timerRunning && !solved)
-        {
-            timeLeft -= Time.deltaTime;
-            UpdateTimerText();
-
-            if (timeLeft <= 0f)
+            if (calendarOpen == false)
             {
-                timeLeft = 0f;
-                UpdateTimerText();
-                Fail();
+                OpenCalendar();
+            }
+            else
+            {
+                BreakSelectedBlock();
+            }
+        }
+
+        //the arrows move between the hidden dates
+        if (calendarOpen == true && isSolved == false)
+        {
+            if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                MoveSelection(1);
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                MoveSelection(-1);
+            }
+        }
+
+        if (calendarOpen == true && Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseCalendar();
+        }
+
+        //the timer counts down after the first block is broken
+        if (timerOn == true)
+        {
+            timeLeft = timeLeft - Time.deltaTime;
+            timerText.text = "" + (int)timeLeft;
+
+            if (timeLeft <= 0)
+            {
+                TimeUp();
             }
         }
     }
 
+    void OpenCalendar()
+    {
+        calendarOpen = true;
+        calendarPanel.SetActive(true); //the big calendar over the blurred classroom
+        interactText.SetActive(false);
+        dialogue.ShowDialogue(); //the hint dialogue appears on the big calendar
+
+        //freeze the player in place while the calendar is open
+        playerRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+        player.enabled = false; //so the arrows move between the dates, not the player
+
+        //start on the first date that is not revealed yet
+        selected = -1;
+        MoveSelection(1);
+    }
+
+    void CloseCalendar()
+    {
+        calendarOpen = false;
+
+        //remove the dark gold, and keep the broken blocks hidden
+        for (int i = 0; i < dateBlocks.Length; i++)
+        {
+            dateBlocks[i].Select(false);
+
+            if (dateBlocks[i].isBroken == true)
+            {
+                dateBlocks[i].HideBlock();
+            }
+        }
+
+        calendarPanel.SetActive(false); //back to the normal scene
+        dialogue.HideDialogue(); //the hint dialogue closes with the calendar
+
+        //the player is still near the calendar and did not solve it yet
+        if (playerNear == true && isSolved == false)
+        {
+            interactText.SetActive(true);
+        }
+
+        //unfreeze the player, but keep his rotation frozen as it was before
+        playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+        player.enabled = true;
+    }
+
+    //moves to the next (1) or the previous (-1) date that is not revealed yet
+    void MoveSelection(int direction)
+    {
+        for (int i = 0; i < dateBlocks.Length; i++)
+        {
+            selected = selected + direction;
+
+            if (selected >= dateBlocks.Length)
+            {
+                selected = 0;
+            }
+            if (selected < 0)
+            {
+                selected = dateBlocks.Length - 1;
+            }
+
+            if (dateBlocks[selected].isBroken == false)
+            {
+                break;
+            }
+        }
+
+        //only the selected date is dark gold
+        for (int i = 0; i < dateBlocks.Length; i++)
+        {
+            if (dateBlocks[i].isBroken == false)
+            {
+                dateBlocks[i].Select(i == selected);
+            }
+        }
+    }
+
+    void BreakSelectedBlock()
+    {
+        if (dateBlocks[selected].isBroken == true)
+        {
+            return;
+        }
+
+        //the 30 seconds start with the first block
+        if (timerOn == false)
+        {
+            timerOn = true;
+            timeLeft = timeLimit;
+            timerText.gameObject.SetActive(true);
+            AudioManager.Instance.PlayMusic(timerSound); //the background music changes to the timer
+        }
+
+        dateBlocks[selected].BreakBlock();
+        AudioManager.Instance.PlayMusicSFX(breakSound); //like the heart sound in lab 7
+        brokenCount++;
+
+        //all 4 dates are revealed
+        if (brokenCount == dateBlocks.Length)
+        {
+            isSolved = true;
+            timerOn = false;
+            timerText.gameObject.SetActive(false);
+            AudioManager.Instance.PlayMusic(AudioManager.Instance.overworldMusic); //back to the normal music
+            dialogue.CloseDialogue(); //the "Solve The Puzzle" hint is not needed any more
+
+            //the dates are also seen on the calendar on the wall now
+            for (int i = 0; i < wallBlocks.Length; i++)
+            {
+                wallBlocks[i].SetActive(false);
+            }
+
+            FindObjectOfType<HintText>().ShowHint("All four dates are revealed!");
+            AudioManager.Instance.PlayRandomSFX(solvedSound); //PlayOneShot, so the break sound of the last block is not cut
+            StartCoroutine(CloseAfterSolved());
+        }
+        else
+        {
+            MoveSelection(1); //go to the next hidden date
+        }
+    }
+
+    //wait a little so the player can read the dates, then close the calendar
+    IEnumerator CloseAfterSolved()
+    {
+        yield return new WaitForSeconds(2f);
+
+        if (calendarOpen == true)
+        {
+            CloseCalendar();
+        }
+    }
+
+    void TimeUp()
+    {
+        timerOn = false;
+        timerText.gameObject.SetActive(false);
+        AudioManager.Instance.PlayMusic(AudioManager.Instance.overworldMusic); //back to the normal music
+
+        if (calendarOpen == true)
+        {
+            CloseCalendar();
+        }
+
+        //hide all the dates again
+        for (int i = 0; i < dateBlocks.Length; i++)
+        {
+            dateBlocks[i].ResetBlock();
+        }
+        brokenCount = 0;
+
+        FindObjectOfType<HintText>().ShowHint("Time is up! Try again.");
+        StartCoroutine(RespawnAfterTimeUp());
+    }
+
+    //wait a little so the player can read the hint, then the level manager respawns him
+    IEnumerator RespawnAfterTimeUp()
+    {
+        yield return new WaitForSeconds(2.5f);
+        FindObjectOfType<LevelManager>().RespawnPlayer();
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
-            playerInside = true;
-            ShowDialogue();
-            RefreshGuide();
+            playerNear = true;
+
+            if (isSolved == false)
+            {
+                interactText.SetActive(true);
+            }
         }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.tag == "Player")
         {
-            playerInside = false;
-            RefreshGuide();
-        }
-    }
-
-    // ----- Big calendar view -----
-
-    void OpenView()
-    {
-        if (cam == null) cam = Camera.main;
-        if (cam == null || zone == null) return;
-
-        viewing = true;
-        ShowDialogue();
-
-        // Freeze Alex while the calendar is on screen.
-        player = FindObjectOfType<PlayerController>();
-        if (player != null)
-        {
-            Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
-            if (rb != null) rb.velocity = Vector2.zero;
-            player.enabled = false;
-        }
-
-        // Move the camera onto the calendar and size it so the whole calendar fits the screen.
-        savedCamPosition = cam.transform.position;
-        savedCamSize = cam.orthographicSize;
-
-        Bounds b = zone.bounds;
-        float halfHeight = b.extents.y * viewPadding;
-        float halfWidth = b.extents.x * viewPadding / cam.aspect;
-        cam.transform.position = new Vector3(b.center.x, b.center.y, savedCamPosition.z);
-        cam.orthographicSize = Mathf.Max(halfHeight, halfWidth);
-
-        SelectFirstAvailable();
-        RefreshGuide();
-    }
-
-    void ShowDialogue()
-    {
-        if (!solved && dialogue != null) dialogue.ShowOnce();
-    }
-
-    void CloseView()
-    {
-        viewing = false;
-        selectedIndex = -1;
-
-        if (dateBlocks != null)
-        {
-            foreach (CalendarDateBlock block in dateBlocks)
-            {
-                if (block != null) block.SetSelected(false);
-            }
-        }
-
-        if (cam != null)
-        {
-            cam.transform.position = savedCamPosition;
-            cam.orthographicSize = savedCamSize;
-        }
-
-        if (player != null) player.enabled = true;
-
-        RefreshGuide();
-    }
-
-    void HandleViewInput()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            CloseView();
-            return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow)) MoveSelection(1);
-        if (Input.GetKeyDown(KeyCode.LeftArrow)) MoveSelection(-1);
-
-        if (Input.GetKeyDown(KeyCode.E) && selectedIndex >= 0)
-        {
-            BlockPressed(dateBlocks[selectedIndex]);
-        }
-    }
-
-    void SelectFirstAvailable()
-    {
-        selectedIndex = -1;
-        if (dateBlocks == null) return;
-
-        for (int i = 0; i < dateBlocks.Length; i++)
-        {
-            if (dateBlocks[i] != null && !dateBlocks[i].IsRevealed)
-            {
-                Select(i);
-                return;
-            }
-        }
-    }
-
-    void MoveSelection(int direction)
-    {
-        if (dateBlocks == null || dateBlocks.Length == 0) return;
-        if (selectedIndex < 0)
-        {
-            SelectFirstAvailable();
-            return;
-        }
-
-        int n = dateBlocks.Length;
-        int i = selectedIndex;
-        for (int step = 0; step < n; step++)
-        {
-            i = (i + direction + n) % n;
-            if (dateBlocks[i] != null && !dateBlocks[i].IsRevealed)
-            {
-                Select(i);
-                return;
-            }
-        }
-    }
-
-    void Select(int index)
-    {
-        selectedIndex = index;
-        for (int i = 0; i < dateBlocks.Length; i++)
-        {
-            if (dateBlocks[i] != null) dateBlocks[i].SetSelected(i == index);
-        }
-    }
-
-    // ----- Puzzle logic -----
-
-    // Called when Alex presses E on the selected block.
-    public void BlockPressed(CalendarDateBlock block)
-    {
-        if (solved || block == null || block.IsRevealed) return;
-
-        // The 30-second timer starts on the first block Alex breaks.
-        if (!timerRunning)
-        {
-            timerRunning = true;
-            timeLeft = timeLimit;
-            if (timerText != null) timerText.gameObject.SetActive(true);
-        }
-
-        block.Break();
-        revealedCount++;
-        UpdateTimerText();
-
-        if (revealedCount >= dateBlocks.Length)
-        {
-            Solve();
-            return;
-        }
-
-        if (viewing) SelectFirstAvailable();
-        RefreshGuide();
-    }
-
-    // Restarts the puzzle: dates hidden again, timer cleared, view closed.
-    public void ResetPuzzle()
-    {
-        if (viewing) CloseView();
-
-        timerRunning = false;
-        solved = false;
-        revealedCount = 0;
-        timeLeft = timeLimit;
-        selectedIndex = -1;
-
-        if (dateBlocks != null)
-        {
-            foreach (CalendarDateBlock block in dateBlocks)
-            {
-                if (block != null) block.ResetBlock();
-            }
-        }
-
-        if (timerText != null) timerText.gameObject.SetActive(false);
-        RefreshGuide();
-    }
-
-    // Called by LevelManager after every respawn (falling, timer, damage).
-    // Hides the dates again unless the puzzle is already solved.
-    public void OnPlayerRespawned()
-    {
-        if (!solved) ResetPuzzle();
-    }
-
-    void Solve()
-    {
-        solved = true;
-        timerRunning = false;
-
-        if (timerText != null) timerText.gameObject.SetActive(false);
-        if (viewing) CloseView();
-        RefreshGuide();
-
-        onSolved.Invoke();
-    }
-
-    void Fail()
-    {
-        ResetPuzzle();
-        HintText.Show("Time is up. The dates are hidden again.");
-
-        LevelManager levelManager = FindObjectOfType<LevelManager>();
-        if (levelManager != null)
-        {
-            levelManager.RespawnPlayer();
-        }
-    }
-
-    void RefreshGuide()
-    {
-        if (guidePanel == null) return;
-
-        // While the calendar is open, the guide lists the controls.
-        if (viewing)
-        {
-            if (guideText != null) guideText.text = "E: break the selected block     Left/Right: choose     Esc: close";
-            guidePanel.SetActive(true);
-            return;
-        }
-
-        // Near the calendar, before the timer starts, the guide asks for the 4 dates.
-        bool show = playerInside && !timerRunning && !solved;
-        if (show && guideText != null) guideText.text = guideMessage;
-        guidePanel.SetActive(show);
-    }
-
-    void UpdateTimerText()
-    {
-        if (timerText != null)
-        {
-            timerText.text = Mathf.CeilToInt(timeLeft).ToString();
+            playerNear = false;
+            interactText.SetActive(false);
         }
     }
 }

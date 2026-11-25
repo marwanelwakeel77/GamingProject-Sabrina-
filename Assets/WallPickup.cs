@@ -1,50 +1,61 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-// Put this on the wall triangle. Alex collects it with E, but only after the calendar is solved.
-[RequireComponent(typeof(SpriteRenderer))]
 public class WallPickup : MonoBehaviour
 {
-    public string itemName = "Triangle Symbol";
-    public CalendarPuzzle requiredPuzzle;   // the calendar that must be solved first
+    public CalendarPuzzle requiredPuzzle; //the calendar must be solved first
+    public GameObject inventoryIcon; //the Triangle Symbol icon in the inventory
+    public AudioClip pickupSound;
+    public GameObject collectText; //"Press E To Collect" in the Canvas
 
-    private SpriteRenderer sr;
-    private bool playerNearby;
-    private bool collected;
+    private bool playerNear = false;
 
-    void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
+        collectText.SetActive(false);
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (collected || !playerNearby) return;
-
-        if (Input.GetKeyDown(KeyCode.E) && requiredPuzzle != null && requiredPuzzle.IsSolved)
+        //the symbol can be collected only after the calendar is solved and closed
+        if (playerNear == true && requiredPuzzle.isSolved == true && requiredPuzzle.calendarOpen == false)
         {
-            Collect();
+            collectText.SetActive(true);
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Collect();
+            }
         }
     }
 
     void Collect()
     {
-        collected = true;
-
-        if (InventoryManager.Instance != null)
-        {
-            InventoryManager.Instance.AddItem(itemName, sr.sprite);
-        }
-
-        gameObject.SetActive(false);
+        collectText.SetActive(false);
+        AudioManager.Instance.PlayRandomSFX(pickupSound); //like the coin pickup in lab 7
+        PlayerStats.hasTriangle = true; //saved for level 5
+        FindObjectOfType<InventoryManager>().AddItem(inventoryIcon);
+        FindObjectOfType<HintText>().ShowHint("You collected the Triangle Symbol.");
+        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) playerNearby = true;
+        if (other.tag == "Player")
+        {
+            playerNear = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) playerNearby = false;
+        if (other.tag == "Player")
+        {
+            playerNear = false;
+            collectText.SetActive(false);
+        }
     }
 }
