@@ -7,6 +7,7 @@ public class DeskPaper : MonoBehaviour
     public GameObject paperScreen; //Sabrina's paper over the transparent background (Canvas > Paper Screen)
     public GameObject interactText; //"Press E To Interact" in the Canvas
     public GameObject ball; //the ball that follows the player
+    public AudioClip paperSound; //plays when the paper opens
 
     private bool playerNear = false;
     private bool paperOpen = false;
@@ -37,6 +38,7 @@ public class DeskPaper : MonoBehaviour
     {
         paperOpen = true;
         paperScreen.SetActive(true);
+        AudioManager.Instance.PlayMusicSFX(paperSound); //like the sounds in lab 7
         interactText.SetActive(false);
         playerRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY; //freezing the player in place while reading
 
