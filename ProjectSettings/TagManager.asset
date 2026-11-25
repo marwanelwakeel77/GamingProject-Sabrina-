@@ -41,9 +41,39 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: background
+  - name: lab wall
     uniqueID: 2910121027
     locked: 0
-  - name: foreground
+  - name: lab middle wall
+    uniqueID: 439832623
+    locked: 0
+  - name: lab lower wall
+    uniqueID: 2949318821
+    locked: 0
+  - name: 'lab floor '
     uniqueID: 51271107
+    locked: 0
+  - name: lab top pipe
+    uniqueID: 368065337
+    locked: 0
+  - name: lab door
+    uniqueID: 2347050541
+    locked: 0
+  - name: lab lamps
+    uniqueID: 1224061085
+    locked: 0
+  - name: lab props
+    uniqueID: 985960179
+    locked: 0
+  - name: lab workbench
+    uniqueID: 2540635737
+    locked: 0
+  - name: rune stones
+    uniqueID: 1529817249
+    locked: 0
+  - name: lab smoke
+    uniqueID: 2520599419
+    locked: 0
+  - name: elictric pillar
+    uniqueID: 2540669047
     locked: 0
