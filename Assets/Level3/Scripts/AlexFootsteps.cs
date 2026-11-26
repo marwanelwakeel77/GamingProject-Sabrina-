@@ -3,7 +3,7 @@ using UnityEngine;
 // Alex's footsteps. Put it on the player next to the PlayerController.
 // Every few moments while Alex walks on the ground, a random step sound plays through
 // the AudioManager's PlayRandomSFX (Lab 7), so it doesn't sound the same every time.
-public class PlayerFootsteps : MonoBehaviour
+public class AlexFootsteps : MonoBehaviour
 {
     public AudioClip[] footsteps;
     public float stepTime = 0.3f; // seconds between two steps

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// Super class for enemies (Lab 6, Exercise #19)
+//super class for the enemies (lab 6, exercise 19)
 public class EnemyController : MonoBehaviour
 {
     public float maxSpeed = 2;

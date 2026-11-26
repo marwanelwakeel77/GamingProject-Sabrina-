@@ -13,6 +13,9 @@ public class CipherPage : MonoBehaviour
     // which of Sabrina's pages this is, shown at the top of the inspection panel (e.g. "Cipher Page I")
     public string pageTitle = "Cipher Page";
 
+    // the icon of this page in the inventory (press H)
+    public GameObject inventoryIcon;
+
     private bool playerNearby = false;
     private bool isReading = false;
 
@@ -65,6 +68,11 @@ public class CipherPage : MonoBehaviour
 
         Debug.Log("Cipher Pages: " +
             PlayerStats.cipherPagesCollected + "/3");
+
+        // the page also goes into the inventory
+        InventoryManager inventory = FindObjectOfType<InventoryManager>();
+        if (inventory != null && inventoryIcon != null)
+            inventory.AddItem(inventoryIcon);
 
         // hide the page instead of destroying it,
         // so the LevelManager can put it back if the guard catches Alex

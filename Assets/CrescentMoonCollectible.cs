@@ -5,6 +5,7 @@ using UnityEngine;
 public class CrescentMoonCollectible : MonoBehaviour
 {
     public AudioClip moonSound;
+    public GameObject inventoryIcon; // the moon's icon in the inventory (press H)
 
    private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,6 +17,11 @@ public class CrescentMoonCollectible : MonoBehaviour
                 AudioManager.Instance.PlayMusicSFX(moonSound);
 
             Debug.Log("Crescent Moon collected!");
+
+            // the moon also goes into the inventory
+            InventoryManager inventory = FindObjectOfType<InventoryManager>();
+            if (inventory != null && inventoryIcon != null)
+                inventory.AddItem(inventoryIcon);
 
             Destroy(gameObject);
         }
