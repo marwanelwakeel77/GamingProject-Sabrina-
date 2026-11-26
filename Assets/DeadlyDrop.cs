@@ -24,9 +24,11 @@ public class DeadlyDrop : MonoBehaviour
     {
         if (other.tag == "Player" && isDying == false)
         {
+            //level 2: the health bar empties, the death sound plays, then alex respawns
             if (deathSound != null)
             {
                 isDying = true;
+                FindObjectOfType<PlayerStats>().healthBar.fillAmount = 0; //the health bar is empty (like lab 8)
                 AudioManager.Instance.musicSource.Stop(); //the background music stops while the death sound plays
                 AudioManager.Instance.PlayMusicSFX(deathSound); //like the sounds in lab 7
                 StartCoroutine(RespawnAfterDeath());

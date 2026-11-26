@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
     public int health=3;
     public int lives=3;
+    public Image healthBar;
     private float flickerTime=0f;
     private float flickerDuration=0.1f;
     private SpriteRenderer sr;
@@ -53,6 +55,7 @@ public class PlayerStats : MonoBehaviour
         if (isImmune == false)
         {
             health = health - damage;
+            healthBar.fillAmount = this.health/3f; //reflect health points on the red bar. When player loses health points, the red bar shrinks
 
             if (health < 0)
                 health = 0;
@@ -61,6 +64,7 @@ public class PlayerStats : MonoBehaviour
             {
                 FindObjectOfType<LevelManager>().RespawnPlayer();
                 health = 3;
+                healthBar.fillAmount = this.health/3f; //replenish the health bar so it's full again
                 lives--;
             }
             else if (lives == 0 && health == 0)
