@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -13,6 +15,13 @@ public class PlayerStats : MonoBehaviour
     public float immunityTime=0f;
 public float immunityDuration=1.5f;
 
+    // Level 3 collectibles. STATIC so their values stay with us (Lab 7)
+    public static int cipherPagesCollected = 0;
+    public static bool hasCrescentMoon = false;
+
+    // Level 3 HUD (Lab 8): drag the PageCount text and the MoonIcon image here
+    public TMP_Text pageCounter;
+    public Image moonIcon;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +41,19 @@ public float immunityDuration=1.5f;
                 isImmune=false;
                 sr.enabled=true;
             }
+        }
+
+        // keep the HUD up to date (only in levels that have one)
+        if (pageCounter != null)
+        {
+            pageCounter.text = cipherPagesCollected + " / 3";
+        }
+        if (moonIcon != null)
+        {
+            if (hasCrescentMoon == true)
+                moonIcon.color = Color.white; //collected: full color
+            else
+                moonIcon.color = new Color(0.3f, 0.35f, 0.5f, 0.35f); //not collected yet: dark and faded
         }
     }
     void SpriteFlicker()
@@ -76,6 +98,3 @@ public float immunityDuration=1.5f;
 }
    
     }
-    
- 
-

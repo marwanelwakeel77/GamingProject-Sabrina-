@@ -1,0 +1,783 @@
+fileFormatVersion: 2
+guid: f36671560e27c466fa88b6906121409f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 71.79
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 709.6
+        width: 295.66666
+        height: 177.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a3f3d78eb64457581a609fed21ea66
+      internalID: -1258801874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 709.6
+        width: 295.66666
+        height: 177.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97284d83c85e471db28e57e9694ea3d
+      internalID: -1455680155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 709.6
+        width: 295.66666
+        height: 177.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8b8da0994dd4b039448989700590f2
+      internalID: 482753411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 709.6
+        width: 295.66666
+        height: 177.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb3f07ebf21d44b4900ce290e2d7041
+      internalID: 108924710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 709.6
+        width: 295.66666
+        height: 177.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c04004520cea48b5ba7a609b6189065
+      internalID: 1929904548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 709.6
+        width: 295.66666
+        height: 177.4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 767e386c66ece443aaf34a4e65894817
+      internalID: 661071393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 554
+        width: 292
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9963fa1958eb4e149da9a54433e822a
+      internalID: 1748205456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 554
+        width: 300
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef14710ed728b499f9d02305378620ce
+      internalID: 1467442867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 556
+        width: 296
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d074650a18ab4ec7adffa282fd0eb25
+      internalID: 1544826443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 563
+        width: 298
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671bde514198e4071a355789baf69c44
+      internalID: 1112360268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 563
+        width: 302
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbe751a6506bf43688c4a87f0828fe64
+      internalID: 187288340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 559
+        width: 299
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d06bb6358e4204d03b7296bd9c123bf4
+      internalID: -327672273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 413
+        width: 295
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb0d47abf1834fcca623cf11ffa9483
+      internalID: -569250741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 394
+        width: 293
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd891e278955410e9c29fb567ce408b
+      internalID: 1392536526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 404
+        width: 288
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807013d7a7ddd4e8b91ac505a6d17a49
+      internalID: 988575319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 409
+        width: 297
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56b7ee0da30f346e3b793934f2d70bba
+      internalID: -1125963565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 400
+        width: 292
+        height: 161
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af197743595094b0c8227bf065143d75
+      internalID: 754234205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 416
+        width: 294
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c33d65d0c1b0c407d8a5146ac4d03b78
+      internalID: -397721483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 231
+        width: 296
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5108a159bf9424230bf82c2e46c67563
+      internalID: 1095380942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 217
+        width: 296
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f180a3a5ef3a94827861cf69f10135ec
+      internalID: 676117929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 220
+        width: 296
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a20d71f66b91e4af5be31a9a1adfe519
+      internalID: 1476173660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 227
+        width: 296
+        height: 177
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b784ecad2f4a4d3b8386bc5f52eb40e
+      internalID: 2049343701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 243
+        width: 292
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304445673557e4bd392c5edcc85cae9b
+      internalID: 894839175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 250
+        width: 299
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f703e268feb384c598627b7084459175
+      internalID: -838246551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 296
+        height: 177
+      alignment: 9
+      pivot: {x: 0.7358, y: 0.5184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d19d29f0bfcb40aa96f9bb8c9a2def7
+      internalID: -1655731363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 16
+        width: 296
+        height: 177
+      alignment: 9
+      pivot: {x: 0.6841, y: 0.5184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 952d0a68812aa44d5901f1495edd81c4
+      internalID: 684287129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 19
+        width: 296
+        height: 177
+      alignment: 9
+      pivot: {x: 0.5676, y: 0.5014}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da813c4f7a9f461fb39471a0992b41c
+      internalID: 1864091652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 5
+        width: 290
+        height: 222
+      alignment: 9
+      pivot: {x: 0.531, y: 0.4628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56ad14d1088d4f69a75c1d1a216174d
+      internalID: 1951495328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 16
+        width: 296
+        height: 225
+      alignment: 9
+      pivot: {x: 0.4486, y: 0.4078}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f00dda981066429cae0d0c433caad19
+      internalID: 569783888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Security Guard Alert Sprite Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1478
+        y: 19
+        width: 296
+        height: 217
+      alignment: 9
+      pivot: {x: 0.3622, y: 0.409}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc0148d6bbab4cff99817504e78d427
+      internalID: -170153452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Security Guard Alert Sprite Sheet_8: 1544826443
+      Security Guard Alert Sprite Sheet_18: 1095380942
+      Security Guard Alert Sprite Sheet_2: 482753411
+      Security Guard Alert Sprite Sheet_24: -1655731363
+      Security Guard Alert Sprite Sheet_26: 1864091652
+      Security Guard Alert Sprite Sheet_6: 1748205456
+      Security Guard Alert Sprite Sheet_21: 2049343701
+      Security Guard Alert Sprite Sheet_19: 676117929
+      Security Guard Alert Sprite Sheet_23: -838246551
+      Security Guard Alert Sprite Sheet_5: 661071393
+      Security Guard Alert Sprite Sheet_9: 1112360268
+      Security Guard Alert Sprite Sheet_12: -569250741
+      Security Guard Alert Sprite Sheet_10: 187288340
+      Security Guard Alert Sprite Sheet_13: 1392536526
+      Security Guard Alert Sprite Sheet_14: 988575319
+      Security Guard Alert Sprite Sheet_28: 569783888
+      Security Guard Alert Sprite Sheet_20: 1476173660
+      Security Guard Alert Sprite Sheet_4: 1929904548
+      Security Guard Alert Sprite Sheet_11: -327672273
+      Security Guard Alert Sprite Sheet_1: -1455680155
+      Security Guard Alert Sprite Sheet_15: -1125963565
+      Security Guard Alert Sprite Sheet_22: 894839175
+      Security Guard Alert Sprite Sheet_0: -1258801874
+      Security Guard Alert Sprite Sheet_16: 754234205
+      Security Guard Alert Sprite Sheet_29: -170153452
+      Security Guard Alert Sprite Sheet_27: 1951495328
+      Security Guard Alert Sprite Sheet_25: 684287129
+      Security Guard Alert Sprite Sheet_17: -397721483
+      Security Guard Alert Sprite Sheet_3: 108924710
+      Security Guard Alert Sprite Sheet_7: 1467442867
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

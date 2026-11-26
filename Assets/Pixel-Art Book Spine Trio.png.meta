@@ -1,0 +1,3841 @@
+fileFormatVersion: 2
+guid: c1f61656735c8475386fa6cc823c71e8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_0
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 652
+        width: 57
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ccaca42882b4d8a813c8e6c0949617
+      internalID: -1431092608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_1
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 718
+        width: 29
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc595d671ee74f6bbd5cb218b76cecc
+      internalID: 1609839446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_2
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 708
+        width: 27
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6721406693d4938993e9e863f00210
+      internalID: 1647899439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_3
+      rect:
+        serializedVersion: 2
+        x: 580
+        y: 715
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c058324499c24e489aebb6224ad40e8
+      internalID: 718870382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_4
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 0
+        width: 700
+        height: 724
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b18b1f18bb14d15adfaced8ba7c853
+      internalID: 852361575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_5
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 697
+        width: 29
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c70a7d36e684811aff0971dc127091
+      internalID: -292157304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_6
+      rect:
+        serializedVersion: 2
+        x: 1447
+        y: 0
+        width: 618
+        height: 721
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18e5cb94baf7a4282ac0d9e92c091d2e
+      internalID: 725735070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_7
+      rect:
+        serializedVersion: 2
+        x: 1495
+        y: 718
+        width: 17
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79fde70d8a07b4e9bab8aed37ca6c210
+      internalID: -1225660709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_8
+      rect:
+        serializedVersion: 2
+        x: 1513
+        y: 706
+        width: 30
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2768081cd6e044649ba48fc930a3d60
+      internalID: 1985415416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_9
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 708
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94986735fc55c4110a16283239ad232f
+      internalID: -882704263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_10
+      rect:
+        serializedVersion: 2
+        x: 1913
+        y: 712
+        width: 18
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50e9ed5a35f824b6bbe7f172049be258
+      internalID: -1768233123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 310
+        width: 269
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d087ca448df2847c8bb7dd4458c3c00a
+      internalID: -498008508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 628
+        width: 91
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3fa31b9b5fd4774906d832e674b7ee
+      internalID: -966347928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 582
+        width: 4
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeb89c42d13f345fe916c1dbf91ec136
+      internalID: 615691330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_14
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 630
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f97605fd1554ba9a7fa14789732187
+      internalID: -1341075595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_15
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 565
+        width: 9
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b16030a0ae4427f82e92d8e64f63c7
+      internalID: -812983395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_16
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 386
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcec2878b20194040915952a8ff86a64
+      internalID: -990832180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_17
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 347
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1bd380ad9b39413c9e29ca6f42a9751
+      internalID: 28524525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_18
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 541
+        width: 25
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c894918fe4f842c39a2232354f0437b
+      internalID: 1054788387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_19
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 585
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a912f4d5ed9545d192eadb786951995
+      internalID: -2084174188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_20
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 522
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed48717116bf64ffda469fc5df19cbbe
+      internalID: 364512035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_21
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 458
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dceefaadfe8f64fe28e2f3a50c809720
+      internalID: -407940452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_22
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 619
+        width: 16
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2642b77fab540469aa044198348b6202
+      internalID: -1728628831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_23
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 566
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 099c46dc29e7a46c5890997b079ee2a4
+      internalID: -1904441565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_24
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 446
+        width: 49
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd238b908eec441e881e8862e155f2f
+      internalID: -852506841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_25
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 542
+        width: 22
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6feac25ae3b46099f8fd03c13fccfb
+      internalID: -698104954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_26
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 613
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3effb8a1950bd44388dad2064d856b85
+      internalID: -1143181022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_27
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 623
+        width: 27
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ffe9a1cc76184466903989bd5b1eb6a
+      internalID: 2110577578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_28
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 265
+        width: 87
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e866386c1f9448e49cf177dd53a12a3
+      internalID: 1235213296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_29
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 513
+        width: 73
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2173f55200ec94609aada10c5112fef5
+      internalID: 2095668570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_30
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 601
+        width: 17
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c190e8634864709bfe2a4598087665
+      internalID: -2080376164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_31
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 449
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ecc86399ca14a4cbfdef2f07e0ce2c
+      internalID: -1744287315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_32
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 457
+        width: 51
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b27705c8de264acf9b230b2bb8971b0
+      internalID: -767483380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_33
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 0
+        width: 395
+        height: 715
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76c984add85474a0bab68c525d121bf1
+      internalID: -2099610812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_34
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 607
+        width: 42
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f830d37ab61e4f2ea40de50569dc53e
+      internalID: -493507487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_35
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 596
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 347bb70b559f24828a2dcf0dd2f4608f
+      internalID: -39930089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_36
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 595
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1dbb8a4144214efdb40e2b7086379c1
+      internalID: 1887411650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_37
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 513
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f982d93576a04f2ebefe0fe5b641c39
+      internalID: -185295950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_38
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 581
+        width: 27
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b6d65ebe20c49dfa68570939ca67fd
+      internalID: 1084067632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_39
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 455
+        width: 18
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e55935244c55a4bc68bdfd6ac3006937
+      internalID: 211894992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_40
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 542
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bfdfdb84de6446997543146717d17d
+      internalID: 1884652414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_41
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 549
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45cf28ea2badf4a55957162c3f5898d9
+      internalID: -1448553060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_42
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 501
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90322ae92a92b4a06816c5ee350e71c3
+      internalID: 1380855642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_43
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 549
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba657bfd2e367414099378cdd7411c29
+      internalID: 1567324120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_44
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 386
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae2cd8ef0ca140e89c415c882661222
+      internalID: 1013769013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_45
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 503
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ff72254cbc542a0a9890fb49dd3592
+      internalID: 1280944956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_46
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 314
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e54424a1f42cf4df481f08e546dc65e2
+      internalID: -348342567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_47
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 399
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abcaacc0d2cb4ea69278683caf0a7e7
+      internalID: 1663072303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_48
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 422
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 332396db3621f4c10b7d18ce900af07e
+      internalID: -955583667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_49
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 392
+        width: 39
+        height: 155
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e9b4f000ea7a412d8ffa9feeb13b999
+      internalID: 57428970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_50
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 348
+        width: 45
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a02d812d5f8459caeccc76fde403cb
+      internalID: -998415599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_51
+      rect:
+        serializedVersion: 2
+        x: 749
+        y: 565
+        width: 92
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71db0715e28bc499db86ae82edd66a7e
+      internalID: -1784543982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_52
+      rect:
+        serializedVersion: 2
+        x: 753
+        y: 553
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f765f2dec63ee45cda123327106b17e1
+      internalID: -1502745561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_53
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 605
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328d7b5a7350148248d2a6ebbbe40194
+      internalID: 386384671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_54
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 523
+        width: 11
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac3f6d790ac0b437c97df62099d18b81
+      internalID: -1976418249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_55
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 489
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62867df583371452a99311122cf94fed
+      internalID: 1107163574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_56
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 366
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105a7bc29a03b401cac282f9564bf102
+      internalID: -194046083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_57
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 294
+        width: 13
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be142a2cabcb46efafa3c772fbc4e86
+      internalID: -1755002135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_58
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 410
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f483f87603e24f8cac9ab589200e440
+      internalID: -1664035957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_59
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 553
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441ccde098a3e40698e6caa6d6c35d60
+      internalID: 59029757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_60
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 435
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cedbdb547f1524fe49e83bd29728f92d
+      internalID: 605468710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_61
+      rect:
+        serializedVersion: 2
+        x: 769
+        y: 334
+        width: 24
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48588a20a8c8548a790c460a27d6a57d
+      internalID: -1330563569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_62
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 523
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdba9b6b626df439b8971978484f543a
+      internalID: 32603410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_63
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 414
+        width: 39
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9338e28a495014f3da9748c4b07ae44b
+      internalID: -1176176165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_64
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 543
+        width: 15
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d25ac0aaabfe497e9f81966d132f076
+      internalID: 825464161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_65
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 465
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03367ef8264ae4da3aec35a36a11e994
+      internalID: -944448877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_66
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 456
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ac85f0b826d4e9092b420a4d81d8eb
+      internalID: -2137542636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_67
+      rect:
+        serializedVersion: 2
+        x: 793
+        y: 479
+        width: 14
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbf6326ed1f9542c3b4bfc0d475f3e97
+      internalID: 1544595247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_68
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 496
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b76c8cede1299433db4d352093f21c3f
+      internalID: -364369687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_69
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 316
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b54557f40ba43c79b889793586eb6c
+      internalID: -2137390698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_70
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 467
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc463b76bbe05477e89dee9f5ba064e7
+      internalID: 1950534871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_71
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 489
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b30abd2de71d48d28d4b7ce2d6cc1c3
+      internalID: -192469863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_72
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 400
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cad54fac56af4fe1abff3fdbb412f3e
+      internalID: -435604361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_73
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 309
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975468a866afe4f65b30cecb431efd75
+      internalID: 2129828254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_74
+      rect:
+        serializedVersion: 2
+        x: 1342
+        y: 283
+        width: 80
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c16dc219e4974efb98352a2268f94e8
+      internalID: -2127496449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_75
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 431
+        width: 70
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9be9c8d739c9f42efbff4b5465a29ca9
+      internalID: -894170213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_76
+      rect:
+        serializedVersion: 2
+        x: 1425
+        y: 535
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0787c8a71c7f4779a68041b1655c23c
+      internalID: 780021666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_77
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 537
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79417c2ac863e4ed6a5d29553bb93458
+      internalID: -600446838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_78
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 557
+        width: 17
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90637d5a89d694ca2a1b69b278a52fa6
+      internalID: -2070729304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_79
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 618
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 449563ef5db684be8ba714eddda5f2e9
+      internalID: 1198635596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_80
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 563
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 351795f4ce2f742408925b424d741441
+      internalID: 1255480391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_81
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 378
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55166fe7c1aca44f6af66a75a0748a9d
+      internalID: -619250295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_82
+      rect:
+        serializedVersion: 2
+        x: 1865
+        y: 470
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2034f7483ac4255acce74ca2c19df9
+      internalID: 1782586851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_83
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 330
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd5878b4dc38d44d4894d6a612c3c992
+      internalID: -1516222149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_84
+      rect:
+        serializedVersion: 2
+        x: 1889
+        y: 545
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d03679b9be9c44e7baf585c7217abfc5
+      internalID: 1115489071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_85
+      rect:
+        serializedVersion: 2
+        x: 1893
+        y: 387
+        width: 16
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564b3b166498448e585c3cde424f88ef
+      internalID: 1261770882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_86
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 423
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec16361ee41449a3898fff0ffe452b0
+      internalID: -601068599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_87
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 591
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab780b67e26346fdb0997172a2f23fd
+      internalID: 1634452888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_88
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 507
+        width: 6
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3f01e36d785463ea3cc98c2d0176b0
+      internalID: 2082156801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_89
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 539
+        width: 268
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed2184b1d0bd48968910c9fff75583f
+      internalID: 1048756319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_90
+      rect:
+        serializedVersion: 2
+        x: 1904
+        y: 428
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 346a91723f9744fc59264a79a9cfeacc
+      internalID: -1179567801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_91
+      rect:
+        serializedVersion: 2
+        x: 1905
+        y: 344
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 150d6aaaea7fd491c8502a0d1b929fe9
+      internalID: 715656686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_92
+      rect:
+        serializedVersion: 2
+        x: 1917
+        y: 599
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f41c5a74b0c4130947266c4124abe4
+      internalID: -76595031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_93
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 473
+        width: 57
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963ccec79a40b4ae488d9c6a89209250
+      internalID: -1932578384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_94
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 587
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 326d78f86f5124cdeb0ed6ecee6b24e1
+      internalID: -906061943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_95
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 612
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 001e9064b309d4bbbaa99a9802d5ab30
+      internalID: -892320796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_96
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 599
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7971b53f480944c1a8b97614c8e7abf6
+      internalID: 999540441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_97
+      rect:
+        serializedVersion: 2
+        x: 1956
+        y: 541
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f8883771b9e34f8181e9f0a9dbceec4
+      internalID: -1254711741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_98
+      rect:
+        serializedVersion: 2
+        x: 2026
+        y: 458
+        width: 58
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d5a907b737a54dc2bc3a939357c4dca
+      internalID: 1281783999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_99
+      rect:
+        serializedVersion: 2
+        x: 2044
+        y: 320
+        width: 34
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0194a43e7ce4f53841518417b0f61a
+      internalID: -597386607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_100
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 517
+        width: 26
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7467289c46954d748ad942d5280d172
+      internalID: -1525267311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_101
+      rect:
+        serializedVersion: 2
+        x: 2098
+        y: 343
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58fc1559b5cc04a72b6397a929c73786
+      internalID: -694912270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_102
+      rect:
+        serializedVersion: 2
+        x: 2109
+        y: 453
+        width: 45
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4dc1391cb44a49b78632b587e4abcbf
+      internalID: -1594780093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_103
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 540
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ef59a1aaa084ffd8386aeb60cd1e77
+      internalID: -1948059539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_104
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 281
+        width: 12
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e25af19ca3534f7381070ca43104378
+      internalID: -11004484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_105
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 291
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e496bca30393145d686f5581dd5dd40a
+      internalID: -1041274315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_106
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 276
+        width: 11
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5676969daaf2486dadea7a1f55a7533
+      internalID: -961979687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_107
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 260
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb480b0e78e6441eaa3ce6ca0d155e13
+      internalID: 1195771878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_108
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 267
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b0dc840eb9c4a42a0fcd45098dd7d3
+      internalID: -653248750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_109
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 267
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8775376f608d4140b1a8561623ab358
+      internalID: -76690749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_110
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 271
+        width: 8
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5451cf4fded5a452db7e834268b7d4e8
+      internalID: 577291851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_111
+      rect:
+        serializedVersion: 2
+        x: 2097
+        y: 88
+        width: 74
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ea0594c4f1ec408a96c096682f9706f
+      internalID: 1004823361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_112
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 129
+        width: 62
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f49545c1eca0e4ce082ccde3bb2f94d6
+      internalID: 1373534702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_113
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 244
+        width: 17
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba38a4d36a25248bbaf98cfaf8b51ca4
+      internalID: 709603017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_114
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 260
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8172741fccab47c9978052e7bb589e8
+      internalID: -357038286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_115
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 22
+        width: 209
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9acf99194ea91426eb19ef6260aa6dfc
+      internalID: -1883534687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_116
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 176
+        width: 41
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4467ba00d7d4a4c5b85ff9e2e0d61487
+      internalID: -233981848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_117
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 243
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf9e84af21c843c0ab4e8dcf71b68e0
+      internalID: -433089589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_118
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 227
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02fdb41cc906a474a834e2fd46571af2
+      internalID: 281750698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_119
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 211
+        width: 36
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9f6f3138afc4f3f9fd74104054cf82
+      internalID: -347437693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_120
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 227
+        width: 36
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c28fb21dbaf249a9a238925f35de9fc
+      internalID: 407081694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_121
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 224
+        width: 18
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0450457fe78034578a482aae88e8f8e6
+      internalID: 1409850046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_122
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 224
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5054a8fe8d04d42b422ee5c132090b
+      internalID: -747759339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_123
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 205
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae8b531d38fcd434082dcfc2e76f7b84
+      internalID: 1289981687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_124
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 224
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e5fde0bd209845af90240c01c6037a5
+      internalID: 792502975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_125
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 223
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9a5d66723a1f4daa855341fabe5d896
+      internalID: 303867073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_126
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 233
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29e431042857b4a40928d2c330ec2534
+      internalID: 1042930811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_127
+      rect:
+        serializedVersion: 2
+        x: 1885
+        y: 228
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75dfb570b8004c91ac3e93ee8dc8a1c
+      internalID: -1229862927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_128
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 215
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23cfbbd209e324ac79bae823f1cc465c
+      internalID: -1479060066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_129
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 229
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7e9784302f204480b8d3cb38f8da953
+      internalID: -479082332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_130
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 199
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0b58edbcdb42443ba8684cbbb1909b6
+      internalID: 1617040983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_131
+      rect:
+        serializedVersion: 2
+        x: 1797
+        y: 195
+        width: 27
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd30b94ccb5d47b7970fa42df1785f5
+      internalID: 983424755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_132
+      rect:
+        serializedVersion: 2
+        x: 1841
+        y: 197
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd8e2a8df1774da19266ccf489c35d8
+      internalID: -495241667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_133
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 195
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e510baa22e6d744f2b4aaabd91239f0b
+      internalID: -1233981641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_134
+      rect:
+        serializedVersion: 2
+        x: 1897
+        y: 202
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cdceceef6f9f41ee819069c854eb740
+      internalID: 1012339947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_135
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 0
+        width: 139
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb1550f6c46f4f28bbcd08b9b115ba5
+      internalID: -1024129034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_136
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 161
+        width: 12
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd6f1937260c415e96fab9468821e7e
+      internalID: -259087133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_137
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 145
+        width: 35
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1843102b4f0414ff4a78255a8fa01e8c
+      internalID: -2118506507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_138
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 179
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e639b3d0383148958c35d33bcdfea1e
+      internalID: -989343811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_139
+      rect:
+        serializedVersion: 2
+        x: 1882
+        y: 145
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d9c575be96354705924c85d4539a97b
+      internalID: -1608885845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_140
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 137
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e9aae596e184e4294df42256aa10a0
+      internalID: -1824568804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_141
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 114
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: effb6d1b4fcb34ed580c12bf0f51f8d8
+      internalID: -1364566317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_142
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 123
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d57ccd61223492ba19a860461556f9
+      internalID: 374596871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_143
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 123
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a301deca279f40f5be6905bf44b3759
+      internalID: 1499696985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_144
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 113
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df00155bad7bb4b28b96148bdba13b00
+      internalID: 249412398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_145
+      rect:
+        serializedVersion: 2
+        x: 733
+        y: 113
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a65622c88fda4f52bfb963bbffe8d43
+      internalID: -458780666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_146
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 105
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1b71c21d32b4b26be54e25d4f94ab4
+      internalID: 1651844418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_147
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 100
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4d9b21064f174e5d98ba2032f5faab5
+      internalID: -321408582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_148
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 94
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ebe9ca7aea8042ef81465d72e16bfdd
+      internalID: 672074205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_149
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 88
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc600c0015e384d4fb2e7f658f833a83
+      internalID: 1307399657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_150
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 88
+        width: 70
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eaf0aa664dc34065a49402c6186ae6d
+      internalID: -485989799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_151
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 82
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316217fafc9f145a2a0b51e5bf23d2b4
+      internalID: 576445513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_152
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 92
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32f8276e0fe3e4c0591912337a87289b
+      internalID: 1257141345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_153
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 46
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3affcf5afc1a946d5b164cb6d8a3fa36
+      internalID: -1988729036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_154
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 86
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a54e32934302450685b1391853363ac
+      internalID: -873458424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_155
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 40
+        width: 56
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee230ef03bf042bc930da2963a53723
+      internalID: 103845011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_156
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 56
+        width: 23
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231a1d80b833e4263991dfcab25b408b
+      internalID: -1740823379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_157
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 42
+        width: 15
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3740969a693cc4632ac964d684223a16
+      internalID: 1774346475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_158
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 38
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a1179f46b4545499002d4769389aad
+      internalID: -518972785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_159
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 32
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f64732611dc4c858cc44f6036181d7
+      internalID: -18831752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_160
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 36
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfd9025ec9d4c441db3790624a058535
+      internalID: 560311789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_161
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 22
+        width: 31
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc7c5cf52c0d242d3b5e8494a3d98ac3
+      internalID: -1589518628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_162
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 26
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04cb579c1428a4946a9f65be4fdd6cf0
+      internalID: 1251525723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_163
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 38
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a714bd93c555e4cd1ba179c5383248a0
+      internalID: 128636152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_164
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 34
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02bebafb99d664784b7d7c52d276a7af
+      internalID: -1121745616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_165
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 16
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea618691ed5f4ff49bca9174ba49745
+      internalID: 691715825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_166
+      rect:
+        serializedVersion: 2
+        x: 1529
+        y: 14
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3568a729455224dc7897f4f7bc5a4581
+      internalID: 1535648075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_167
+      rect:
+        serializedVersion: 2
+        x: 1552
+        y: 16
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27642fbb06172456786b2bc771bae6c4
+      internalID: 1473113718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel-Art Book Spine Trio_168
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 0
+        width: 68
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3781b517f9ed421b9cc148912e64989
+      internalID: -989304458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Pixel-Art Book Spine Trio_2: 1647899439
+      Pixel-Art Book Spine Trio_42: 1380855642
+      Pixel-Art Book Spine Trio_0: -1431092608
+      Pixel-Art Book Spine Trio_7: -1225660709
+      Pixel-Art Book Spine Trio_105: -1041274315
+      Pixel-Art Book Spine Trio_87: 1634452888
+      Pixel-Art Book Spine Trio_74: -2127496449
+      Pixel-Art Book Spine Trio_131: 983424755
+      Pixel-Art Book Spine Trio_28: 1235213296
+      Pixel-Art Book Spine Trio_161: -1589518628
+      Pixel-Art Book Spine Trio_12: -966347928
+      Pixel-Art Book Spine Trio_125: 303867073
+      Pixel-Art Book Spine Trio_101: -694912270
+      Pixel-Art Book Spine Trio_73: 2129828254
+      Pixel-Art Book Spine Trio_118: 281750698
+      Pixel-Art Book Spine Trio_3: 718870382
+      Pixel-Art Book Spine Trio_55: 1107163574
+      Pixel-Art Book Spine Trio_1: 1609839446
+      Pixel-Art Book Spine Trio_137: -2118506507
+      Pixel-Art Book Spine Trio_51: -1784543982
+      Pixel-Art Book Spine Trio_123: 1289981687
+      Pixel-Art Book Spine Trio_112: 1373534702
+      Pixel-Art Book Spine Trio_90: -1179567801
+      Pixel-Art Book Spine Trio_162: 1251525723
+      Pixel-Art Book Spine Trio_158: -518972785
+      Pixel-Art Book Spine Trio_14: -1341075595
+      Pixel-Art Book Spine Trio_32: -767483380
+      Pixel-Art Book Spine Trio_72: -435604361
+      Pixel-Art Book Spine Trio_26: -1143181022
+      Pixel-Art Book Spine Trio_23: -1904441565
+      Pixel-Art Book Spine Trio_29: 2095668570
+      Pixel-Art Book Spine Trio_117: -433089589
+      Pixel-Art Book Spine Trio_163: 128636152
+      Pixel-Art Book Spine Trio_81: -619250295
+      Pixel-Art Book Spine Trio_154: -873458424
+      Pixel-Art Book Spine Trio_20: 364512035
+      Pixel-Art Book Spine Trio_94: -906061943
+      Pixel-Art Book Spine Trio_98: 1281783999
+      Pixel-Art Book Spine Trio_127: -1229862927
+      Pixel-Art Book Spine Trio_76: 780021666
+      Pixel-Art Book Spine Trio_16: -990832180
+      Pixel-Art Book Spine Trio_133: -1233981641
+      Pixel-Art Book Spine Trio_80: 1255480391
+      Pixel-Art Book Spine Trio_85: 1261770882
+      Pixel-Art Book Spine Trio_156: -1740823379
+      Pixel-Art Book Spine Trio_84: 1115489071
+      Pixel-Art Book Spine Trio_139: -1608885845
+      Pixel-Art Book Spine Trio_60: 605468710
+      Pixel-Art Book Spine Trio_62: 32603410
+      Pixel-Art Book Spine Trio_65: -944448877
+      Pixel-Art Book Spine Trio_38: 1084067632
+      Pixel-Art Book Spine Trio_121: 1409850046
+      Pixel-Art Book Spine Trio_34: -493507487
+      Pixel-Art Book Spine Trio_143: 1499696985
+      Pixel-Art Book Spine Trio_148: 672074205
+      Pixel-Art Book Spine Trio_88: 2082156801
+      Pixel-Art Book Spine Trio_8: 1985415416
+      Pixel-Art Book Spine Trio_83: -1516222149
+      Pixel-Art Book Spine Trio_149: 1307399657
+      Pixel-Art Book Spine Trio_41: -1448553060
+      Pixel-Art Book Spine Trio_111: 1004823361
+      Pixel-Art Book Spine Trio_30: -2080376164
+      Pixel-Art Book Spine Trio_18: 1054788387
+      Pixel-Art Book Spine Trio_17: 28524525
+      Pixel-Art Book Spine Trio_52: -1502745561
+      Pixel-Art Book Spine Trio_77: -600446838
+      Pixel-Art Book Spine Trio_50: -998415599
+      Pixel-Art Book Spine Trio_63: -1176176165
+      Pixel-Art Book Spine Trio_166: 1535648075
+      Pixel-Art Book Spine Trio_86: -601068599
+      Pixel-Art Book Spine Trio_106: -961979687
+      Pixel-Art Book Spine Trio_141: -1364566317
+      Pixel-Art Book Spine Trio_99: -597386607
+      Pixel-Art Book Spine Trio_39: 211894992
+      Pixel-Art Book Spine Trio_4: 852361575
+      Pixel-Art Book Spine Trio_57: -1755002135
+      Pixel-Art Book Spine Trio_43: 1567324120
+      Pixel-Art Book Spine Trio_24: -852506841
+      Pixel-Art Book Spine Trio_100: -1525267311
+      Pixel-Art Book Spine Trio_122: -747759339
+      Pixel-Art Book Spine Trio_45: 1280944956
+      Pixel-Art Book Spine Trio_115: -1883534687
+      Pixel-Art Book Spine Trio_56: -194046083
+      Pixel-Art Book Spine Trio_96: 999540441
+      Pixel-Art Book Spine Trio_102: -1594780093
+      Pixel-Art Book Spine Trio_152: 1257141345
+      Pixel-Art Book Spine Trio_36: 1887411650
+      Pixel-Art Book Spine Trio_147: -321408582
+      Pixel-Art Book Spine Trio_5: -292157304
+      Pixel-Art Book Spine Trio_44: 1013769013
+      Pixel-Art Book Spine Trio_103: -1948059539
+      Pixel-Art Book Spine Trio_136: -259087133
+      Pixel-Art Book Spine Trio_128: -1479060066
+      Pixel-Art Book Spine Trio_97: -1254711741
+      Pixel-Art Book Spine Trio_129: -479082332
+      Pixel-Art Book Spine Trio_61: -1330563569
+      Pixel-Art Book Spine Trio_22: -1728628831
+      Pixel-Art Book Spine Trio_164: -1121745616
+      Pixel-Art Book Spine Trio_135: -1024129034
+      Pixel-Art Book Spine Trio_68: -364369687
+      Pixel-Art Book Spine Trio_82: 1782586851
+      Pixel-Art Book Spine Trio_124: 792502975
+      Pixel-Art Book Spine Trio_104: -11004484
+      Pixel-Art Book Spine Trio_157: 1774346475
+      Pixel-Art Book Spine Trio_93: -1932578384
+      Pixel-Art Book Spine Trio_168: -989304458
+      Pixel-Art Book Spine Trio_53: 386384671
+      Pixel-Art Book Spine Trio_145: -458780666
+      Pixel-Art Book Spine Trio_47: 1663072303
+      Pixel-Art Book Spine Trio_140: -1824568804
+      Pixel-Art Book Spine Trio_142: 374596871
+      Pixel-Art Book Spine Trio_48: -955583667
+      Pixel-Art Book Spine Trio_69: -2137390698
+      Pixel-Art Book Spine Trio_91: 715656686
+      Pixel-Art Book Spine Trio_134: 1012339947
+      Pixel-Art Book Spine Trio_71: -192469863
+      Pixel-Art Book Spine Trio_116: -233981848
+      Pixel-Art Book Spine Trio_119: -347437693
+      Pixel-Art Book Spine Trio_165: 691715825
+      Pixel-Art Book Spine Trio_167: 1473113718
+      Pixel-Art Book Spine Trio_95: -892320796
+      Pixel-Art Book Spine Trio_19: -2084174188
+      Pixel-Art Book Spine Trio_113: 709603017
+      Pixel-Art Book Spine Trio_13: 615691330
+      Pixel-Art Book Spine Trio_78: -2070729304
+      Pixel-Art Book Spine Trio_155: 103845011
+      Pixel-Art Book Spine Trio_9: -882704263
+      Pixel-Art Book Spine Trio_132: -495241667
+      Pixel-Art Book Spine Trio_159: -18831752
+      Pixel-Art Book Spine Trio_138: -989343811
+      Pixel-Art Book Spine Trio_110: 577291851
+      Pixel-Art Book Spine Trio_160: 560311789
+      Pixel-Art Book Spine Trio_54: -1976418249
+      Pixel-Art Book Spine Trio_59: 59029757
+      Pixel-Art Book Spine Trio_75: -894170213
+      Pixel-Art Book Spine Trio_21: -407940452
+      Pixel-Art Book Spine Trio_10: -1768233123
+      Pixel-Art Book Spine Trio_144: 249412398
+      Pixel-Art Book Spine Trio_79: 1198635596
+      Pixel-Art Book Spine Trio_6: 725735070
+      Pixel-Art Book Spine Trio_146: 1651844418
+      Pixel-Art Book Spine Trio_64: 825464161
+      Pixel-Art Book Spine Trio_70: 1950534871
+      Pixel-Art Book Spine Trio_120: 407081694
+      Pixel-Art Book Spine Trio_130: 1617040983
+      Pixel-Art Book Spine Trio_67: 1544595247
+      Pixel-Art Book Spine Trio_153: -1988729036
+      Pixel-Art Book Spine Trio_58: -1664035957
+      Pixel-Art Book Spine Trio_49: 57428970
+      Pixel-Art Book Spine Trio_126: 1042930811
+      Pixel-Art Book Spine Trio_40: 1884652414
+      Pixel-Art Book Spine Trio_150: -485989799
+      Pixel-Art Book Spine Trio_109: -76690749
+      Pixel-Art Book Spine Trio_46: -348342567
+      Pixel-Art Book Spine Trio_33: -2099610812
+      Pixel-Art Book Spine Trio_108: -653248750
+      Pixel-Art Book Spine Trio_107: 1195771878
+      Pixel-Art Book Spine Trio_11: -498008508
+      Pixel-Art Book Spine Trio_27: 2110577578
+      Pixel-Art Book Spine Trio_35: -39930089
+      Pixel-Art Book Spine Trio_114: -357038286
+      Pixel-Art Book Spine Trio_151: 576445513
+      Pixel-Art Book Spine Trio_92: -76595031
+      Pixel-Art Book Spine Trio_37: -185295950
+      Pixel-Art Book Spine Trio_89: 1048756319
+      Pixel-Art Book Spine Trio_15: -812983395
+      Pixel-Art Book Spine Trio_31: -1744287315
+      Pixel-Art Book Spine Trio_66: -2137542636
+      Pixel-Art Book Spine Trio_25: -698104954
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

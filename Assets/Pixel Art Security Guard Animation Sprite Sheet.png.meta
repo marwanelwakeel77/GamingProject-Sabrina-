@@ -1,0 +1,651 @@
+fileFormatVersion: 2
+guid: 6382bd7c9838d4568a13e9d6baa92cc1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 665.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.554, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06799ce416e4b4a8191b1608cef99417
+      internalID: 1647905280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 665.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.554, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 798d8b08248c642bf85f3b81c99cb5d6
+      internalID: 1839087886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 665.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.554, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71da02127c887495ebb40e67ad686ed7
+      internalID: 1213028864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 665.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.554, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e39a514f8d854fab943d53041be7883
+      internalID: -461748076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 665.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.554, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a148923435b0d4925b98c6cd28362931
+      internalID: -870968230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 665.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.554, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1ea0f7accaa4870aae2e0b064a4d89
+      internalID: 1288331362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.5675, y: 0.50902}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6619aaee26bed49caa1136b11e8ef555
+      internalID: 274240031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 444.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.5675, y: 0.50902}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22fd90807ed5248a2a28e8fb3ad48158
+      internalID: 1365270012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 444.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.5675, y: 0.50902}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d80bfc0ab34455f9c8137d59049c70
+      internalID: 1747508446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 444.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.5675, y: 0.50902}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638186401351a4bbabe555234d776596
+      internalID: 1322296177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 444.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.5675, y: 0.50902}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4055d7b7dcba4841a966e42256e344d
+      internalID: 239191684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 444.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.5675, y: 0.50902}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37fc07d4290484aa691d17ff3fd4fe6f
+      internalID: -637487272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 223.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.569, y: 0.5451}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd2ec00e19494366b7a05017e436dd7
+      internalID: -761882777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 223.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.569, y: 0.5451}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a7b2a27c7fc64104beb2d9fb704f110
+      internalID: -796000366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 223.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.569, y: 0.5451}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6257b8c9aefd146b6ae0b16f90617a91
+      internalID: -1742577565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 223.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.569, y: 0.5451}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94056608833041699e6286cf17cd34d
+      internalID: -158955396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 223.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.569, y: 0.5451}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 647e74fa594054e879e1f7cada702557
+      internalID: -93945339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 223.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.569, y: 0.5451}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d611491978a9d4692811c88db85aa4e7
+      internalID: 980105647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.558, y: 0.52706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fdad4356c4ec4059acbaa9ac7b42427
+      internalID: 788618776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 2.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.558, y: 0.52706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1060675adb09647059c7443cd6540749
+      internalID: 409900364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 590
+        y: 2.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.558, y: 0.52706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 950e763d69ee643a990f55e2a7762760
+      internalID: -21855508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 2.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.558, y: 0.52706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6855ae0621bea40b6bd75bdbd1337bcf
+      internalID: -785235761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 2.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.558, y: 0.52706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744129ffea3404d43be03f97eaecb4d9
+      internalID: -139645772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pixel Art Security Guard Animation Sprite Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 2.25
+        width: 295.66666
+        height: 221.75
+      alignment: 9
+      pivot: {x: 0.558, y: 0.52706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb240c70aaf1b40e7b23456ab43729f8
+      internalID: -725235711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Pixel Art Security Guard Animation Sprite Sheet_8: 1747508446
+      Pixel Art Security Guard Animation Sprite Sheet_10: 239191684
+      Pixel Art Security Guard Animation Sprite Sheet_2: 1213028864
+      Pixel Art Security Guard Animation Sprite Sheet_9: 1322296177
+      Pixel Art Security Guard Animation Sprite Sheet_12: -761882777
+      Pixel Art Security Guard Animation Sprite Sheet_0: 1647905280
+      Pixel Art Security Guard Animation Sprite Sheet_16: -93945339
+      Pixel Art Security Guard Animation Sprite Sheet_21: -785235761
+      Pixel Art Security Guard Animation Sprite Sheet_14: -1742577565
+      Pixel Art Security Guard Animation Sprite Sheet_19: 409900364
+      Pixel Art Security Guard Animation Sprite Sheet_3: -461748076
+      Pixel Art Security Guard Animation Sprite Sheet_4: -870968230
+      Pixel Art Security Guard Animation Sprite Sheet_17: 980105647
+      Pixel Art Security Guard Animation Sprite Sheet_18: 788618776
+      Pixel Art Security Guard Animation Sprite Sheet_15: -158955396
+      Pixel Art Security Guard Animation Sprite Sheet_20: -21855508
+      Pixel Art Security Guard Animation Sprite Sheet_6: 274240031
+      Pixel Art Security Guard Animation Sprite Sheet_7: 1365270012
+      Pixel Art Security Guard Animation Sprite Sheet_1: 1839087886
+      Pixel Art Security Guard Animation Sprite Sheet_11: -637487272
+      Pixel Art Security Guard Animation Sprite Sheet_23: -725235711
+      Pixel Art Security Guard Animation Sprite Sheet_5: 1288331362
+      Pixel Art Security Guard Animation Sprite Sheet_22: -139645772
+      Pixel Art Security Guard Animation Sprite Sheet_13: -796000366
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
