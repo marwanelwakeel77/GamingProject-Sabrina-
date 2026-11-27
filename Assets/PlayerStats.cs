@@ -72,6 +72,17 @@ public class PlayerStats : MonoBehaviour
             sr.enabled=!(sr.enabled);
         }
     }
+    // gives health back (heart pickup, Lab 7) and fills the health bar again (Lab 8)
+    public void Heal(int amount)
+    {
+        health = health + amount;
+        if (health > 3)
+            health = 3;
+
+        if (healthBar != null)
+            healthBar.fillAmount = this.health/3f;
+    }
+
     public void TakeDamage(int damage)
     {
         if (isImmune == false)

@@ -32,10 +32,38 @@ public class BookMechanism : MonoBehaviour
     private bool playerNearby = false;
     private bool mechanismActivated = false;
 
+    private Sprite sigilBookStart;        // the sigil book before it is pulled
+    private Vector3[] shakeStartPositions; // where the shaking objects belong
+
     void Start()
     {
         if (interactionPrompt != null)
             interactionPrompt.SetActive(false);
+
+        sigilBookStart = sigilBook.sprite;
+        shakeStartPositions = new Vector3[shakeObjects.Length];
+        for (int i = 0; i < shakeObjects.Length; i++)
+        {
+            shakeStartPositions[i] = shakeObjects[i].position;
+        }
+    }
+
+    // called when the guard catches Alex: everything goes back to how it was at the start
+    public void ResetMechanism()
+    {
+        StopAllCoroutines(); // stop the shaking if it was still going
+
+        for (int i = 0; i < shakeObjects.Length; i++)
+        {
+            shakeObjects[i].position = shakeStartPositions[i];
+        }
+
+        mechanismActivated = false;
+        sigilBook.sprite = sigilBookStart; // the sigil book slides back into the shelf
+
+        shelfUI.ResetShelf();
+        if (secretPassage != null)
+            secretPassage.ClosePassage();
     }
 
     void Update()

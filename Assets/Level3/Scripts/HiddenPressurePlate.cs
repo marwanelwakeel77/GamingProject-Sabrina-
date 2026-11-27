@@ -25,6 +25,7 @@ public class HiddenPressurePlate : MonoBehaviour
     public Transform spikes;
     public float riseSpeed = 3f;      // units per second
     public float retractSpeed = 1.5f;
+    public float riseHeight = 0f;     // how far the spikes rise (0 = their own height, so they hide fully under the floor)
 
     [Header("Timing (seconds)")]
     public float warningTime = 0.7f;  // fair warning before the spikes come up
@@ -44,6 +45,8 @@ public class HiddenPressurePlate : MonoBehaviour
     public AudioClip activationSound;   // click of the plate
     public AudioClip spikesUpSound;
     public AudioClip spikesDownSound;
+
+    public bool autoRepeat = false;       // during the escape the trap goes off again and again by itself
 
     private bool trapRunning = false;     // true while the sequence plays, so it can't start twice
     private bool spikesDangerous = false; // true only while the spikes are fully up
@@ -68,8 +71,7 @@ public class HiddenPressurePlate : MonoBehaviour
         {
             // the spikes wait hidden below the floor in the scene; they rise by their own height
             spikesDownPosition = spikes.localPosition;
-            float spikeHeight = spikes.GetComponent<SpriteRenderer>().bounds.size.y;
-            spikesUpPosition = spikesDownPosition + new Vector3(0, spikeHeight + 0.05f, 0);
+            spikesUpPosition = spikesDownPosition + new Vector3(0, GetRiseHeight(), 0);
         }
         else
         {
@@ -79,6 +81,9 @@ public class HiddenPressurePlate : MonoBehaviour
 
     void Update()
     {
+        if (autoRepeat)
+            TryActivate();
+
         // while the spikes are up, check if Alex is touching them
         // (same idea as the ground check in the PlayerController: an overlap test every frame)
         if (spikesDangerous && !hitThisTime && spikes != null)
@@ -224,13 +229,21 @@ public class HiddenPressurePlate : MonoBehaviour
             AudioManager.Instance.PlayMusicSFX(clip);
     }
 
+    // how far the spikes move up: the value from the Inspector, or their own height if it is 0
+    float GetRiseHeight()
+    {
+        if (riseHeight > 0)
+            return riseHeight;
+        return spikes.GetComponent<SpriteRenderer>().bounds.size.y + 0.05f;
+    }
+
     // shows the spike hitbox in the Scene view when the plate is selected
     void OnDrawGizmosSelected()
     {
         if (spikes == null) return;
         Vector3 center = spikes.position + new Vector3(0, hitboxSize.y / 2, 0);
         if (!Application.isPlaying) // in the editor the spikes are still hidden, so draw where they will rise to
-            center += new Vector3(0, spikes.GetComponent<SpriteRenderer>().bounds.size.y + 0.05f, 0);
+            center += new Vector3(0, GetRiseHeight(), 0);
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(center, new Vector3(hitboxSize.x, hitboxSize.y, 0));
     }

@@ -21,6 +21,8 @@ public class SecretPassage : MonoBehaviour
     public AudioClip openSound;
     public AudioClip discoverySound;
 
+    public EscapeSequence escape; // starts when the passage is open
+
     private bool isOpen = false;
     private bool playerNearby = false;
 
@@ -66,6 +68,35 @@ public class SecretPassage : MonoBehaviour
         // back to Alex
         cameraFollow.Target = alex;
         playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        // the library notices: the escape begins
+        if (escape != null)
+            escape.StartEscape();
+    }
+
+    public bool IsOpen()
+    {
+        return isOpen;
+    }
+
+    // called when the guard catches Alex: the passage closes and the puzzle must be solved again
+    public void ClosePassage()
+    {
+        StopAllCoroutines(); // in case it was still opening
+
+        isOpen = false;
+        playerNearby = false;
+        entryTrigger.enabled = false;
+        revealLight.SetActive(false);
+
+        // back to the Closed state (Lab 3: a trigger parameter starts the transition)
+        animator.ResetTrigger("Open");
+        animator.SetTrigger("Close");
+
+        // the camera follows Alex again and he can move (in case it happened during the cut-scene)
+        PlayerController alex = FindObjectOfType<PlayerController>();
+        cameraFollow.Target = alex.transform;
+        alex.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;
     }
 
     void Update()

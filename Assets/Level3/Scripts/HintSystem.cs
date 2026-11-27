@@ -21,6 +21,7 @@ public class HintSystem : MonoBehaviour
 
     public string indirectHint = "The three pages may reveal more than just symbols. Look closely at what they have in common.";
     public string directHint = "Combine the symbols from all three cipher pages to discover the title of the book. Search for that title on the bookshelf beneath the statue.";
+    public string moonHint = "The crescent moon still hides on the balcony, and only moonlight can reveal it. A chain at the far end of the balcony opens the old window shutters.";
     public string solvedHint = "The passage behind the shelf stands open. Whatever Sabrina found lies beyond it.";
 
     private int hintStage = 0; //remembers which hint the player already got
@@ -64,6 +65,8 @@ public class HintSystem : MonoBehaviour
         if (bookMechanism.IsActivated())
         {
             footerText.text = "F to close";
+            if (PlayerStats.hasCrescentMoon == false)
+                return solvedHint + "\n\n" + moonHint; // don't leave without the moon (needed in level 5)
             return solvedHint;
         }
 

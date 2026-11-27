@@ -29,8 +29,16 @@ public class BookShelfInspectionUI : MonoBehaviour
     public AudioClip wrongBookSound;
     public AudioClip correctBookSound;
 
+    // trap: pulling a wrong book springs a hidden blade out of the shelf
+    public RectTransform blade;        // the blade image (its pivot is on the left, so it grows out to the right)
+    public Image redFlash;             // red flash over the close-up
+    public RectTransform shelfWindow;  // the close-up window, it shakes when the blade snaps out
+    public AudioClip bladeSound;
+    public int bladeDamage = 1;
+
     private int selectedBook = -1;
     private bool pulling = false;
+    private Sprite bookStartSprite; // the correct book before it was pulled
 
     public void OpenShelf()
     {
@@ -39,6 +47,7 @@ public class BookShelfInspectionUI : MonoBehaviour
 
         selectedBook = -1;
         pulling = false;
+        HideBlade();
         ShowTitle(-1);
         selectionGlow.gameObject.SetActive(false);
         pageViewer.SetActive(false);
@@ -131,12 +140,68 @@ public class BookShelfInspectionUI : MonoBehaviour
         }
         else
         {
-            // wrong book: nothing happens, the player can try another one
-            messageText.text = "The book slides out... and nothing happens. It slips back into place.";
-
-            if (AudioManager.Instance != null)
-                AudioManager.Instance.PlayMusicSFX(wrongBookSound);
+            // wrong book: it is a trap
+            StartCoroutine(WrongBookTrap());
         }
+    }
+
+    // a wrong book springs a hidden blade (Coroutine, Lab 9). Realtime, because the game is paused here
+    IEnumerator WrongBookTrap()
+    {
+        pulling = true;
+
+        // the wrong book slides out a little...
+        RectTransform book = books[selectedBook].rectTransform;
+        Vector2 bookStart = book.anchoredPosition;
+        book.anchoredPosition = bookStart + new Vector2(0, -18);
+        messageText.text = "The book slides out... CLICK.";
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayMusicSFX(wrongBookSound);
+        yield return new WaitForSecondsRealtime(0.35f);
+
+        // ...and a blade snaps out of the shelf next to it
+        blade.gameObject.SetActive(true);
+        blade.anchoredPosition = bookStart + new Vector2(book.rect.width / 2f, 0);
+        if (AudioManager.Instance != null)
+            AudioManager.Instance.PlayMusicSFX(bladeSound);
+        messageText.text = "A hidden blade snaps out of the shelf! That was the wrong book.";
+
+        Vector2 windowStart = shelfWindow.anchoredPosition;
+        float timer = 0f;
+        while (timer < 0.5f)
+        {
+            timer = timer + Time.unscaledDeltaTime;
+            blade.localScale = new Vector3(Mathf.Clamp01(timer / 0.08f), 1, 1);                // fast
+            redFlash.color = new Color(0.8f, 0f, 0f, Mathf.Lerp(0.45f, 0f, timer / 0.5f));      // red flash
+            float shake = 1f - timer / 0.5f;
+            shelfWindow.anchoredPosition = windowStart + new Vector2(Random.Range(-12f, 12f), Random.Range(-8f, 8f)) * shake;
+            yield return null;
+        }
+        shelfWindow.anchoredPosition = windowStart;
+        redFlash.color = new Color(0.8f, 0f, 0f, 0f);
+
+        yield return new WaitForSecondsRealtime(0.9f);
+
+        // the book slides back, the close-up closes and Alex is hurt and thrown back from the shelf
+        book.anchoredPosition = bookStart;
+        HideBlade();
+        pulling = false;
+        gameObject.SetActive(false);
+        Time.timeScale = 1f;
+
+        PlayerStats stats = FindObjectOfType<PlayerStats>();
+        stats.TakeDamage(bladeDamage); // Lab 6
+        stats.GetComponent<Rigidbody2D>().velocity = new Vector2(-4f, 5f);
+
+        bookMechanism.ShowPrompt();
+    }
+
+    void HideBlade()
+    {
+        if (blade != null)
+            blade.gameObject.SetActive(false);
+        if (redFlash != null)
+            redFlash.color = new Color(0.8f, 0f, 0f, 0f);
     }
 
     IEnumerator PullCorrectBook()
@@ -144,6 +209,7 @@ public class BookShelfInspectionUI : MonoBehaviour
         pulling = true;
 
         // swap the sprite to the pulled-out book (like the brick in Lab 5)
+        bookStartSprite = books[correctBook].sprite;
         books[correctBook].sprite = pulledBookSprite;
         messageText.text = "The book resists... then something clicks deep inside the shelf.";
 
@@ -156,6 +222,16 @@ public class BookShelfInspectionUI : MonoBehaviour
         gameObject.SetActive(false);
         Time.timeScale = 1f;
         bookMechanism.ActivateMechanism();
+    }
+
+    // called by the BookMechanism when the guard catches Alex: the book goes back into the shelf
+    public void ResetShelf()
+    {
+        StopAllCoroutines();
+        pulling = false;
+        HideBlade();
+        if (bookStartSprite != null)
+            books[correctBook].sprite = bookStartSprite;
     }
 
     // OnClick of the "Step Back" and X buttons

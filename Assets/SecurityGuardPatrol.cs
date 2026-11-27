@@ -1,6 +1,7 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 // The Level 3 security guard. He inherits from the EnemyController super class (Lab 6).
 // He patrols between two points on the upper floor, investigates now and then,
@@ -32,6 +33,10 @@ public class SecurityGuardPatrol : EnemyController
     public float hearingDistance = 7f; // Alex can't hear his steps further away than this
     public AudioClip alertSound;
     public AudioClip caughtSound;
+
+    // black UI Image that covers the screen when Alex is caught (Lab 8 UI)
+    public Image blackScreen;
+    public float fadeTime = 0.5f;
 
     private Transform target;
     private Transform player;
@@ -281,14 +286,22 @@ public class SecurityGuardPatrol : EnemyController
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(caughtSound);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.6f);
 
-        // back to the checkpoint, and every collected cipher page is lost
+        // the screen goes black
+        yield return StartCoroutine(FadeScreen(0f, 1f));
+
+        // while it is black: back to the checkpoint, every collected cipher page is lost,
+        // and the bookshelf and the secret passage close again
         LevelManager levelManager = FindObjectOfType<LevelManager>();
         levelManager.RespawnPlayer();
         levelManager.ResetCipherPages();
 
-        playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+        BookMechanism mechanism = FindObjectOfType<BookMechanism>();
+        if (mechanism != null)
+            mechanism.ResetMechanism();
+
+        playerRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
 
         // the guard goes back to the start of his patrol
         transform.position = startPosition;
@@ -297,7 +310,32 @@ public class SecurityGuardPatrol : EnemyController
         flashlight.color = calmLight;
         FaceLeft(false);
 
+        // the camera jumps to Alex while the screen is still black
+        Vector3 alexPosition = playerRB.transform.position;
+        Camera.main.transform.position = new Vector3(alexPosition.x, alexPosition.y, -10f);
+        yield return new WaitForSeconds(0.4f);
+
+        // the screen comes back and Alex can move again
+        yield return StartCoroutine(FadeScreen(1f, 0f));
+        playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
+
         catching = false;
+    }
+
+    // fades the black screen from one alpha to another (Lerp, like the camera in Lab 4)
+    IEnumerator FadeScreen(float from, float to)
+    {
+        if (blackScreen == null)
+            yield break; // no black screen in this level
+
+        float time = 0f;
+        while (time < fadeTime)
+        {
+            time = time + Time.deltaTime;
+            blackScreen.color = new Color(0f, 0f, 0f, Mathf.Lerp(from, to, time / fadeTime));
+            yield return null; // wait for the next frame
+        }
+        blackScreen.color = new Color(0f, 0f, 0f, to);
     }
 
     // The guard doesn't hurt Alex by touching him like the other enemies do:
