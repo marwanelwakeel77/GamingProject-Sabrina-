@@ -17,6 +17,21 @@ public class FallingBooksTrap : MonoBehaviour
     public AudioClip wobbleSound;
 
     private bool trapRunning = false;
+    private bool wobbling = false;
+    private Vector3 stackStartPosition;
+
+    void Start()
+    {
+        stackStartPosition = bookStack.transform.position;
+    }
+
+    void Update()
+    {
+        if (wobbling)
+        {
+            bookStack.transform.position = stackStartPosition + new Vector3(Random.Range(-wobbleAmount, wobbleAmount), 0, 0);
+        }
+    }
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -33,20 +48,15 @@ public class FallingBooksTrap : MonoBehaviour
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(wobbleSound);
 
-        Vector3 startPosition = bookStack.transform.position;
-        float timer = 0f;
-        while (timer < warningTime)
-        {
-            timer = timer + Time.deltaTime;
-            bookStack.transform.position = startPosition + new Vector3(Random.Range(-wobbleAmount, wobbleAmount), 0, 0);
-            yield return null;
-        }
-        bookStack.transform.position = startPosition;
+        wobbling = true;
+        yield return new WaitForSeconds(warningTime);
+        wobbling = false;
+        bookStack.transform.position = stackStartPosition;
         bookStack.SetActive(false);
 
         for (int i = 0; i < spawnPoints.Length; i++)
         {
-            GameObject book = Instantiate(bookPrefab, spawnPoints[i].position, Quaternion.identity);
+            GameObject book = Instantiate(bookPrefab, spawnPoints[i].position, spawnPoints[i].rotation);
 
             if (i < bookSprites.Length)
                 book.GetComponent<SpriteRenderer>().sprite = bookSprites[i];

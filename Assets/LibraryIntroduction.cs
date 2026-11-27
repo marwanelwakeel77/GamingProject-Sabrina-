@@ -8,11 +8,9 @@ public class LibraryIntroduction : MonoBehaviour
     public TMP_Text introText;
     public GameObject startButton;
 
-    [Header("Typewriter Settings")]
     public float typingSpeed = 0.04f;
 
     private string fullText;
-    private Coroutine typingCoroutine;
 
     void Start()
     {
@@ -25,7 +23,7 @@ public class LibraryIntroduction : MonoBehaviour
 
         startButton.SetActive(false);
 
-        typingCoroutine = StartCoroutine(TypeText());
+        StartCoroutine(TypeText());
     }
 
     IEnumerator TypeText()
@@ -41,8 +39,7 @@ public class LibraryIntroduction : MonoBehaviour
 
     public void CloseIntroduction()
     {
-        if (typingCoroutine != null)
-            StopCoroutine(typingCoroutine);
+        StopAllCoroutines();
 
         introPanel.SetActive(false);
         Time.timeScale = 1f;

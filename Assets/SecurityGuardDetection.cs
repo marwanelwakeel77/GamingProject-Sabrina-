@@ -4,25 +4,33 @@ using UnityEngine;
 
 public class SecurityGuardDetection : MonoBehaviour
 {
-    private SecurityGuardPatrol guardPatrol;
+    public SecurityGuardPatrol guardPatrol;
 
-    private void Start()
-    {
-        guardPatrol = GetComponentInParent<SecurityGuardPatrol>();
-    }
+    private bool playerInside = false;
+    private Transform player;
 
-    private void OnTriggerStay2D(Collider2D other)
+    void Update()
     {
-        if (other.tag == "Player")
+        if (playerInside)
         {
-            guardPatrol.StartChasing(other.transform);
+            guardPatrol.StartChasing(player);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
+            playerInside = true;
+            player = other.transform;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            playerInside = false;
             guardPatrol.StopChasing();
         }
     }

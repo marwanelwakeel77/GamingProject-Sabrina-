@@ -24,6 +24,9 @@ public class ShutterChain : MonoBehaviour
 
     private bool playerNearby = false;
     private bool pulled = false;
+    private bool retracting = false;
+    private bool beamFading = false;
+    private Vector3 chainTarget;
 
     void Start()
     {
@@ -35,6 +38,24 @@ public class ShutterChain : MonoBehaviour
         if (playerNearby && !pulled && Time.timeScale > 0 && Input.GetKeyDown(KeyCode.E))
         {
             StartCoroutine(PullChain());
+        }
+
+        if (retracting)
+        {
+            Transform chain = chainRenderer.transform;
+            chain.position = Vector3.MoveTowards(chain.position, chainTarget, retractSpeed * Time.deltaTime);
+
+            if (chain.position == chainTarget)
+            {
+                retracting = false;
+                chainRenderer.gameObject.SetActive(false);
+            }
+        }
+
+        if (beamFading)
+        {
+            float alpha = Mathf.MoveTowards(moonbeam.color.a, moonbeamAlpha, moonbeamAlpha / 1.2f * Time.deltaTime);
+            moonbeam.color = new Color(1f, 1f, 1f, alpha);
         }
     }
 
@@ -51,32 +72,17 @@ public class ShutterChain : MonoBehaviour
         shutters.sprite = openShutters;
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(shuttersSound);
-        StartCoroutine(RetractChain());
+
+        chainTarget = chainRenderer.transform.position + new Vector3(0, retractHeight, 0);
+        retracting = true;
         yield return new WaitForSeconds(0.4f);
 
-        float timer = 0f;
-        while (timer < 1.2f)
-        {
-            timer = timer + Time.deltaTime;
-            moonbeam.color = new Color(1f, 1f, 1f, Mathf.Lerp(0f, moonbeamAlpha, timer / 1.2f));
-            yield return null;
-        }
+        beamFading = true;
+        yield return new WaitForSeconds(1.2f);
+        beamFading = false;
+        moonbeam.color = new Color(1f, 1f, 1f, moonbeamAlpha);
 
         moon.Reveal();
-    }
-
-    IEnumerator RetractChain()
-    {
-        Transform chain = chainRenderer.transform;
-        Vector3 target = chain.position + new Vector3(0, retractHeight, 0);
-
-        while (chain.position != target)
-        {
-            chain.position = Vector3.MoveTowards(chain.position, target, retractSpeed * Time.deltaTime);
-            yield return null;
-        }
-
-        chainRenderer.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D other)

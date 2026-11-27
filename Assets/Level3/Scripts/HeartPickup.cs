@@ -6,35 +6,58 @@ public class HeartPickup : MonoBehaviour
     public AudioClip pickupSound;
 
     public float bobHeight = 0.08f;
-    public float bobSpeed = 2.5f;
+    public float moveSpeed = 0.13f;
 
-    private Vector3 startPosition;
+    private Vector3 topPosition;
+    private Vector3 bottomPosition;
+    private bool movingUp = true;
+    private bool playerNearby = false;
+    private PlayerStats stats;
 
     void Start()
     {
-        startPosition = transform.position;
+        topPosition = transform.position + new Vector3(0, bobHeight, 0);
+        bottomPosition = transform.position - new Vector3(0, bobHeight, 0);
     }
 
     void Update()
     {
-        transform.position = startPosition + new Vector3(0, Mathf.Sin(Time.time * bobSpeed) * bobHeight, 0);
+        Vector3 targetPosition;
+        if (movingUp == true)
+            targetPosition = topPosition;
+        else
+            targetPosition = bottomPosition;
+
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+        if (Mathf.Abs(transform.position.y - targetPosition.y) < 0.001f)
+            movingUp = !movingUp;
+
+        if (playerNearby && stats.health < 3)
+        {
+            stats.Heal(healAmount);
+
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlayMusicSFX(pickupSound);
+
+            Destroy(gameObject);
+        }
     }
 
-    void OnTriggerStay2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            PlayerStats stats = other.GetComponent<PlayerStats>();
+            playerNearby = true;
+            stats = other.GetComponent<PlayerStats>();
+        }
+    }
 
-            if (stats != null && stats.health < 3)
-            {
-                stats.Heal(healAmount);
-
-                if (AudioManager.Instance != null)
-                    AudioManager.Instance.PlayMusicSFX(pickupSound);
-
-                Destroy(gameObject);
-            }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            playerNearby = false;
         }
     }
 }

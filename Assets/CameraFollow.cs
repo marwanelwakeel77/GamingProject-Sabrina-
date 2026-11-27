@@ -9,8 +9,6 @@ public class CameraFollow : MonoBehaviour
     public float minX, maxX;
     public float minY, maxY;
 
-    [Header("Optional: keep the view inside the level art")]
-    [Tooltip("When on, the camera never shows past these world-space edges, whatever the zoom.")]
     public bool clampToLevelBounds = false;
     public Vector2 levelBoundsMin;
     public Vector2 levelBoundsMax;
@@ -63,7 +61,7 @@ public class CameraFollow : MonoBehaviour
         }
     }
 
-    static float ClampToBounds(float value, float low, float high)
+    float ClampToBounds(float value, float low, float high)
     {
         // If the view is wider than the level, centre it.
         if (low > high) return (low + high) * 0.5f;

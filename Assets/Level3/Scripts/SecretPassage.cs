@@ -46,7 +46,7 @@ public class SecretPassage : MonoBehaviour
         cameraFollow.Target = cameraFocus;
         yield return new WaitForSeconds(1f);
 
-        animator.SetTrigger("Open");
+        animator.SetBool("IsOpen", true);
         dust.Play();
         revealLight.SetActive(true);
         if (AudioManager.Instance != null)
@@ -82,8 +82,7 @@ public class SecretPassage : MonoBehaviour
         entryTrigger.enabled = false;
         revealLight.SetActive(false);
 
-        animator.ResetTrigger("Open");
-        animator.SetTrigger("Close");
+        animator.SetBool("IsOpen", false);
 
         PlayerController alex = FindObjectOfType<PlayerController>();
         cameraFollow.Target = alex.transform;

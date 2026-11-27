@@ -16,7 +16,9 @@ public class CrescentMoonCollectible : MonoBehaviour
     public AudioClip revealSound;
 
     private bool revealed = false;
+    private bool revealing = false;
     private bool collected = false;
+    private bool playerNearby = false;
     private SpriteRenderer sr;
 
     void Start()
@@ -35,6 +37,19 @@ public class CrescentMoonCollectible : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (revealing)
+        {
+            SetAlpha(Mathf.MoveTowards(sr.color.a, 1f, (1f - hiddenAlpha) / 1.2f * Time.deltaTime));
+        }
+
+        if (playerNearby && revealed)
+        {
+            Collect();
+        }
+    }
+
     public void Reveal()
     {
         if (!revealed)
@@ -46,13 +61,9 @@ public class CrescentMoonCollectible : MonoBehaviour
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(revealSound);
 
-        float timer = 0f;
-        while (timer < 1.2f)
-        {
-            timer = timer + Time.deltaTime;
-            SetAlpha(Mathf.Lerp(hiddenAlpha, 1f, timer / 1.2f));
-            yield return null;
-        }
+        revealing = true;
+        yield return new WaitForSeconds(1.2f);
+        revealing = false;
         SetAlpha(1f);
 
         for (int i = 0; i < glowObjects.Length; i++)
@@ -68,34 +79,29 @@ public class CrescentMoonCollectible : MonoBehaviour
         sr.color = c;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
-            if (!revealed)
-            {
-                if (prompt != null)
-                {
-                    promptText.text = "Only moonlight can reveal the crescent moon...";
-                    prompt.SetActive(true);
-                }
-                return;
-            }
+            playerNearby = true;
 
-            Collect();
+            if (!revealed && prompt != null)
+            {
+                promptText.text = "Only moonlight can reveal the crescent moon...";
+                prompt.SetActive(true);
+            }
         }
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
-        if (revealed && other.tag == "Player")
-            Collect();
-    }
+        if (other.tag == "Player")
+        {
+            playerNearby = false;
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "Player" && prompt != null)
-            prompt.SetActive(false);
+            if (prompt != null)
+                prompt.SetActive(false);
+        }
     }
 
     void Collect()

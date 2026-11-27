@@ -12,6 +12,7 @@ public class EscapeSequence : MonoBehaviour
     public TMP_Text timerText;
     public GameObject timerPanel;
     public Image alarmGlow;
+    public float glowSpeed = 0.95f;
     public HiddenPressurePlate[] armedTraps;
     public CursedTorch[] torches;
     public SecurityGuardPatrol guard;
@@ -23,6 +24,10 @@ public class EscapeSequence : MonoBehaviour
     public AudioClip sealSound;
 
     private bool escaping = false;
+    private bool timerRunning = false;
+    private bool glowRising = true;
+    private float timeLeft;
+    private float bellTimer;
     private float normalGuardSpeed;
 
     void Start()
@@ -33,45 +38,65 @@ public class EscapeSequence : MonoBehaviour
 
     public void StartEscape()
     {
-        if (!escaping)
-            StartCoroutine(EscapeRoutine());
+        if (escaping)
+            return;
+
+        escaping = true;
+        timerRunning = true;
+        timeLeft = escapeTime;
+        bellTimer = 0f;
+        SetAlarm(true);
     }
 
-    IEnumerator EscapeRoutine()
+    void Update()
     {
-        escaping = true;
-        SetAlarm(true);
+        if (timerRunning == false)
+            return;
 
-        float timeLeft = escapeTime;
-        float bellTimer = 0f;
-
-        while (timeLeft > 0)
+        if (secretPassage.levelCompletePanel.activeSelf || !secretPassage.IsOpen())
         {
-            if (secretPassage.levelCompletePanel.activeSelf || !secretPassage.IsOpen())
-            {
-                SetAlarm(false);
-                escaping = false;
-                yield break;
-            }
-
-            timeLeft = timeLeft - Time.deltaTime;
-
-            bellTimer = bellTimer - Time.deltaTime;
-            if (bellTimer <= 0)
-            {
-                bellTimer = bellInterval;
-                if (AudioManager.Instance != null)
-                    AudioManager.Instance.PlayMusicSFX(bellSound);
-            }
-
-            timerText.text = "ESCAPE!   " + Mathf.CeilToInt(timeLeft);
-
-            float pulse = (Mathf.Sin(Time.time * 6f) + 1f) / 2f;
-            alarmGlow.color = new Color(1f, 1f, 1f, Mathf.Lerp(0.35f, 0.85f, pulse));
-
-            yield return null;
+            SetAlarm(false);
+            timerRunning = false;
+            escaping = false;
+            return;
         }
 
+        timeLeft = timeLeft - Time.deltaTime;
+
+        bellTimer = bellTimer - Time.deltaTime;
+        if (bellTimer <= 0)
+        {
+            bellTimer = bellInterval;
+            if (AudioManager.Instance != null)
+                AudioManager.Instance.PlayMusicSFX(bellSound);
+        }
+
+        Color c = alarmGlow.color;
+        if (glowRising == true)
+            c.a = Mathf.MoveTowards(c.a, 0.85f, glowSpeed * Time.deltaTime);
+        else
+            c.a = Mathf.MoveTowards(c.a, 0.35f, glowSpeed * Time.deltaTime);
+        alarmGlow.color = c;
+
+        if (c.a >= 0.85f)
+            glowRising = false;
+        else if (c.a <= 0.35f)
+            glowRising = true;
+
+        if (timeLeft > 0)
+        {
+            int secondsLeft = (int)timeLeft + 1;
+            timerText.text = "ESCAPE!   " + secondsLeft;
+        }
+        else
+        {
+            timerRunning = false;
+            StartCoroutine(SealPassage());
+        }
+    }
+
+    IEnumerator SealPassage()
+    {
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(sealSound);
         secretPassage.dust.Play();
@@ -90,6 +115,12 @@ public class EscapeSequence : MonoBehaviour
     {
         timerPanel.SetActive(on);
         alarmGlow.gameObject.SetActive(on);
+
+        if (on)
+        {
+            alarmGlow.color = new Color(1f, 1f, 1f, 0.35f);
+            glowRising = true;
+        }
 
         for (int i = 0; i < armedTraps.Length; i++)
             armedTraps[i].autoRepeat = on;

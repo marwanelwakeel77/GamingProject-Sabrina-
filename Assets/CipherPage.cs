@@ -38,12 +38,6 @@ public class CipherPage : MonoBehaviour
 
     void OpenPage()
     {
-        if (inspectionController == null)
-        {
-            Debug.LogError("CipherInspectionController is missing!");
-            return;
-        }
-
         isReading = true;
         inspectPrompt.SetActive(false);
 

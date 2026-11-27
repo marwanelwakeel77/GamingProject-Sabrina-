@@ -27,7 +27,7 @@ public class FallingBook : EnemyController
             FindObjectOfType<PlayerStats>().TakeDamage(damage);
             Land();
         }
-        else if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        else if (other.tag == "Ground")
         {
             Land();
         }

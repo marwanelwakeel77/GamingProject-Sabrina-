@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class PlayerStats : MonoBehaviour
@@ -22,6 +23,8 @@ public class PlayerStats : MonoBehaviour
     // Level 3 collectibles. STATIC so their values stay with us (Lab 7)
     public static int cipherPagesCollected = 0;
     public static bool hasCrescentMoon = false;
+
+    public static int lastLevel = 1;
 
     // Level 3 HUD (Lab 8): drag the PageCount text and the MoonIcon image here
     public TMP_Text pageCounter;
@@ -105,6 +108,8 @@ public class PlayerStats : MonoBehaviour
             else if (lives == 0 && health == 0)
             {
                 Debug.Log("Gameover");
+                lastLevel = SceneManager.GetActiveScene().buildIndex;
+                SceneManager.LoadScene("GameOver");
                 Destroy(this.gameObject);
             }
 

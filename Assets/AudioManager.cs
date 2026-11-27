@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class AudioManager : MonoBehaviour
 {
@@ -12,7 +11,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource sfxSource; //source that plays sound effects
 
     // background music of this level (level 2: overworld music, level 3: library music)
-    [FormerlySerializedAs("libraryMusic")] // the level 3 scene saved this clip under its old name
     public AudioClip overworldMusic;
 
     public AudioClip[] variousSFX; //array of sound effects clips to keep things varied

@@ -36,6 +36,10 @@ public class BookShelfInspectionUI : MonoBehaviour
     private bool pulling = false;
     private Sprite bookStartSprite;
 
+    private bool bladeAnimating = false;
+    private float bladeTimer = 0f;
+    private Vector2 windowStart;
+
     public void OpenShelf()
     {
         gameObject.SetActive(true);
@@ -64,6 +68,15 @@ public class BookShelfInspectionUI : MonoBehaviour
 
     void Update()
     {
+        if (bladeAnimating)
+        {
+            bladeTimer = bladeTimer + Time.unscaledDeltaTime;
+            blade.localScale = new Vector3(Mathf.Clamp(bladeTimer / 0.08f, 0f, 1f), 1, 1);
+            redFlash.color = new Color(0.8f, 0f, 0f, Mathf.Lerp(0.45f, 0f, bladeTimer / 0.5f));
+            float shake = 1f - bladeTimer / 0.5f;
+            shelfWindow.anchoredPosition = windowStart + new Vector2(Random.Range(-12f, 12f), Random.Range(-8f, 8f)) * shake;
+        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (pageViewer.activeSelf)
@@ -147,23 +160,18 @@ public class BookShelfInspectionUI : MonoBehaviour
             AudioManager.Instance.PlayMusicSFX(wrongBookSound);
         yield return new WaitForSecondsRealtime(0.35f);
 
+        blade.localScale = new Vector3(0, 1, 1);
         blade.gameObject.SetActive(true);
         blade.anchoredPosition = bookStart + new Vector2(book.rect.width / 2f, 0);
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(bladeSound);
         messageText.text = "A hidden blade snaps out of the shelf! That was the wrong book.";
 
-        Vector2 windowStart = shelfWindow.anchoredPosition;
-        float timer = 0f;
-        while (timer < 0.5f)
-        {
-            timer = timer + Time.unscaledDeltaTime;
-            blade.localScale = new Vector3(Mathf.Clamp01(timer / 0.08f), 1, 1);
-            redFlash.color = new Color(0.8f, 0f, 0f, Mathf.Lerp(0.45f, 0f, timer / 0.5f));
-            float shake = 1f - timer / 0.5f;
-            shelfWindow.anchoredPosition = windowStart + new Vector2(Random.Range(-12f, 12f), Random.Range(-8f, 8f)) * shake;
-            yield return null;
-        }
+        windowStart = shelfWindow.anchoredPosition;
+        bladeTimer = 0f;
+        bladeAnimating = true;
+        yield return new WaitForSecondsRealtime(0.5f);
+        bladeAnimating = false;
         shelfWindow.anchoredPosition = windowStart;
         redFlash.color = new Color(0.8f, 0f, 0f, 0f);
 
@@ -212,6 +220,7 @@ public class BookShelfInspectionUI : MonoBehaviour
     {
         StopAllCoroutines();
         pulling = false;
+        bladeAnimating = false;
         HideBlade();
         if (bookStartSprite != null)
             books[correctBook].sprite = bookStartSprite;

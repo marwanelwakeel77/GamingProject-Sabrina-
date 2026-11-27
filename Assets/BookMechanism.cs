@@ -5,8 +5,6 @@ using TMPro;
 
 public class BookMechanism : MonoBehaviour
 {
-    public Animator passageAnimator;
-
     public GameObject interactionPrompt;
     public TMP_Text messageText;
     public TMP_Text promptText;
@@ -26,6 +24,7 @@ public class BookMechanism : MonoBehaviour
 
     private bool playerNearby = false;
     private bool mechanismActivated = false;
+    private bool shaking = false;
 
     private Sprite sigilBookStart;
     private Vector3[] shakeStartPositions;
@@ -46,6 +45,7 @@ public class BookMechanism : MonoBehaviour
     public void ResetMechanism()
     {
         StopAllCoroutines();
+        shaking = false;
 
         for (int i = 0; i < shakeObjects.Length; i++)
         {
@@ -56,12 +56,20 @@ public class BookMechanism : MonoBehaviour
         sigilBook.sprite = sigilBookStart;
 
         shelfUI.ResetShelf();
-        if (secretPassage != null)
-            secretPassage.ClosePassage();
+        secretPassage.ClosePassage();
     }
 
     void Update()
     {
+        if (shaking)
+        {
+            float offset = Random.Range(-shakeAmount, shakeAmount);
+            for (int i = 0; i < shakeObjects.Length; i++)
+            {
+                shakeObjects[i].position = shakeStartPositions[i] + new Vector3(offset, 0, 0);
+            }
+        }
+
         if (sigilSparkles != null)
             sigilSparkles.SetActive(PlayerStats.cipherPagesCollected >= 3 && !mechanismActivated);
 
@@ -107,34 +115,16 @@ public class BookMechanism : MonoBehaviour
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(mechanismSound);
 
-        Vector3[] startPositions = new Vector3[shakeObjects.Length];
-        for (int i = 0; i < shakeObjects.Length; i++)
-        {
-            startPositions[i] = shakeObjects[i].position;
-        }
-
-        float timer = 0f;
-        while (timer < shakeTime)
-        {
-            timer = timer + Time.deltaTime;
-
-            float offset = Random.Range(-shakeAmount, shakeAmount);
-            for (int i = 0; i < shakeObjects.Length; i++)
-            {
-                shakeObjects[i].position = startPositions[i] + new Vector3(offset, 0, 0);
-            }
-            yield return null;
-        }
+        shaking = true;
+        yield return new WaitForSeconds(shakeTime);
+        shaking = false;
 
         for (int i = 0; i < shakeObjects.Length; i++)
         {
-            shakeObjects[i].position = startPositions[i];
+            shakeObjects[i].position = shakeStartPositions[i];
         }
 
-        if (secretPassage != null)
-            secretPassage.OpenPassage();
-        else if (passageAnimator != null)
-            passageAnimator.SetTrigger("Open");
+        secretPassage.OpenPassage();
     }
 
     void OnTriggerEnter2D(Collider2D other)

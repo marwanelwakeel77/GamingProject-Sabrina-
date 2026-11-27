@@ -35,15 +35,19 @@ public class SecurityGuardPatrol : EnemyController
     private Transform alex;
 
     private Animator animator;
+    private CameraFollow cameraFollow;
 
     private bool alerted = false;
     private bool chasing = false;
     private bool investigating = false;
     private bool searching = false;
+    private bool walkingToSearchSpot = false;
     private bool catching = false;
 
     private float lastSeenX;
+    private float searchX;
     private float stepTimer = 0f;
+    private float fadeTarget = 0f;
     private Vector3 startPosition;
     private Coroutine searchRoutine;
 
@@ -51,6 +55,7 @@ public class SecurityGuardPatrol : EnemyController
     {
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        cameraFollow = FindObjectOfType<CameraFollow>();
 
         target = pointB;
         startPosition = transform.position;
@@ -62,6 +67,13 @@ public class SecurityGuardPatrol : EnemyController
 
     void Update()
     {
+        if (blackScreen != null)
+        {
+            Color c = blackScreen.color;
+            c.a = Mathf.MoveTowards(c.a, fadeTarget, Time.deltaTime / fadeTime);
+            blackScreen.color = c;
+        }
+
         if (catching)
             return;
 
@@ -82,7 +94,14 @@ public class SecurityGuardPatrol : EnemyController
         if (alerted)
             return;
 
-        if (searching || investigating)
+        if (searching)
+        {
+            if (walkingToSearchSpot)
+                WalkToSearchSpot();
+            return;
+        }
+
+        if (investigating)
             return;
 
         MoveTowards(target.position.x, maxSpeed);
@@ -98,11 +117,17 @@ public class SecurityGuardPatrol : EnemyController
         }
     }
 
+    float KeepInsidePatrol(float x)
+    {
+        if (pointA.position.x < pointB.position.x)
+            return Mathf.Clamp(x, pointA.position.x, pointB.position.x);
+        else
+            return Mathf.Clamp(x, pointB.position.x, pointA.position.x);
+    }
+
     void MoveTowards(float x, float speed)
     {
-        float minX = Mathf.Min(pointA.position.x, pointB.position.x);
-        float maxX = Mathf.Max(pointA.position.x, pointB.position.x);
-        x = Mathf.Clamp(x, minX, maxX);
+        x = KeepInsidePatrol(x);
 
         if (x < transform.position.x - 0.05f)
             FaceLeft(true);
@@ -131,6 +156,7 @@ public class SecurityGuardPatrol : EnemyController
         animator.SetBool("IsWalking", walking);
         animator.SetBool("IsRunning", running);
         animator.SetBool("IsInvestigating", investigatingAnim);
+        animator.SetBool("IsAlert", false);
     }
 
     void PlayFootsteps(float time)
@@ -164,12 +190,14 @@ public class SecurityGuardPatrol : EnemyController
 
         if (searching)
         {
-            StopCoroutine(searchRoutine);
+            if (searchRoutine != null)
+                StopCoroutine(searchRoutine);
             searching = false;
+            walkingToSearchSpot = false;
         }
 
         SetAnimation(false, false, false);
-        animator.SetTrigger("Alert");
+        animator.SetBool("IsAlert", true);
         flashlight.color = alertLight;
 
         if (AudioManager.Instance != null)
@@ -201,24 +229,29 @@ public class SecurityGuardPatrol : EnemyController
             player = null;
             flashlight.color = calmLight;
 
-            searchRoutine = StartCoroutine(SearchRoutine());
+            searchX = KeepInsidePatrol(lastSeenX);
+            searching = true;
+            walkingToSearchSpot = true;
         }
     }
 
-    IEnumerator SearchRoutine()
+    void WalkToSearchSpot()
     {
-        searching = true;
-
-        float searchX = Mathf.Clamp(lastSeenX, Mathf.Min(pointA.position.x, pointB.position.x), Mathf.Max(pointA.position.x, pointB.position.x));
-
-        while (Mathf.Abs(transform.position.x - searchX) > 0.1f)
+        if (Mathf.Abs(transform.position.x - searchX) > 0.1f)
         {
             MoveTowards(lastSeenX, maxSpeed);
             SetAnimation(true, false, false);
             PlayFootsteps(stepTime);
-            yield return null;
         }
+        else
+        {
+            walkingToSearchSpot = false;
+            searchRoutine = StartCoroutine(LookAround());
+        }
+    }
 
+    IEnumerator LookAround()
+    {
         SetAnimation(false, false, true);
         yield return new WaitForSeconds(searchDuration / 2);
         FaceLeft(!sr.flipX);
@@ -265,7 +298,8 @@ public class SecurityGuardPatrol : EnemyController
 
         yield return new WaitForSeconds(0.6f);
 
-        yield return StartCoroutine(FadeScreen(0f, 1f));
+        fadeTarget = 1f;
+        yield return new WaitForSeconds(fadeTime);
 
         LevelManager levelManager = FindObjectOfType<LevelManager>();
         levelManager.RespawnPlayer();
@@ -284,28 +318,14 @@ public class SecurityGuardPatrol : EnemyController
         FaceLeft(false);
 
         Vector3 alexPosition = playerRB.transform.position;
-        Camera.main.transform.position = new Vector3(alexPosition.x, alexPosition.y, -10f);
+        cameraFollow.transform.position = new Vector3(alexPosition.x, alexPosition.y, -10f);
         yield return new WaitForSeconds(0.4f);
 
-        yield return StartCoroutine(FadeScreen(1f, 0f));
+        fadeTarget = 0f;
+        yield return new WaitForSeconds(fadeTime);
         playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
 
         catching = false;
-    }
-
-    IEnumerator FadeScreen(float from, float to)
-    {
-        if (blackScreen == null)
-            yield break;
-
-        float time = 0f;
-        while (time < fadeTime)
-        {
-            time = time + Time.deltaTime;
-            blackScreen.color = new Color(0f, 0f, 0f, Mathf.Lerp(from, to, time / fadeTime));
-            yield return null;
-        }
-        blackScreen.color = new Color(0f, 0f, 0f, to);
     }
 
     void OnTriggerEnter2D(Collider2D other)

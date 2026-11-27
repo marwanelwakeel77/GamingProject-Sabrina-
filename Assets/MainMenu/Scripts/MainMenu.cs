@@ -15,6 +15,9 @@ public class MainMenu : MonoBehaviour
     public AudioClip clickSound;
 
     private bool starting = false;
+    private float fadeTarget = 0f;
+    private float fadeSpeed;
+    private float volumeSpeed;
 
     void Start()
     {
@@ -23,11 +26,22 @@ public class MainMenu : MonoBehaviour
         fadeScreen.gameObject.SetActive(true);
         fadeScreen.color = new Color(0f, 0f, 0f, 1f);
         fadeScreen.raycastTarget = true;
+        fadeTarget = 0f;
+        fadeSpeed = 1f / fadeTime;
         StartCoroutine(FadeIn());
     }
 
     void Update()
     {
+        Color c = fadeScreen.color;
+        c.a = Mathf.MoveTowards(c.a, fadeTarget, fadeSpeed * Time.deltaTime);
+        fadeScreen.color = c;
+
+        if (starting)
+        {
+            musicSource.volume = Mathf.MoveTowards(musicSource.volume, 0f, volumeSpeed * Time.deltaTime);
+        }
+
         if (howToPlayPanel.activeSelf && Input.GetKeyDown(KeyCode.Escape))
         {
             onClickBack();
@@ -80,13 +94,7 @@ public class MainMenu : MonoBehaviour
 
     IEnumerator FadeIn()
     {
-        float timer = 0f;
-        while (timer < fadeTime)
-        {
-            timer = timer + Time.deltaTime;
-            fadeScreen.color = new Color(0f, 0f, 0f, Mathf.Lerp(1f, 0f, timer / fadeTime));
-            yield return null;
-        }
+        yield return new WaitForSeconds(fadeTime);
         fadeScreen.color = new Color(0f, 0f, 0f, 0f);
         fadeScreen.raycastTarget = false;
     }
@@ -94,17 +102,11 @@ public class MainMenu : MonoBehaviour
     IEnumerator StartGame()
     {
         fadeScreen.raycastTarget = true;
-        float startAlpha = fadeScreen.color.a;
-        float startVolume = musicSource.volume;
+        fadeSpeed = (1f - fadeScreen.color.a) / fadeTime;
+        volumeSpeed = musicSource.volume / fadeTime;
+        fadeTarget = 1f;
 
-        float timer = 0f;
-        while (timer < fadeTime)
-        {
-            timer = timer + Time.deltaTime;
-            fadeScreen.color = new Color(0f, 0f, 0f, Mathf.Lerp(startAlpha, 1f, timer / fadeTime));
-            musicSource.volume = Mathf.Lerp(startVolume, 0f, timer / fadeTime);
-            yield return null;
-        }
+        yield return new WaitForSeconds(fadeTime);
 
         SceneManager.LoadScene(firstLevel);
     }
