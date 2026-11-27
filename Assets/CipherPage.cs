@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using TMPro;
 
@@ -10,10 +9,8 @@ public class CipherPage : MonoBehaviour
     public Sprite pageSprite;
     public AudioClip pageSound;
 
-    // which of Sabrina's pages this is, shown at the top of the inspection panel (e.g. "Cipher Page I")
     public string pageTitle = "Cipher Page";
 
-    // the icon of this page in the inventory (press H)
     public GameObject inventoryIcon;
 
     private bool playerNearby = false;
@@ -32,7 +29,6 @@ public class CipherPage : MonoBehaviour
 
     void Update()
     {
-        // Time.timeScale is 0 while another panel is open, so E is ignored then
         if (playerNearby && !isReading && Time.timeScale > 0 &&
             Input.GetKeyDown(KeyCode.E))
         {
@@ -69,13 +65,10 @@ public class CipherPage : MonoBehaviour
         Debug.Log("Cipher Pages: " +
             PlayerStats.cipherPagesCollected + "/3");
 
-        // the page also goes into the inventory
         InventoryManager inventory = FindObjectOfType<InventoryManager>();
         if (inventory != null && inventoryIcon != null)
             inventory.AddItem(inventoryIcon);
 
-        // hide the page instead of destroying it,
-        // so the LevelManager can put it back if the guard catches Alex
         gameObject.SetActive(false);
     }
 

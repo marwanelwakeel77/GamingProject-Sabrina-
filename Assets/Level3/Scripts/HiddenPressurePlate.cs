@@ -1,14 +1,6 @@
 using System.Collections;
 using UnityEngine;
 
-// A hidden pressure plate in the library floor.
-// Alex steps on it -> the plate glows red and shakes (warning) -> spikes rise -> they stay up for a while
-// -> they go back down -> the plate is normal again and can be triggered again.
-//
-// Built only with things from the labs:
-//   sprite swap between the 4 plate sprites (Lab 5, BrickBreak), the whole sequence in a Coroutine (Lab 9),
-//   MoveTowards to move the spikes (Lab 5 moving platform / Lab 6), a particle burst for dust (Lab 4),
-//   damage through PlayerStats.TakeDamage (Lab 6) and sounds through the AudioManager (Lab 7).
 public class HiddenPressurePlate : MonoBehaviour
 {
     [Header("Plate (the tile in the floor)")]
@@ -19,38 +11,38 @@ public class HiddenPressurePlate : MonoBehaviour
     public Sprite activeSprite;
     [Tooltip("The plate with an empty hole, shown while the big spikes are out of it")]
     public Sprite openSprite;
-    public float frameTime = 0.12f;   // how long the Emerging and Active plate sprites show before the spikes shoot up
+    public float frameTime = 0.12f;
 
     [Header("Spikes that rise out of the plate")]
     public Transform spikes;
-    public float riseSpeed = 3f;      // units per second
+    public float riseSpeed = 3f;
     public float retractSpeed = 1.5f;
-    public float riseHeight = 0f;     // how far the spikes rise (0 = their own height, so they hide fully under the floor)
+    public float riseHeight = 0f;
 
     [Header("Timing (seconds)")]
-    public float warningTime = 0.7f;  // fair warning before the spikes come up
-    public float activeTime = 2f;     // how long the spikes stay up and dangerous
-    public float cooldownTime = 1f;   // wait before the plate can be triggered again
+    public float warningTime = 0.7f;
+    public float activeTime = 2f;
+    public float cooldownTime = 1f;
 
     [Header("Warning shake")]
     public float shakeAmount = 0.012f;
 
     [Header("Damage")]
     public int damage = 1;
-    public Vector2 hitboxSize = new Vector2(0.36f, 0.3f); // area of the raised spikes that hurts Alex
-    public float knockUp = 6f;                              // small bounce when Alex is hit
+    public Vector2 hitboxSize = new Vector2(0.36f, 0.3f);
+    public float knockUp = 6f;
 
     [Header("Effects (optional)")]
     public ParticleSystem dust;
-    public AudioClip activationSound;   // click of the plate
+    public AudioClip activationSound;
     public AudioClip spikesUpSound;
     public AudioClip spikesDownSound;
 
-    public bool autoRepeat = false;       // during the escape the trap goes off again and again by itself
+    public bool autoRepeat = false;
 
-    private bool trapRunning = false;     // true while the sequence plays, so it can't start twice
-    private bool spikesDangerous = false; // true only while the spikes are fully up
-    private bool hitThisTime = false;     // the spikes hurt Alex only once each time they rise
+    private bool trapRunning = false;
+    private bool spikesDangerous = false;
+    private bool hitThisTime = false;
     private Vector3 plateStartPosition;
     private Vector3 spikesUpPosition;
     private Vector3 spikesDownPosition;
@@ -69,7 +61,6 @@ public class HiddenPressurePlate : MonoBehaviour
 
         if (spikes != null)
         {
-            // the spikes wait hidden below the floor in the scene; they rise by their own height
             spikesDownPosition = spikes.localPosition;
             spikesUpPosition = spikesDownPosition + new Vector3(0, GetRiseHeight(), 0);
         }
@@ -84,8 +75,6 @@ public class HiddenPressurePlate : MonoBehaviour
         if (autoRepeat)
             TryActivate();
 
-        // while the spikes are up, check if Alex is touching them
-        // (same idea as the ground check in the PlayerController: an overlap test every frame)
         if (spikesDangerous && !hitThisTime && spikes != null)
         {
             Vector2 center = (Vector2)spikes.position + new Vector2(0, hitboxSize.y / 2);
@@ -102,14 +91,12 @@ public class HiddenPressurePlate : MonoBehaviour
         }
     }
 
-    // Alex steps on the plate
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
             TryActivate();
     }
 
-    // Alex is still standing on the plate when it is ready again
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -119,7 +106,7 @@ public class HiddenPressurePlate : MonoBehaviour
     void TryActivate()
     {
         if (trapRunning)
-            return; // the trap is already running
+            return;
 
         StartCoroutine(TrapSequence());
     }
@@ -130,7 +117,6 @@ public class HiddenPressurePlate : MonoBehaviour
         hitThisTime = false;
         Debug.Log("Pressure plate: stepped on!");
 
-        // 1) WARNING: red glow and a small shake
         plateRenderer.sprite = warningSprite;
         PlaySound(activationSound);
 
@@ -144,7 +130,6 @@ public class HiddenPressurePlate : MonoBehaviour
         }
         plateRenderer.transform.localPosition = plateStartPosition;
 
-        // 2) EMERGING: the spikes start to come out of the plate (Emerging, then Active sprite)
         Debug.Log("Pressure plate: spikes emerging");
         plateRenderer.sprite = emergingSprite;
         PlaySound(spikesUpSound);
@@ -152,7 +137,6 @@ public class HiddenPressurePlate : MonoBehaviour
         plateRenderer.sprite = activeSprite;
         yield return new WaitForSeconds(frameTime);
 
-        // the spikes shoot up out of the plate, leaving the hole open
         if (dust != null) dust.Play();
         if (openSprite != null)
             plateRenderer.sprite = openSprite;
@@ -166,13 +150,11 @@ public class HiddenPressurePlate : MonoBehaviour
             }
         }
 
-        // 3) ACTIVE: spikes fully up and dangerous
         Debug.Log("Pressure plate: spikes active");
         spikesDangerous = true;
         yield return new WaitForSeconds(activeTime);
         spikesDangerous = false;
 
-        // 4) RETRACTING: the spikes go back down into the plate
         Debug.Log("Pressure plate: spikes retracting");
         PlaySound(spikesDownSound);
         if (dust != null) dust.Play();
@@ -186,13 +168,11 @@ public class HiddenPressurePlate : MonoBehaviour
             }
         }
 
-        // the spikes sink back into the plate (Active, then Emerging sprite)
         plateRenderer.sprite = activeSprite;
         yield return new WaitForSeconds(frameTime);
         plateRenderer.sprite = emergingSprite;
         yield return new WaitForSeconds(frameTime);
 
-        // 5) NORMAL again, then a short cooldown before it can be triggered again
         plateRenderer.sprite = normalSprite;
         yield return new WaitForSeconds(cooldownTime);
 
@@ -209,18 +189,16 @@ public class HiddenPressurePlate : MonoBehaviour
             return;
         }
 
-        // PlayerStats already gives Alex a short immunity after a hit, so he isn't hit every frame
         if (stats.isImmune)
             return;
 
-        // small bounce up off the spikes
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         if (rb != null)
             rb.velocity = new Vector2(rb.velocity.x, knockUp);
 
         hitThisTime = true;
         Debug.Log("Pressure plate: Alex hit the spikes!");
-        stats.TakeDamage(damage); // existing health, lives and checkpoint respawn (Lab 6)
+        stats.TakeDamage(damage);
     }
 
     void PlaySound(AudioClip clip)
@@ -229,7 +207,6 @@ public class HiddenPressurePlate : MonoBehaviour
             AudioManager.Instance.PlayMusicSFX(clip);
     }
 
-    // how far the spikes move up: the value from the Inspector, or their own height if it is 0
     float GetRiseHeight()
     {
         if (riseHeight > 0)
@@ -237,12 +214,11 @@ public class HiddenPressurePlate : MonoBehaviour
         return spikes.GetComponent<SpriteRenderer>().bounds.size.y + 0.05f;
     }
 
-    // shows the spike hitbox in the Scene view when the plate is selected
     void OnDrawGizmosSelected()
     {
         if (spikes == null) return;
         Vector3 center = spikes.position + new Vector3(0, hitboxSize.y / 2, 0);
-        if (!Application.isPlaying) // in the editor the spikes are still hidden, so draw where they will rise to
+        if (!Application.isPlaying)
             center += new Vector3(0, GetRiseHeight(), 0);
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(center, new Vector3(hitboxSize.x, hitboxSize.y, 0));

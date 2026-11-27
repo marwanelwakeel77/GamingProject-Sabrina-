@@ -2,11 +2,10 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-// The hidden door behind the bookshelf
 public class SecretPassage : MonoBehaviour
 {
-    public Animator animator;          // Open trigger (Lab 3 animation states)
-    public ParticleSystem dust;        // dust burst when it opens (Lab 4 particle system)
+    public Animator animator;
+    public ParticleSystem dust;
     public GameObject revealLight;
     public BoxCollider2D entryTrigger;
 
@@ -21,19 +20,18 @@ public class SecretPassage : MonoBehaviour
     public AudioClip openSound;
     public AudioClip discoverySound;
 
-    public EscapeSequence escape; // starts when the passage is open
+    public EscapeSequence escape;
 
     private bool isOpen = false;
     private bool playerNearby = false;
 
     void Start()
     {
-        entryTrigger.enabled = false; //can't be entered until it opens
+        entryTrigger.enabled = false;
         revealLight.SetActive(false);
         levelCompletePanel.SetActive(false);
     }
 
-    // called once by the BookMechanism
     public void OpenPassage()
     {
         StartCoroutine(OpenRoutine());
@@ -41,11 +39,9 @@ public class SecretPassage : MonoBehaviour
 
     IEnumerator OpenRoutine()
     {
-        // freeze Alex during the short cut-scene (like during dialogue in Lab 9)
         Rigidbody2D playerRB = FindObjectOfType<PlayerController>().GetComponent<Rigidbody2D>();
         playerRB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
 
-        // the camera looks at the passage
         Transform alex = cameraFollow.Target;
         cameraFollow.Target = cameraFocus;
         yield return new WaitForSeconds(1f);
@@ -65,11 +61,9 @@ public class SecretPassage : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
-        // back to Alex
         cameraFollow.Target = alex;
         playerRB.constraints = RigidbodyConstraints2D.FreezeRotation;
 
-        // the library notices: the escape begins
         if (escape != null)
             escape.StartEscape();
     }
@@ -79,21 +73,18 @@ public class SecretPassage : MonoBehaviour
         return isOpen;
     }
 
-    // called when the guard catches Alex: the passage closes and the puzzle must be solved again
     public void ClosePassage()
     {
-        StopAllCoroutines(); // in case it was still opening
+        StopAllCoroutines();
 
         isOpen = false;
         playerNearby = false;
         entryTrigger.enabled = false;
         revealLight.SetActive(false);
 
-        // back to the Closed state (Lab 3: a trigger parameter starts the transition)
         animator.ResetTrigger("Open");
         animator.SetTrigger("Close");
 
-        // the camera follows Alex again and he can move (in case it happened during the cut-scene)
         PlayerController alex = FindObjectOfType<PlayerController>();
         cameraFollow.Target = alex.transform;
         alex.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.FreezeRotation;

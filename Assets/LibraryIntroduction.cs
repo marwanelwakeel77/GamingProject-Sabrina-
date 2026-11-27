@@ -1,4 +1,3 @@
-
 using System.Collections;
 using UnityEngine;
 using TMPro;
@@ -49,4 +48,3 @@ public class LibraryIntroduction : MonoBehaviour
         Time.timeScale = 1f;
     }
 }
-

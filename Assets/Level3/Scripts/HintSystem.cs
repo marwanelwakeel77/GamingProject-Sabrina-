@@ -2,8 +2,6 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-// Hints on the F key, written like the Dialogue Manager in Lab 9:
-// a panel, text typed letter by letter with a Coroutine, and a button that appears when the text is done.
 public class HintSystem : MonoBehaviour
 {
     public GameObject hintPanel;
@@ -15,7 +13,6 @@ public class HintSystem : MonoBehaviour
     public BookMechanism bookMechanism;
     public AudioClip hintSound;
 
-    // while pages are missing, the hint points to the first missing page
     public GameObject[] cipherPages;
     public string[] pageHints;
 
@@ -24,7 +21,7 @@ public class HintSystem : MonoBehaviour
     public string moonHint = "The crescent moon still hides on the balcony, and only moonlight can reveal it. A chain at the far end of the balcony opens the old window shutters.";
     public string solvedHint = "The passage behind the shelf stands open. Whatever Sabrina found lies beyond it.";
 
-    private int hintStage = 0; //remembers which hint the player already got
+    private int hintStage = 0;
 
     void Start()
     {
@@ -37,7 +34,7 @@ public class HintSystem : MonoBehaviour
         {
             if (hintPanel.activeSelf)
                 CloseHint();
-            else if (Time.timeScale > 0) //no hint while another panel is open
+            else if (Time.timeScale > 0)
                 OpenHint();
         }
         else if (hintPanel.activeSelf && Input.GetKeyDown(KeyCode.Escape))
@@ -52,7 +49,7 @@ public class HintSystem : MonoBehaviour
 
         hintPanel.SetActive(true);
         closeButton.SetActive(false);
-        Time.timeScale = 0f; //pause the game while reading
+        Time.timeScale = 0f;
 
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(hintSound);
@@ -66,11 +63,10 @@ public class HintSystem : MonoBehaviour
         {
             footerText.text = "F to close";
             if (PlayerStats.hasCrescentMoon == false)
-                return solvedHint + "\n\n" + moonHint; // don't leave without the moon (needed in level 5)
+                return solvedHint + "\n\n" + moonHint;
             return solvedHint;
         }
 
-        // pages still missing: point to the first one that is still in the level
         if (PlayerStats.cipherPagesCollected < 3)
         {
             footerText.text = "Cipher pages found: " + PlayerStats.cipherPagesCollected + " / 3";
@@ -81,7 +77,6 @@ public class HintSystem : MonoBehaviour
             }
         }
 
-        // all pages found: first the indirect hint, then the direct one
         if (hintStage == 0)
         {
             hintStage = 1;
@@ -96,7 +91,6 @@ public class HintSystem : MonoBehaviour
         }
     }
 
-    //types the hint letter by letter, like TypeDialogue() in Lab 9
     IEnumerator TypeHint(string hint)
     {
         hintText.text = "";
@@ -104,13 +98,12 @@ public class HintSystem : MonoBehaviour
         foreach (char letter in hint.ToCharArray())
         {
             hintText.text += letter;
-            yield return new WaitForSecondsRealtime(typingSpeed); //Realtime, because the game is paused
+            yield return new WaitForSecondsRealtime(typingSpeed);
         }
 
         closeButton.SetActive(true);
     }
 
-    // OnClick of the Close button
     public void CloseHint()
     {
         StopAllCoroutines();

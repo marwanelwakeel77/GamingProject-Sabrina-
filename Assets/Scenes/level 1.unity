@@ -1205,7 +1205,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.316915
+  orthographic size: 5.188945
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1254,6 +1254,9 @@ MonoBehaviour:
   maxX: 34.8
   minY: 0
   maxY: 4.8
+  clampToLevelBounds: 0
+  levelBoundsMin: {x: 0, y: 0}
+  levelBoundsMax: {x: 0, y: 0}
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1268,6 +1271,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Cam: {fileID: 0}
   ZoomSpeed: 3
+  minZoom: 3
+  maxZoom: 6
+  scrollAmount: 1
 --- !u!1 &521672178
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,6 +1304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa67b7c84e89ea498a31eb903998adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 0}
 --- !u!61 &521672180
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1564,6 +1571,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentCheckpoint: {fileID: 1997991849}
+  respawnSound: {fileID: 0}
+  restartLevel: 0
+  levelName: level 0
+  cipherPages: []
 --- !u!4 &561632154
 Transform:
   m_ObjectHideFlags: 0
@@ -1609,6 +1620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa67b7c84e89ea498a31eb903998adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 0}
 --- !u!61 &563774165
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2004,7 +2016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &913498163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4316,6 +4328,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa67b7c84e89ea498a31eb903998adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 0}
 --- !u!61 &1757034339
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4736,7 +4749,7 @@ SpriteRenderer:
   m_Size: {x: 0.98, y: 0.65}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1909104479
@@ -4852,6 +4865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8aa67b7c84e89ea498a31eb903998adf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathSound: {fileID: 0}
 --- !u!61 &1915122576
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4980,7 +4994,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1916013315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.95, y: -2.76, z: 0}
+  m_LocalPosition: {x: -18.19, y: -2.76, z: 0}
   m_LocalScale: {x: 0.43280998, y: 0.38502827, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5071,9 +5085,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   lives: 3
+  healthBar: {fileID: 0}
   isImmune: 0
   immunityTime: 0
   immunityDuration: 1.5
+  pageCounter: {fileID: 0}
+  moonIcon: {fileID: 0}
 --- !u!1 &1950329936
 GameObject:
   m_ObjectHideFlags: 0

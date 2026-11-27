@@ -13179,7 +13179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5c4082f343f1fb489a6a94b6f91b30a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: 2
+  nextLevel: 3
   interactText: {fileID: 420261220}
 --- !u!61 &1878981679
 BoxCollider2D:

@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-// The bookshelf with the statue on top. Pressing E opens the shelf close-up,
-// where the player has to pull the book that Sabrina's three pages describe.
 public class BookMechanism : MonoBehaviour
 {
     public Animator passageAnimator;
@@ -16,14 +14,11 @@ public class BookMechanism : MonoBehaviour
     public BookShelfInspectionUI shelfUI;
     public SecretPassage secretPassage;
 
-    // the red book with the sigil in the gap of the shelf
     public SpriteRenderer sigilBook;
     public Sprite sigilBookPulled;
 
-    // sparkles (Lab 4 particle system) that appear on the sigil book once all three pages are found
     public GameObject sigilSparkles;
 
-    // the bookshelf, the statue and the book shake when the hidden mechanism moves
     public Transform[] shakeObjects;
     public float shakeTime = 0.6f;
     public float shakeAmount = 0.03f;
@@ -32,8 +27,8 @@ public class BookMechanism : MonoBehaviour
     private bool playerNearby = false;
     private bool mechanismActivated = false;
 
-    private Sprite sigilBookStart;        // the sigil book before it is pulled
-    private Vector3[] shakeStartPositions; // where the shaking objects belong
+    private Sprite sigilBookStart;
+    private Vector3[] shakeStartPositions;
 
     void Start()
     {
@@ -48,10 +43,9 @@ public class BookMechanism : MonoBehaviour
         }
     }
 
-    // called when the guard catches Alex: everything goes back to how it was at the start
     public void ResetMechanism()
     {
-        StopAllCoroutines(); // stop the shaking if it was still going
+        StopAllCoroutines();
 
         for (int i = 0; i < shakeObjects.Length; i++)
         {
@@ -59,7 +53,7 @@ public class BookMechanism : MonoBehaviour
         }
 
         mechanismActivated = false;
-        sigilBook.sprite = sigilBookStart; // the sigil book slides back into the shelf
+        sigilBook.sprite = sigilBookStart;
 
         shelfUI.ResetShelf();
         if (secretPassage != null)
@@ -68,7 +62,6 @@ public class BookMechanism : MonoBehaviour
 
     void Update()
     {
-        // visual hint: the sigil book shimmers once the player holds all three pages
         if (sigilSparkles != null)
             sigilSparkles.SetActive(PlayerStats.cipherPagesCollected >= 3 && !mechanismActivated);
 
@@ -87,7 +80,6 @@ public class BookMechanism : MonoBehaviour
         return mechanismActivated;
     }
 
-    // called by the shelf close-up when the player still near the shelf steps back
     public void ShowPrompt()
     {
         if (playerNearby && !mechanismActivated)
@@ -97,7 +89,6 @@ public class BookMechanism : MonoBehaviour
         }
     }
 
-    // called by the shelf close-up when the correct book is pulled. Works only once.
     public void ActivateMechanism()
     {
         if (mechanismActivated) return;
@@ -106,19 +97,16 @@ public class BookMechanism : MonoBehaviour
 
         Debug.Log("The secret mechanism is activated!");
 
-        // the real book slides out of the shelf too (sprite swap, like the brick in Lab 5)
         sigilBook.sprite = sigilBookPulled;
 
         StartCoroutine(ShakeShelf());
     }
 
-    // shakes the shelf for a moment (Coroutine, Lab 9), then opens the secret passage
     IEnumerator ShakeShelf()
     {
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(mechanismSound);
 
-        // remember where everything was
         Vector3[] startPositions = new Vector3[shakeObjects.Length];
         for (int i = 0; i < shakeObjects.Length; i++)
         {
@@ -130,16 +118,14 @@ public class BookMechanism : MonoBehaviour
         {
             timer = timer + Time.deltaTime;
 
-            // move left and right by a small random amount every frame
             float offset = Random.Range(-shakeAmount, shakeAmount);
             for (int i = 0; i < shakeObjects.Length; i++)
             {
                 shakeObjects[i].position = startPositions[i] + new Vector3(offset, 0, 0);
             }
-            yield return null; //wait for the next frame
+            yield return null;
         }
 
-        // put everything back exactly where it was
         for (int i = 0; i < shakeObjects.Length; i++)
         {
             shakeObjects[i].position = startPositions[i];

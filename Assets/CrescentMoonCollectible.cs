@@ -6,19 +6,17 @@ using TMPro;
 public class CrescentMoonCollectible : MonoBehaviour
 {
     public AudioClip moonSound;
-    public GameObject inventoryIcon; // the moon's icon in the inventory (press H)
+    public GameObject inventoryIcon;
 
-    // Level 3: the moon can only be taken once moonlight falls on it (the ShutterChain opens the window).
-    // Before that it is only a faint shape on the nightstand.
     public bool needsMoonlight = true;
     public float hiddenAlpha = 0.15f;
-    public GameObject[] glowObjects;   // MoonGlow and Sparkles, switched on when it is revealed
-    public GameObject prompt;          // the "Press E" box in the Canvas, used for a clue
+    public GameObject[] glowObjects;
+    public GameObject prompt;
     public TMP_Text promptText;
     public AudioClip revealSound;
 
     private bool revealed = false;
-    private bool collected = false; // so it can't be collected twice
+    private bool collected = false;
     private SpriteRenderer sr;
 
     void Start()
@@ -37,14 +35,12 @@ public class CrescentMoonCollectible : MonoBehaviour
         }
     }
 
-    // called by the ShutterChain when the moonlight reaches the moon
     public void Reveal()
     {
         if (!revealed)
             StartCoroutine(RevealRoutine());
     }
 
-    // the moon fades in (Lerp, like the camera in Lab 4)
     IEnumerator RevealRoutine()
     {
         if (AudioManager.Instance != null)
@@ -78,7 +74,6 @@ public class CrescentMoonCollectible : MonoBehaviour
         {
             if (!revealed)
             {
-                // a clue: the moon is here, but out of reach for now
                 if (prompt != null)
                 {
                     promptText.text = "Only moonlight can reveal the crescent moon...";
@@ -91,7 +86,6 @@ public class CrescentMoonCollectible : MonoBehaviour
         }
     }
 
-    // if Alex is already standing at the nightstand when the moon appears
     private void OnTriggerStay2D(Collider2D other)
     {
         if (revealed && other.tag == "Player")
@@ -109,12 +103,11 @@ public class CrescentMoonCollectible : MonoBehaviour
         if (collected) return;
         collected = true;
 
-        PlayerStats.hasCrescentMoon = true; //static, so it is kept even when the guard catches Alex
+        PlayerStats.hasCrescentMoon = true;
 
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(moonSound);
 
-        // the moon also goes into the inventory
         InventoryManager inventory = FindObjectOfType<InventoryManager>();
         if (inventory != null && inventoryIcon != null)
             inventory.AddItem(inventoryIcon);

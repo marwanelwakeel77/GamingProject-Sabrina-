@@ -1,4 +1,3 @@
-
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -18,7 +17,7 @@ public class CipherInspectionController : MonoBehaviour
         pageImage.sprite = page;
 
         if (titleText != null)
-            titleText.text = source.pageTitle; //the page number, e.g. "Cipher Page II"
+            titleText.text = source.pageTitle;
 
         if (counterText != null)
             counterText.text = "Pages found: " + (PlayerStats.cipherPagesCollected + 1) + " / 3      Esc to close";
@@ -29,7 +28,6 @@ public class CipherInspectionController : MonoBehaviour
 
     void Update()
     {
-        // the panel can also be closed with the Escape key
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             CloseInspection();
@@ -48,4 +46,3 @@ public class CipherInspectionController : MonoBehaviour
         }
     }
 }
-

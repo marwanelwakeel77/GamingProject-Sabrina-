@@ -2,9 +2,6 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 
-// The chain at the far end of the upper balcony. Pulling it (E) opens the old shutters of the
-// stained-glass window: moonlight falls on the nightstand and reveals the crescent moon.
-// Sprite swaps like the brick in Lab 5, a fade with Lerp (Lab 4) and a Coroutine (Lab 9).
 public class ShutterChain : MonoBehaviour
 {
     public SpriteRenderer chainRenderer;
@@ -16,18 +13,21 @@ public class ShutterChain : MonoBehaviour
     public float moonbeamAlpha = 1f;
     public CrescentMoonCollectible moon;
 
-    public GameObject prompt;      // the "Press E" box in the Canvas
+    public GameObject prompt;
     public TMP_Text promptText;
 
     public AudioClip chainSound;
     public AudioClip shuttersSound;
+
+    public float retractHeight = 4f;
+    public float retractSpeed = 3f;
 
     private bool playerNearby = false;
     private bool pulled = false;
 
     void Start()
     {
-        moonbeam.color = new Color(1f, 1f, 1f, 0f); // no moonlight while the shutters are closed
+        moonbeam.color = new Color(1f, 1f, 1f, 0f);
     }
 
     void Update()
@@ -48,13 +48,12 @@ public class ShutterChain : MonoBehaviour
             AudioManager.Instance.PlayMusicSFX(chainSound);
         yield return new WaitForSeconds(0.6f);
 
-        // far away, the shutters swing open
         shutters.sprite = openShutters;
         if (AudioManager.Instance != null)
             AudioManager.Instance.PlayMusicSFX(shuttersSound);
+        StartCoroutine(RetractChain());
         yield return new WaitForSeconds(0.4f);
 
-        // the moonbeam slowly appears
         float timer = 0f;
         while (timer < 1.2f)
         {
@@ -64,6 +63,20 @@ public class ShutterChain : MonoBehaviour
         }
 
         moon.Reveal();
+    }
+
+    IEnumerator RetractChain()
+    {
+        Transform chain = chainRenderer.transform;
+        Vector3 target = chain.position + new Vector3(0, retractHeight, 0);
+
+        while (chain.position != target)
+        {
+            chain.position = Vector3.MoveTowards(chain.position, target, retractSpeed * Time.deltaTime);
+            yield return null;
+        }
+
+        chainRenderer.gameObject.SetActive(false);
     }
 
     void OnTriggerEnter2D(Collider2D other)

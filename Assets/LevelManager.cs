@@ -17,7 +17,7 @@ public class LevelManager : MonoBehaviour
     void Awake()
     {
         // Level 3 starts with no pages and no moon
-        if (cipherPages.Length > 0)
+        if (cipherPages != null && cipherPages.Length > 0)
         {
             PlayerStats.cipherPagesCollected = 0;
             PlayerStats.hasCrescentMoon = false;
