@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -11,7 +13,10 @@ public class PlayerStats : MonoBehaviour
     private SpriteRenderer sr;
     public bool isImmune=false;
     public float immunityTime=0f;
-public float immunityDuration=1.5f;
+    public float immunityDuration=1.5f;
+    public TextMeshProUGUI InventoryText;
+   
+
 
 
     // Start is called before the first frame update
@@ -33,6 +38,9 @@ public float immunityDuration=1.5f;
                 sr.enabled=true;
             }
         }
+     
+
+
     }
     void SpriteFlicker()
     {
