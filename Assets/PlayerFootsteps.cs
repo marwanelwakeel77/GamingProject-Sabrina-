@@ -24,13 +24,14 @@ public class PlayerFootsteps : MonoBehaviour
 
         if (walking == true && soundOn == false)
         {
-            footsteps.Play();
+            footsteps.enabled = true;
+            footsteps.Play(); //like the audio sources in lab 7
             soundOn = true;
         }
 
         if (walking == false && soundOn == true)
         {
-            footsteps.Stop();
+            footsteps.enabled = false; //turning the audio source off stops the sound (like sr.enabled in lab 6)
             soundOn = false;
         }
     }

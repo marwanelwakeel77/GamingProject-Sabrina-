@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WallPickup : MonoBehaviour
 {
-    public CalendarPuzzle requiredPuzzle; //the calendar must be solved first
+    public CalendarPuzzle requiredPuzzle; //the calendar next to the symbol
     public GameObject inventoryIcon; //the Triangle Symbol icon in the inventory
     public AudioClip pickupSound;
     public GameObject collectText; //"Press E To Collect" in the Canvas
@@ -20,8 +20,9 @@ public class WallPickup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //the symbol can be collected only after the calendar is solved and closed
-        if (playerNear == true && requiredPuzzle.isSolved == true && requiredPuzzle.calendarOpen == false)
+        //the symbol can be collected any time, but not while the calendar is open,
+        //and not while the player also stands at the calendar before solving it (there E opens the calendar)
+        if (playerNear == true && requiredPuzzle.calendarOpen == false && (requiredPuzzle.isSolved == true || requiredPuzzle.playerNear == false))
         {
             collectText.SetActive(true);
 
@@ -29,6 +30,10 @@ public class WallPickup : MonoBehaviour
             {
                 Collect();
             }
+        }
+        else if (playerNear == true)
+        {
+            collectText.SetActive(false); //the player is at the calendar now, so E is for the calendar
         }
     }
 

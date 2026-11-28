@@ -17,6 +17,8 @@ public class PlayerStats : MonoBehaviour
 
     public static bool hasTriangle = false; //Triangle Symbol from level 2, needed in level 5
     public static bool hasLibraryPermit = false; //needed to enter the library (level 3)
+    public static bool hasMoon = false; //Crescent Moon Symbol from level 3, needed in level 5
+    public static bool hasSun = false; //Sun Symbol from level 4, needed in level 5
 
     // Start is called before the first frame update
     void Start()

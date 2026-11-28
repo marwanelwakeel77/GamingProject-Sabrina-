@@ -10,6 +10,7 @@ public class CalendarPuzzle : MonoBehaviour
     public GameObject[] wallBlocks; //the 4 ? blocks on the calendar on the wall
     public CalendarDialogue dialogue; //the hint dialogue
     public TextMeshProUGUI timerText; //shows the seconds left
+    public GameObject timerImage; //the alarm clock image behind the seconds (Canvas > timer)
     public float timeLimit = 30f; //the player has 30 seconds to reveal the dates
     public AudioClip timerSound; //ticking sound while the 30 seconds run
     public AudioClip breakSound; //plays one time when a date block breaks
@@ -17,8 +18,9 @@ public class CalendarPuzzle : MonoBehaviour
     public GameObject interactText; //"Press E To Interact" in the Canvas
 
     public bool isSolved = false;
-    private bool playerNear = false;
+    public bool playerNear = false; //WallPickup checks it
     public bool calendarOpen = false; //WallPickup checks it
+    private bool timeIsUp = false; //the level is about to start again, so the calendar can not be opened
     private bool timerOn = false;
     private float timeLeft;
     private int selected = 0; //the date the player is on now
@@ -34,6 +36,7 @@ public class CalendarPuzzle : MonoBehaviour
         playerRB = player.GetComponent<Rigidbody2D>();
         calendarPanel.SetActive(false); //the big calendar is hidden until the player presses E
         timerText.gameObject.SetActive(false);
+        timerImage.SetActive(false);
         dialogue.gameObject.SetActive(false); //the dialogue is hidden until the player opens the calendar
         interactText.SetActive(false);
     }
@@ -42,7 +45,7 @@ public class CalendarPuzzle : MonoBehaviour
     void Update()
     {
         //first E opens the calendar, after that E breaks the date the player is on
-        if (playerNear == true && isSolved == false && Input.GetKeyDown(KeyCode.E))
+        if (playerNear == true && isSolved == false && timeIsUp == false && Input.GetKeyDown(KeyCode.E))
         {
             if (calendarOpen == false)
             {
@@ -120,7 +123,7 @@ public class CalendarPuzzle : MonoBehaviour
         dialogue.HideDialogue(); //the hint dialogue closes with the calendar
 
         //the player is still near the calendar and did not solve it yet
-        if (playerNear == true && isSolved == false)
+        if (playerNear == true && isSolved == false && timeIsUp == false)
         {
             interactText.SetActive(true);
         }
@@ -175,6 +178,7 @@ public class CalendarPuzzle : MonoBehaviour
             timerOn = true;
             timeLeft = timeLimit;
             timerText.gameObject.SetActive(true);
+            timerImage.SetActive(true);
             AudioManager.Instance.PlayMusic(timerSound); //the background music changes to the timer
         }
 
@@ -188,6 +192,7 @@ public class CalendarPuzzle : MonoBehaviour
             isSolved = true;
             timerOn = false;
             timerText.gameObject.SetActive(false);
+            timerImage.SetActive(false);
             AudioManager.Instance.PlayMusic(AudioManager.Instance.overworldMusic); //back to the normal music
             dialogue.CloseDialogue(); //the "Solve The Puzzle" hint is not needed any more
 
@@ -197,8 +202,6 @@ public class CalendarPuzzle : MonoBehaviour
                 wallBlocks[i].SetActive(false);
             }
 
-            FindObjectOfType<HintText>().ShowHint("All four dates are revealed!");
-            AudioManager.Instance.PlayRandomSFX(solvedSound); //PlayOneShot, so the break sound of the last block is not cut
             StartCoroutine(CloseAfterSolved());
         }
         else
@@ -216,12 +219,19 @@ public class CalendarPuzzle : MonoBehaviour
         {
             CloseCalendar();
         }
+
+        //a short pause between the calendar and the message, so they do not appear together
+        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<HintText>().ShowHint("All four dates are revealed!");
+        AudioManager.Instance.PlayRandomSFX(solvedSound); //PlayOneShot, so the break sound of the last block is not cut
     }
 
     void TimeUp()
     {
         timerOn = false;
+        timeIsUp = true;
         timerText.gameObject.SetActive(false);
+        timerImage.SetActive(false);
         AudioManager.Instance.PlayMusic(AudioManager.Instance.overworldMusic); //back to the normal music
 
         if (calendarOpen == true)
@@ -236,14 +246,19 @@ public class CalendarPuzzle : MonoBehaviour
         }
         brokenCount = 0;
 
-        FindObjectOfType<HintText>().ShowHint("Time is up! Try again.");
+        interactText.SetActive(false);
         StartCoroutine(RespawnAfterTimeUp());
     }
 
     //wait a little so the player can read the hint, then the level manager respawns him
     IEnumerator RespawnAfterTimeUp()
     {
-        yield return new WaitForSeconds(2.5f);
+        //a short pause after the calendar closes, then the message
+        yield return new WaitForSeconds(0.5f);
+        FindObjectOfType<HintText>().ShowHint("Time is up! Try again.");
+
+        //time to read the message, then the level starts again
+        yield return new WaitForSeconds(3f);
         FindObjectOfType<LevelManager>().RespawnPlayer();
     }
 
@@ -253,7 +268,7 @@ public class CalendarPuzzle : MonoBehaviour
         {
             playerNear = true;
 
-            if (isSolved == false)
+            if (isSolved == false && timeIsUp == false)
             {
                 interactText.SetActive(true);
             }

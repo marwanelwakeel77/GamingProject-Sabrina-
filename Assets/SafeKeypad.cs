@@ -12,6 +12,8 @@ public class SafeKeypad : MonoBehaviour
     public string password = "5152529"; //the 4 hidden dates: 5, 15, 25, 29
     public GameObject interactText; //"Press E To Interact" in the Canvas
     public GameObject collectText; //"Press E To Collect" in the Canvas
+    public CalendarPuzzle requiredPuzzle; //the calendar must be solved first, because the passcode is the 4 dates
+    public GameObject solvePuzzleHint; //"Solve The Puzzle To Collect The Passcode." in the Canvas
 
     public AudioClip keypadSound; //when a button is pressed
     public AudioClip wrongSound; //wrong passcode
@@ -34,6 +36,7 @@ public class SafeKeypad : MonoBehaviour
         keypadPanel.SetActive(false);
         interactText.SetActive(false);
         collectText.SetActive(false);
+        solvePuzzleHint.SetActive(false);
     }
 
     // Update is called once per frame
@@ -43,7 +46,16 @@ public class SafeKeypad : MonoBehaviour
         {
             if (safeOpen == false)
             {
-                OpenKeypad();
+                //the player does not know the passcode before solving the calendar
+                if (requiredPuzzle.isSolved == false)
+                {
+                    interactText.SetActive(false);
+                    solvePuzzleHint.SetActive(true);
+                }
+                else
+                {
+                    OpenKeypad();
+                }
             }
             else if (permitTaken == false)
             {
@@ -177,6 +189,7 @@ public class SafeKeypad : MonoBehaviour
             playerNear = false;
             interactText.SetActive(false);
             collectText.SetActive(false);
+            solvePuzzleHint.SetActive(false);
         }
     }
 }

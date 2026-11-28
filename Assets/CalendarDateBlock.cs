@@ -6,8 +6,6 @@ using UnityEngine.UI;
 //put this on each ? block on the big calendar (Calendar Panel)
 public class CalendarDateBlock : MonoBehaviour
 {
-    public Color selectedColor = new Color(0.72f, 0.53f, 0.04f); //dark gold = the date the player is on
-
     private Image img;
     private Animator anim;
     public bool isBroken = false;
@@ -20,16 +18,10 @@ public class CalendarDateBlock : MonoBehaviour
     }
 
     //called by the calendar when the player moves between the dates
+    //the "selected" animation turns the block dark gold (like the animations in lab 3)
     public void Select(bool isSelected)
     {
-        if (isSelected == true)
-        {
-            img.color = selectedColor;
-        }
-        else
-        {
-            img.color = Color.white;
-        }
+        anim.SetBool("isSelected", isSelected);
     }
 
     //called by the calendar when the player presses E on this date
@@ -61,7 +53,7 @@ public class CalendarDateBlock : MonoBehaviour
     {
         isBroken = false;
         anim.SetBool("isBroken", false);
-        img.color = Color.white;
+        anim.SetBool("isSelected", false);
         img.enabled = true;
     }
 }

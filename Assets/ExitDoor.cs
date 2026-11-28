@@ -7,24 +7,49 @@ public class ExitDoor : MonoBehaviour
 {
     public int nextLevel = 3; //the number of Level 3 (the library) in File > Build Settings
     public GameObject interactText; //"Press E To Interact" in the Canvas
+    public GameObject openSafeHint; //"Door Is Locked Collect The Library Permit" in the Canvas
+    public GameObject collectSymbolHint; //"Door Is Locked Collect The Triangle Symbol" in the Canvas
+    public Animator doorAnim; //the exit door panel, it opens before going to the next level
 
     private bool playerNear = false;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        openSafeHint.SetActive(false);
+        collectSymbolHint.SetActive(false);
+    }
 
     // Update is called once per frame
     void Update()
     {
         if (playerNear == true && Input.GetKeyDown(KeyCode.E))
         {
-            //the door opens only if the player has the Library Permit
-            if (PlayerStats.hasLibraryPermit == true)
+            //the door opens only if the player has the Library Permit and the Triangle Symbol
+            if (PlayerStats.hasLibraryPermit == true && PlayerStats.hasTriangle == true)
             {
-                SceneManager.LoadScene(nextLevel);
+                playerNear = false; //so E can't be pressed again while the door is opening
+                interactText.SetActive(false);
+                doorAnim.SetBool("isOpen", true); //like the animations in lab 3
+                StartCoroutine(OpenAndLeave());
+            }
+            else if (PlayerStats.hasLibraryPermit == false)
+            {
+                interactText.SetActive(false);
+                openSafeHint.SetActive(true);
             }
             else
             {
-                FindObjectOfType<HintText>().ShowHint("The door is locked. You need the Library Permit.");
+                interactText.SetActive(false);
+                collectSymbolHint.SetActive(true);
             }
         }
+    }
+
+    IEnumerator OpenAndLeave()
+    {
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(nextLevel);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -42,6 +67,8 @@ public class ExitDoor : MonoBehaviour
         {
             playerNear = false;
             interactText.SetActive(false);
+            openSafeHint.SetActive(false);
+            collectSymbolHint.SetActive(false);
         }
     }
 }

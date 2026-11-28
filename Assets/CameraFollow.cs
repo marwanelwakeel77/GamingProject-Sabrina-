@@ -33,8 +33,10 @@ public class CameraFollow : MonoBehaviour
         {
             Vector2 newCamPosition = Vector2.Lerp(transform.position,Target.position, Cameraspeed * Time.deltaTime);
 
-            //when the camera zooms in (CameraZoom) it sees less, so it can move closer to the edges of the level
-            float extraX = (startSize - cam.orthographicSize) * 16f / 9f; //the game screen is 16:9
+            //minX and maxX are set for a 16:9 screen at the start size.
+            //when the camera zooms in, or the screen is narrower, it sees less, so it can move closer to the edges.
+            //when the screen is wider (like Free Aspect), it sees more, so it must stay further from the edges.
+            float extraX = startSize * 16f / 9f - cam.orthographicSize * cam.aspect;
             float extraY = startSize - cam.orthographicSize;
 
             float ClampX = Mathf.Clamp(newCamPosition.x, minX - extraX, maxX + extraX);

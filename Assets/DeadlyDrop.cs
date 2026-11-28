@@ -29,7 +29,7 @@ public class DeadlyDrop : MonoBehaviour
             {
                 isDying = true;
                 FindObjectOfType<PlayerStats>().healthBar.fillAmount = 0; //the health bar is empty (like lab 8)
-                AudioManager.Instance.musicSource.Stop(); //the background music stops while the death sound plays
+                AudioManager.Instance.musicSource.enabled = false; //the background music is turned off while the death sound plays (like sr.enabled in lab 6)
                 AudioManager.Instance.PlayMusicSFX(deathSound); //like the sounds in lab 7
                 StartCoroutine(RespawnAfterDeath());
             }
@@ -45,7 +45,6 @@ public class DeadlyDrop : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
         isDying = false;
-        AudioManager.Instance.PlayMusic(AudioManager.Instance.overworldMusic); //the background music starts again (like lab 7)
         FindObjectOfType<LevelManager>().RespawnPlayer();
     }
 }

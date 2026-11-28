@@ -28,6 +28,14 @@ public class HintText : MonoBehaviour
         StartCoroutine(TypeHint(message, hintNumber));
     }
 
+    //linked to the OnClick() of a close button on the frame (Level 5): hides the message at once
+    public void CloseHint()
+    {
+        hintNumber++; //the message that is typing or waiting stops, it will not show or hide anything any more
+        textDisplay.text = "";
+        hintBox.SetActive(false);
+    }
+
     //shows the frame, types the message letter by letter, waits, then hides the frame
     IEnumerator TypeHint(string message, int number)
     {

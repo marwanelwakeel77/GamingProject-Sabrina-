@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius;
     public LayerMask whatIsGround;
+    public bool canJump = true; //Level 5: false on the collapsing floor, alex must walk across it
 
     private bool grounded;
     private Animator anim;
@@ -26,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(Spacebar) && grounded)
+        if (Input.GetKeyDown(Spacebar) && grounded && canJump)
         {
             Jump();
         }
